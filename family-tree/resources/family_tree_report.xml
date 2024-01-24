@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Report>
+	<Title><var var="I18N::translate('Pedigree')" /></Title>
+	<Description><var var="I18N::translate('A report of an individual’s ancestors, formatted as a tree.')" /></Description>
+	<Input name="pid" lookup="INDI" type="text" default=""><var var="I18N::translate('Individual')" /></Input>
+	<Input name="orientation" type="select" default="portrait" options="portrait=>I18N::translate('Portrait')|landscape=>I18N::translate('Landscape')"><var var="I18N::translate('Orientation')"/></Input>
+	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|A2=>I18N::translateContext('paper size', 'A2')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
+
+	<SetVar name="paper" value="$pageSize" />
+	<if condition="$pageSize=='US-Letter'"><SetVar name="paper" value="U1" /></if>
+	<if condition="$pageSize=='US-Legal'"><SetVar name="paper" value="U2" /></if>
+	<if condition="$pageSize=='US-Tabloid'"><SetVar name="paper" value="U3" /></if>
+
+	<!-- paper sizes in points -->
+	<SetVar name="w_A4" value="595" />
+	<SetVar name="w_A3" value="841" />
+	<SetVar name="w_A2" value="1190" />
+	<SetVar name="w_U1" value="612" />
+	<SetVar name="w_U2" value="612" />
+	<SetVar name="w_U3" value="792" />
+	<SetVar name="w_name" value="w_$paper" />
+
+	<SetVar name="h_A4" value="841" />
+	<SetVar name="h_A3" value="1190" />
+	<SetVar name="h_A2" value="1682" />
+	<SetVar name="h_U1" value="792" />
+	<SetVar name="h_U2" value="1008" />
+	<SetVar name="h_U3" value="1224" />
+	<SetVar name="h_name" value="h_$paper" />
+
+	<SetVar name="w_current" value="@$w_name" />
+	<SetVar name="h_current" value="@$h_name" />
+	<if condition="$orientation=='landscape'">
+	  <SetVar name="w_current" value="@$h_name" />
+	  <SetVar name="h_current" value="@$w_name" />
+	</if>
+
+	<SetVar name="fonts" value="dejavusans" />
+
+	<Style name="header" font="$fonts" size="18" style="b"/>
+	<Style name="label1" font="$fonts" size="9" />
+	<Style name="name" font="$fonts" size="9" />
+	<Style name="name_i" font="$fonts" size="9" style="bi" />
+	<Style name="mainname" font="$fonts" size="12" style="B" />
+	<Style name="text" font="$fonts" size="7" />
+	<Style name="text_i" font="$fonts" size="7" style="bi" />
+	<Style name="genby" font="$fonts" size="8" />
+	<!-- Date text -->
+	<Style name="date" font="$fonts" size="8"/>
+
+	<SetVar name="format" value="@format" />
+	<SetVar name="max_nn" value="31" />
+	<SetVar name="o" value="" />
+	<if condition="$orientation=='landscape'"><SetVar name="o" value="L" /></if>
+	<SetVar name="paper" value="$paper$o" />
+
+	<!-- Truncate variables -->
+	<SetVar name="trunc_name" value="32" />
+	<SetVar name="trunc_name2" value="22" />
+	<SetVar name="trunc_fact" value="60" />
+	<SetVar name="trunc_date" value="d" />
+	<SetVar name="x_incr" value="180" />
+	<SetVar name="x_left" value="30" />
+	<if condition="$paper=='A4' or $paper=='U1' or $paper=='U2'">
+	    <SetVar name="trunc_name" value="24" />
+	    <SetVar name="trunc_fact" value="35" />
+	    <SetVar name="x_incr" value="140" />
+	</if>
+
+	<!-- Vertical positions -->
+	<SetVar name="y_middle" value="$h_current/2+5" />
+	<SetVar name="y_incr1" value="$h_current/5+10" />
+	<if condition="$format=='HTML'">
+		<SetVar name="y_middle" value="$h_current/2-60" />
+	</if>
+
+	<!-- generations -->
+	<SetVar name="maxgen" value="5" />
+	<if condition="$paper=='A3L' or $paper=='A2' or $paper=='U3L'">
+	    <SetVar name="max_nn" value="127" />
+	    <SetVar name="maxgen" value="7" />
+	</if>
+	<if condition="$paper=='A2L'">
+	    <SetVar name="x_incr" value="220" />
+	    <SetVar name="max_nn" value="255" />
+	    <SetVar name="maxgen" value="8" />
+	</if>
+
+	<!-- Horizontal positions -->
+	<SetVar name="x_123" value="$x_left" />
+	<SetVar name="x_4_7" value="$x_left + $x_incr" />
+	<SetVar name="x_8_15" value="$x_left + 2*$x_incr" />
+	<SetVar name="x_16_31" value="$x_left + 3*$x_incr" />
+	<SetVar name="x_32_63" value="$x_left + 4*$x_incr" />
+	<SetVar name="x_64_127" value="$x_left + 5*$x_incr" />
+	<SetVar name="x_128_255" value="$x_left + 6*$x_incr" />
+	<SetVar name="x_256_511" value="$x_left + 7*$x_incr" />
+
+	<SetVar name="y_incr2" value="$y_incr1/2" />
+	<SetVar name="y_incr3" value="$y_incr2/2" />
+	<SetVar name="y_incr4" value="$y_incr3/2" />
+	<SetVar name="y_incr5" value="$y_incr4/2" />
+	<SetVar name="y_incr6" value="$y_incr5/2" />
+	<SetVar name="y_incr7" value="$y_incr6/2" />
+	<SetVar name="y_incr8" value="$y_incr7/2" />
+
+	<SetVar name="width" value="$x_incr -0" />
+	<SetVar name="namewidth" value="$x_incr" />
+	<SetVar name="namewidth2" value="2* $x_incr" />
+	<SetVar name="relatives" value="direct-ancestors" />
+	<SetVar name="sortby" value="generation" />
+	<GedCom id="$pid"><SetVar name="startname" value="@NAME" trim="/" /></GedCom>
+	<SetVar name="startname" value="$startname" trim="*" />
+    <SetVar name="title" value="I18N::translate('Pedigree')" />
+    <SetVar name="title" value="$title — $startname" />  <!-- only used for pdf -->
+    <SetVar name="leftmargin" value="10" />
+
+
+		<Doc pageSize="$pageSize" orientation="$orientation" leftmargin="$leftmargin" rightmargin="10" topmargin="25" bottommargin="10" headermargin="15" footermargin="0" showGeneratedBy="0" >
+			<Header>  <!-- only used for html -->
+				<Textbox newline="1" pos="rel">
+					<Text style="header"><var var="I18N::translate('Pedigree')" /> — <GetPersonName id="$pid" /></Text>
+				</Textbox>
+				<!--Cell align="rightrtl" height="10" newline="0" style="date"><Now /></Cell-->
+				<!--Cell height="20" newline="1" left="20" style="header"><var var="I18N::translate('Pedigree')" /> — <GetPersonName id="$pid" /></Cell-->
+			</Header>
+			<Body>
+
+			<setvar name="dval" value="10"/>
+			<setvar name="dump" value="dval"/>
+			<if condition="$format=='HTML'" >
+				<!-- comment="line drawing is different for html and pdf" -->
+				<SetVar name="leftmargin" value="0" />
+			</if>
+			<setvar name="nn" value="1"/>
+			<setvar name="nn1" value="11111"/>
+			<!-- set the gedcom context for this individual -->
+			<Relatives id="$pid" group="$relatives" maxgen="$maxgen" sortby="generation" >
+				<setvar name="gen" value="@generation" />
+				<setvar name="xref" value="@ID" />
+				<if condition="$gen == 1" >
+					<setvar name="$xref" value="1"/>
+				</if>
+				<setvar name="nn" value="@$xref?"/>
+			    <if condition="$nn GT 0" >
+
+				<setvar name="nnn" value="nn_$xref"/>
+				<setvar name="nn2" value="@$nnn?"/>	<!-- used if brothers and sisters occur in this tree   -->
+
+				<if condition="$gen == '1'" >
+				  <setvar name="top_x" value="$x_123" />
+				  <setvar name="y_incr" value="$y_incr1" />
+				  <setvar name="n_bias" value="2" />
+				</if>
+				<if condition="$gen == '2'" >
+				  <setvar name="top_x" value="$x_123" />
+				  <setvar name="y_incr" value="$y_incr1" />
+				  <setvar name="n_bias" value="5" />
+				</if>
+				<if condition="$gen == '3'" >
+				  <setvar name="top_x" value="$x_4_7" />
+				  <setvar name="y_incr" value="$y_incr2" />
+				  <setvar name="n_bias" value="11" />
+				</if>
+				<if condition="$gen == '4'" >
+				  <setvar name="top_x" value="$x_8_15" />
+				  <setvar name="y_incr" value="$y_incr3" />
+				  <setvar name="n_bias" value="23" />
+				</if>
+				<if condition="$gen == '5'" >
+				  <setvar name="top_x" value="$x_16_31" />
+				  <setvar name="y_incr" value="$y_incr4" />
+				  <setvar name="n_bias" value="47" />
+				</if>
+				<if condition="$gen == '6'" >
+				  <setvar name="top_x" value="$x_32_63" />
+				  <setvar name="y_incr" value="$y_incr5" />
+				  <setvar name="n_bias" value="95" />
+				</if>
+				<if condition="$gen == '7'" >
+				  <setvar name="top_x" value="$x_64_127" />
+				  <setvar name="y_incr" value="$y_incr6" />
+				  <setvar name="n_bias" value="191" />
+				</if>
+				<if condition="$gen == '8'" >
+				  <setvar name="top_x" value="$x_128_255" />
+				  <setvar name="y_incr" value="$y_incr7" />
+				  <setvar name="n_bias" value="383" />
+				</if>
+
+				<if condition="$nn2 LT 2" >
+				  <setvar name="top2_x" value="$x_123" />
+				  <setvar name="y2_incr" value="$y_incr1" />
+				  <setvar name="n2_bias" value="2" />
+				</if>
+				<if condition="$nn2 GT 2 and $nn2 LT 4" >
+				  <setvar name="top2_x" value="$x_123" />
+				  <setvar name="y2_incr" value="$y_incr1" />
+				  <setvar name="n2_bias" value="5" />
+				</if>
+				<if condition="$nn2 GT 3 and $nn2 LT 8" >
+				  <setvar name="top2_x" value="$x_4_7" />
+				  <setvar name="y2_incr" value="$y_incr2" />
+				  <setvar name="n2_bias" value="11" />
+				</if>
+				<if condition="$nn2 GT 7 and $nn2 LT 16" >
+				  <setvar name="top2_x" value="$x_8_15" />
+				  <setvar name="y2_incr" value="$y_incr3" />
+				  <setvar name="n2_bias" value="23" />
+				</if>
+				<if condition="$nn2 GT 15 and $nn2 LT 32" >
+				  <setvar name="top2_x" value="$x_16_31" />
+				  <setvar name="y2_incr" value="$y_incr4" />
+				  <setvar name="n2_bias" value="47" />
+				</if>
+				<if condition="$nn2 GT 31 and $nn2 LT 64" >
+				  <setvar name="top2_x" value="$x_32_63" />
+				  <setvar name="y2_incr" value="$y_incr5" />
+				  <setvar name="n2_bias" value="95" />
+				</if>
+				<if condition="$nn2 GT 63 and $nn2 LT 128" >
+				  <setvar name="top2_x" value="$x_64_127" />
+				  <setvar name="y2_incr" value="$y_incr6" />
+				  <setvar name="n2_bias" value="191" />
+				</if>
+				<if condition="$nn2 GT 127" >
+				  <setvar name="top2_x" value="$x_128_255" />
+				  <setvar name="y2_incr" value="$y_incr7" />
+				  <setvar name="n2_bias" value="383" />
+				</if>
+
+				<!-- Individual name -->
+
+				<if condition="$nn2 GT 0">
+				<!-- one person has descendants that have married (e.g. cousins) -->
+					<!--setvar name="dv" value="@$dump" dumpvar="nn2"/-->
+					<SetVar name="top2_y" value="$y_middle + (2*$nn2-$n2_bias)* $y2_incr" />
+					<SetVar name="top2_y1" value="$top2_y -10" />
+					<SetVar name="top2_y2" value="$top2_y -10" />
+					<SetVar name="top2_x1" value="$top2_x -11" />
+					<SetVar name="top2_x2" value="$top2_x +3" />
+					<SetVar name="same" value="I18N::translate('same person!')" />
+					<if condition="$y2_incr LT 5"><SetVar name="top2_y2" value="$top2_y -8" />
+								     <SetVar name="top2_x1" value="$top2_x1 +6" /> </if>
+					<if condition="$nn GT  9"><SetVar name="top2_x1" value="$top2_x1 -6" /></if>
+					<if condition="$nn GT 99"><SetVar name="top2_x1" value="$top2_x1 -6" /></if>
+					<if condition="$y2_incr LT 5">
+					    <TextBox padding="0" width="30" height="10" align="right" left="$top2_x1" top="$top2_y2" reseth="1" pos="abs">
+						<Text style="text"><var var="$nn2"/>. </Text>
+					    </TextBox>
+					    <TextBox padding="0" width="$namewidth" height="10" align="left" left="$top2_x2" top="$top2_y2" reseth="1" pos="abs">
+						<Text style="text_i">= <var var="$nn"/>: <var var="same"/></Text>
+					    </TextBox>
+					</if>
+					<if condition="$y2_incr GT 4">
+					    <TextBox padding="0" width="30" height="10" align="right" left="$top2_x1" top="$top2_y2" reseth="1" pos="abs">
+						<Text style="label1"><var var="$nn2"/>. </Text>
+					    </TextBox>
+					    <TextBox padding="0" width="$namewidth" height="10" align="left" left="$top2_x2" top="$top2_y2" reseth="1" pos="abs">
+						<Text style="name_i">= <var var="$nn"/>: <var var="same"/></Text>
+					    </TextBox>
+					</if>
+					<SetVar name="odd" value="0" />
+					<if condition="@SEX=='F'">
+						<SetVar name="odd" value="1" />
+					</if>
+					<SetVar name="x1" value="$top2_x + $leftmargin" />
+					<SetVar name="x2" value="$x1 + $x_incr" />
+					<SetVar name="y2" value="$top2_y + $y2_incr" />
+					<if condition="$odd == 1" ><SetVar name="y2" value="$top2_y - $y2_incr" /></if>
+					<Line x1="$x1" y1="$top2_y" x2="$x2" y2="$top2_y" />
+					<if condition="$odd == 0" ><Line x1="$x1" y1="$top2_y" x2="$x1" y2="$y2" /></if>
+					<if condition="$odd == 1" ><Line x1="$x1" y1="$y2" x2="$x1" y2="$top2_y" /></if>
+				</if>
+
+	<SetVar name="top_y" value="$y_middle + (2*$nn-$n_bias)* $y_incr" />
+	<SetVar name="top_y1" value="$top_y -10" />
+	<SetVar name="top_y2" value="$top_y -10" />
+	<SetVar name="top_x1" value="$top_x -11" />
+	<SetVar name="top_x2" value="$top_x +3" />
+	<SetVar name="trunc_fact2" value="$trunc_fact" />
+	<if condition="$y_incr LT 5"><SetVar name="top_y2" value="$top_y -8" />
+				    <SetVar name="top_x1" value="$top_x1 +6" /> </if>
+	<if condition="$nn GT  9"><SetVar name="top_x1" value="$top_x1 -6" /></if>
+	<if condition="$nn GT 99"><SetVar name="top_x1" value="$top_x1 -6" /></if>	<!-- reduced by -6 twice -->
+	<if condition="$y_incr LT 40 and $x_incr GT 200"><SetVar name="trunc_fact" value="35" /></if>
+	<if condition="$y_incr LT 40 and $x_incr LT 200"><SetVar name="trunc_fact" value="22" /></if>
+
+	<TextBox padding="0" width="30" height="10" align="right" left="$top_x1" top="$top_y2" reseth="1" pos="abs">
+	    <if condition="$y_incr LT 5">
+		<Text style="text"><var var="$nn"/>. </Text>
+	    </if>
+	    <if condition="$y_incr GT 4">
+		<Text style="label1"><var var="$nn"/>. </Text>
+	    </if>
+	</TextBox>
+	<if condition="$y_incr GT 9">
+		<TextBox padding="0" width="$namewidth" height="10" align="left" left="$top_x2" top="$top_y1" reseth="1" pos="abs">
+			<Text style="name"><GetPersonName truncate="$trunc_name" /></Text>
+		</TextBox>
+		<SetVar name="top_y2" value="$top_y +2" />
+	</if>
+    <setvar name="width2" value="$width"/>
+    <if condition="$gen==7 and $maxgen==7"><setvar name="width2" value="$width+50"/></if>
+	<TextBox padding="0" width="$width2" height="10" align="left" left="$top_x2" top="$top_y2" reseth="1" pagecheck="0" pos="abs">
+		<if condition="$y_incr LT 5">
+			<Text style="text"><GetPersonName truncate="$trunc_name2" /></Text>
+			<if condition="@BIRT:DATE!=''"><Text style="text"> &#x2055; <GedcomValue tag="BIRT:DATE" truncate="$trunc_date" /></Text></if>
+			<if condition="@DEAT:DATE!=''"><Text style="text"> &#x271D; <GedcomValue tag="DEAT:DATE" truncate="$trunc_date" /></Text></if>
+		</if>
+		<if condition="$y_incr LT 9 and $y_incr GT 4">
+			<Text style="name"><GetPersonName truncate="$trunc_name2" /></Text>
+			<SetVar name="top_y2" value="$top_y -8" />
+			<if condition="@BIRT:DATE!=''"><Text style="text"> &#x2055; <GedcomValue tag="BIRT:DATE" truncate="$trunc_date" /></Text></if>
+			<if condition="@DEAT:DATE!=''"><Text style="text"> &#x271D; <GedcomValue tag="DEAT:DATE" truncate="$trunc_date" /></Text></if>
+		</if>
+		<if condition="$y_incr GT 8">
+			<if condition="$x_incr LT 150">
+				<SetVar name="trunc_fact2" value="$trunc_fact-10" />
+			</if>
+			<Text style="text">
+				<var var="I18N::translate('Birth')" /> <GedcomValue tag="BIRT:DATE" truncate="$trunc_date" />
+				<if condition="$y_incr GT 12 and @BIRT:PLAC!=''">
+					<if condition="$y_incr LT 40">, </if>
+					<if condition="$y_incr GT 39"><br /><var var="I18N::translate('Birth')" /> </if>
+					<GedcomValue tag="BIRT:PLAC" truncate="$trunc_fact2" />
+				</if>
+				<if condition="$y_incr GT 19 and @SEX=='F'"><Gedcom id="@FAMS:MARR">
+					<if condition="@MARR:DATE!='' or @MARR:PLAC!=''">
+					<br /><var var="I18N::translate('Marriage')" /> <GedcomValue tag="MARR:DATE" truncate="$trunc_date" />
+					<if condition="@MARR:PLAC!=''">
+					<if condition="$y_incr LT 40">, </if>
+					<if condition="$y_incr GT 39"><br /><var var="I18N::translate('Marriage')" /> </if>
+					<GedcomValue tag="MARR:PLAC" truncate="$trunc_fact2" />
+					</if></if>
+				</Gedcom></if>
+				<Gedcom id="DEAT">
+					<if condition="$y_incr GT 12"><br /></if>
+					<if condition="$y_incr LT 12">, </if>
+					<var var="I18N::translate('Death')" /> <GedcomValue tag="DEAT:DATE" truncate="$trunc_date" />
+					<if condition="$y_incr GT 12 and @DEAT:PLAC!=''">
+					<if condition="$y_incr LT 40">, </if>
+					<if condition="$y_incr GT 39"><br /><var var="I18N::translate('Death')" /> </if>
+					<GedcomValue tag="DEAT:PLAC" truncate="$trunc_fact2" /></if>
+				</Gedcom>
+			</Text>
+		</if>
+	</TextBox>
+
+	<SetVar name="odd" value="0" />
+	<if condition="@SEX=='F'">
+		<SetVar name="odd" value="1" />
+	</if>
+	<SetVar name="x1" value="$top_x + $leftmargin" />
+	<SetVar name="x2" value="$top_x + $x_incr + $leftmargin" />
+	<SetVar name="y2" value="$top_y + $y_incr" />
+	<if condition="$odd == 1" ><SetVar name="y2" value="$top_y - $y_incr" /></if>
+	<Line x1="$x1" y1="$top_y" x2="$x2" y2="$top_y" />
+	<if condition="$odd == 0" ><Line x1="$x1" y1="$top_y" x2="$x1" y2="$y2" /></if>
+	<if condition="$odd == 1" ><Line x1="$x1" y1="$y2" x2="$x1" y2="$top_y" /></if>
+
+
+				<Gedcom id="@FAMC:@HUSB" >
+				<setvar name="xref" value="@ID" />
+				<setvar name="nn1" value="@$xref?" />
+				<!--setvar name="$xref" value="$nn*2" /-->
+				<if condition="$nn1 == 0"><setvar name="$xref" value="$nn*2" /></if>
+				<if condition="$nn1 != 0">
+					<setvar name="nnn" value="nn_$xref" />
+					<setvar name="nn2" value="@$nnn" />
+					<if condition="$nn2 == 0"><setvar name="$nnn" value="$nn*2" /></if>
+					<if condition="$nn2 != 0"><setvar name="$nnn" value="$nn1+$nn*2000" /></if>
+					<!--setvar name="dv" value="@$dump"/-->
+				</if>
+				</Gedcom>
+				<Gedcom id="@FAMC:@WIFE" >
+				<setvar name="xref" value="@ID" />
+				<setvar name="nn1" value="@$xref" />
+				<!--setvar name="$xref" value="$nn*2+1" /-->
+				<if condition="$nn1 == 0"><setvar name="$xref" value="$nn*2+1" /></if>
+				<if condition="$nn1 != 0">
+					<setvar name="nnn" value="nn_$xref" />
+					<setvar name="nn2" value="@$nnn" />
+					<if condition="$nn2 == 0"><setvar name="$nnn" value="$nn*2+1" /></if>
+					<if condition="$nn2 != 0"><setvar name="$nnn" value="$nn1+$nn*2000+1000" /></if>
+					<!--setvar name="dv" value="@$dump"/-->
+				</if>
+				</Gedcom>
+			    </if>
+			</Relatives>
+		</Body>
+		<!--Footer>
+			<Cell align="rightrtl" newline="1" style="date"><Now/></Cell>
+		</Footer-->
+	</Doc>
+</Report>
