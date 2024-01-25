@@ -1,6 +1,12 @@
+#  resources/family_ext_report.xml:5
 msgid    "A report of an individual’s relatives, one per page." 
 msgstr   "En rapport om en persons släktingar, en per sida."
 
+#  resources/family_ext_report.xml:4
 msgid    "Family individuals" 
 msgstr   "Släktingar"
+
+#  resources/family_ext_report.xml:9
+msgid    "generation"
+msgstr   "generation"
 
