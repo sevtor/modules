@@ -1,0 +1,12 @@
+msgid    "An overview of the descendants of an individual." 
+msgstr   "En översikt av ättlingarna till en person."
+
+msgid    "Descendants overview" 
+msgstr   "Ättlingar översikt"
+
+msgid    "Married within this tree, see above!" 
+msgstr   "Gift inom detta träd, se ovan!"
+
+msgid    "sp" 
+msgstr   "ma"
+

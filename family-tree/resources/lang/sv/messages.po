@@ -1,0 +1,3 @@
+msgid    "same person!" 
+msgstr   "samma person!"
+

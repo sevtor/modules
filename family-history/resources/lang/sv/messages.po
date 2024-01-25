@@ -1,0 +1,51 @@
+msgid    "A report of an individual’s relatives, in a narrative style." 
+msgstr   "En rapport om en persons släktingar, i en berättande stil."
+
+msgid    "by" 
+msgstr   "av"
+
+msgid    "child of" 
+msgstr   "barn till"
+
+msgid    "Children, see spouse above." 
+msgstr   "Barn, se make/maka ovan."
+
+msgid    "Family history" 
+msgstr   "Släkthistoria"
+
+msgid    "He emigrated to" 
+msgstr   "Han utvandrade till"
+
+msgid    "He engaged" 
+msgstr   "Han förlovade sig med"
+
+msgid    "He moved in with" 
+msgstr   "Han flyttade ihop med"
+
+msgid    "He was adopted" 
+msgstr   "Han adopterades"
+
+msgid    "She emigrated to" 
+msgstr   "Hon utvandrade till"
+
+msgid    "She engaged" 
+msgstr   "Hon förlovade sig med"
+
+msgid    "She moved in with" 
+msgstr   "Hon flyttade ihop med"
+
+msgid    "She was adopted" 
+msgstr   "Hon adopterades"
+
+msgid    "The husband died" 
+msgstr   "Maken dog"
+
+msgid    "The wife died" 
+msgstr   "Makan dog"
+
+msgid    "They divorced" 
+msgstr   "De separerade"
+
+msgid    "They separated" 
+msgstr   "De separerade"
+

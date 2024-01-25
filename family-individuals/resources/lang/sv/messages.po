@@ -1,0 +1,6 @@
+msgid    "A report of an individual’s relatives, one per page." 
+msgstr   "En rapport om en persons släktingar, en per sida."
+
+msgid    "Family individuals" 
+msgstr   "Släktingar"
+
