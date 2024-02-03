@@ -147,11 +147,7 @@
 					</if>
 					<if condition="$format=='HTML'">
 						<TextBox newline="1" >
-							<Text style="text"><sp/> </Text>
-						</TextBox>
-						<Line />
-						<TextBox newline="1" >
-							<Text style="date"></Text>
+							<Text style="text"><br/><sp/> </Text>
 						</TextBox>
 						<Line />
 						<TextBox newline="1" >
