@@ -1,0 +1,20 @@
+#  resources/descendants-overview.xml:4
+msgid    "An overview of the descendants of an individual." 
+msgstr   "Ein Überblick über die Nachkommen eines Person."
+
+#  resources/descendants-overview.xml:3
+msgid    "Descendants overview" 
+msgstr   "Nachkommenübersicht"
+
+#  resources/descendants-overview.xml:318 // TODO dont know what this stands for or where used
+msgid    "Emig"
+msgstr   "emig"
+
+#  resources/descendants-overview.xml:323
+msgid    "Married within this tree, see above!" 
+msgstr   "Verheiratet in diesem Baum, siehe oben!"
+
+#  resources/descendants-overview.xml:292 // TODO dont know what this stands for or where used
+msgid    "sp" 
+msgstr   "ma"
+

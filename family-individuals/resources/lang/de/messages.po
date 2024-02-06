@@ -1,0 +1,12 @@
+#  resources/family_ext_report.xml:5
+msgid    "A report of an individual’s relatives, one per page." 
+msgstr   "Ein Bericht der Verwandten einer Person, einzeln pro Seite."
+
+#  resources/family_ext_report.xml:4
+msgid    "Family individuals" 
+msgstr   "Familienmitglieder"
+
+#  resources/family_ext_report.xml:9
+msgid    "generation"
+msgstr   "sortiert nach Generationen"
+
