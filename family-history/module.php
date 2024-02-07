@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace MyCustomNamespace;
 
+use Fisharebest\Localization\Translation;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
@@ -57,6 +58,25 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     {
         return __DIR__ . '/resources/';
     }
+
+    /**
+     * Additional translations for module.
+     *
+     * @param string $language
+     *
+     * @return string[]
+     */
+
+     public function customTranslations(string $language): array
+     {
+         $lang_dir   = $this->resourcesFolder() . 'lang/';
+         $file       = $lang_dir . $language . '.mo';
+         if (file_exists($file)) {
+             return (new Translation($file))->asArray();
+         } else {
+             return [];
+         }
+     }
 
     /**
      * A sentence describing what this module does.
