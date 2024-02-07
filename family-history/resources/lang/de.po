@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Holger Eisold <github@eisold.family>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -11,13 +11,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
+#  app/Report/ReportParserGenerate.php
+msgid "b."
+msgstr "geb."
+
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
-msgstr "Ein Bericht der Verwandten einer Person in einem narrativen Stil."
+msgstr "Ein Bericht der Verwandten einer Person in einem Erzähl-Stil."
 
 #  resources/family_history_report.xml:212
 msgid "by"
-msgstr "bei"
+msgstr "an"
 
 #  resources/family_history_report.xml:353
 msgid "child of"
