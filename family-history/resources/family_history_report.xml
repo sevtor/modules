@@ -202,8 +202,8 @@
 						<if condition="$fact=='BIRT'" >
 						<!-- Individual, birth... -->
 							<Text style="text">
-								<if condition="$gender=='m'"> <var var="I18N::translateContext('MALE', 'was born')" /></if>
-								<if condition="$gender=='f'"> <var var="I18N::translateContext('FEMALE', 'was born')" /></if>
+								<if condition="$gender=='m'"> <var var="I18N::translate('he was born at')" /></if>
+								<if condition="$gender=='f'"> <var var="I18N::translate('she was born at')" /></if>
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
@@ -359,7 +359,7 @@
 									</Gedcom>
 									</Gedcom>
 							</if>
-							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
+							<if condition="@DATE!=''"> <var var="I18N::translate(' at ')" /> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>

@@ -23,6 +23,10 @@ msgstr "Ein Bericht der Verwandten einer Person in einem Erzähl-Stil."
 msgid "by"
 msgstr "an"
 
+#  resources/family_history_report.xml:362
+msgid "at"
+msgstr "am"
+
 #  resources/family_history_report.xml:353
 msgid "child of"
 msgstr "Kind von"
@@ -86,3 +90,11 @@ msgstr "Sie wurden geschieden"
 #  resources/family_history_report.xml:528
 msgid "They separated"
 msgstr "Sie trennten sich"
+
+#  resources/family_history_report.xml:205
+msgid "he was born at"
+msgstr "Er wurde geboren am"
+
+#  resources/family_history_report.xml:206
+msgid "she was born at"
+msgstr "Sie wurde geboren am"

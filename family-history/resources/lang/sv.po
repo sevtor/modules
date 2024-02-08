@@ -23,6 +23,10 @@ msgstr "En rapport om en persons släktingar, i en berättande stil."
 msgid "by"
 msgstr "av"
 
+#  resources/family_history_report.xml:362
+msgid "at"
+msgstr "Jag är"
+
 #  resources/family_history_report.xml:353
 msgid "child of"
 msgstr "barn till"
@@ -86,3 +90,11 @@ msgstr "De separerade"
 #  resources/family_history_report.xml:528
 msgid "They separated"
 msgstr "De separerade"
+
+#  resources/family_history_report.xml:205
+msgid "he was born at"
+msgstr "Han föddes på"
+
+#  resources/family_history_report.xml:206
+msgid "she was born at"
+msgstr "Hon föddes den"
