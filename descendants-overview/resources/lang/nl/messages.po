@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#  resources/descendants-overview.xml:4
+msgid "An overview of the descendants of an individual."
+msgstr "Een overzicht van de afstammelingen van een persoon."
+
+#  resources/descendants-overview.xml:3
+msgid "Descendants overview"
+msgstr "Afstammelingenoverzicht"
+
+#  resources/descendants-overview.xml:318
+msgid "emig"
+msgstr "emig"
+
+#  resources/descendants-overview.xml:323
+msgid "Married within this tree, see above!"
+msgstr "Getrouwd in deze boom, zie hierboven!"
+
+#  resources/descendants-overview.xml:292
+msgid "sp"
+msgstr "e.v"
