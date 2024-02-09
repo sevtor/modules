@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Holger Eisold <github@eisold.family>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#  app/Report/ReportParserGenerate.php
+msgid "b."
+msgstr "geb."
+
+#  resources/family_history_report.xml:6
+msgid "A report of an individual’s relatives, in a narrative style."
+msgstr "Ein Bericht der Verwandten einer Person in einem Erzähl-Stil."
+
+#  resources/family_history_report.xml:212
+msgid "by"
+msgstr "an"
+
+#  resources/family_history_report.xml:362
+msgid "at"
+msgstr "am"
+
+#  resources/family_history_report.xml:353
+msgid "child of"
+msgstr "Kind von"
+
+#  resources/family_history_report.xml:754
+msgid "Children, see spouse above."
+msgstr "Kinder, siehe Ehepratner darüber"
+
+#  resources/family_history_report.xml:5
+msgid "Family history"
+msgstr "Familiengeschichte"
+
+#  resources/family_history_report.xml:20
+msgid "generation"
+msgstr "Generation"
+
+#  resources/family_history_report.xml:610
+msgid "He emigrated to"
+msgstr "Er wanderte aus nach"
+
+#  resources/family_history_report.xml:342
+msgid "He engaged"
+msgstr "Er verlobte sich"
+
+#  resources/family_history_report.xml:340
+msgid "He moved in with"
+msgstr "Er zog ein mit"
+
+#  resources/family_history_report.xml:283
+msgid "He was adopted"
+msgstr "Er wurde adoptiert"
+
+#  resources/family_history_report.xml:611
+msgid "She emigrated to"
+msgstr "Sie wanderte aus nach"
+
+#  resources/family_history_report.xml:343
+msgid "She engaged"
+msgstr "Sie verlobte sich"
+
+#  resources/family_history_report.xml:341
+msgid "She moved in with"
+msgstr "Sie zog ein mit"
+
+#  resources/family_history_report.xml:284
+msgid "She was adopted"
+msgstr "Sie wurde adoptiert"
+
+#  resources/family_history_report.xml:535
+msgid "The husband died"
+msgstr "Der Ehemann starb"
+
+#  resources/family_history_report.xml:534
+msgid "The wife died"
+msgstr "Die Ehefrau starb"
+
+#  resources/family_history_report.xml:493
+msgid "They divorced"
+msgstr "Sie wurden geschieden"
+
+#  resources/family_history_report.xml:528
+msgid "They separated"
+msgstr "Sie trennten sich"
+
+#  resources/family_history_report.xml:205
+msgid "he was born at"
+msgstr "Er wurde geboren am"
+
+#  resources/family_history_report.xml:206
+msgid "she was born at"
+msgstr "Sie wurde geboren am"

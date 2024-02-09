@@ -1,0 +1,26 @@
+<?php
+
+return array (
+  'A report of an individual’s relatives, in a narrative style.' => 'En rapport om en persons släktingar, i en berättande stil.',
+  'Children, see spouse above.' => 'Barn, se make/maka ovan.',
+  'Family history' => 'Släkthistoria',
+  'He emigrated to' => 'Han utvandrade till',
+  'He engaged' => 'Han förlovade sig med',
+  'He moved in with' => 'Han flyttade ihop med',
+  'He was adopted' => 'Han adopterades',
+  'She emigrated to' => 'Hon utvandrade till',
+  'She engaged' => 'Hon förlovade sig med',
+  'She moved in with' => 'Hon flyttade ihop med',
+  'She was adopted' => 'Hon adopterades',
+  'The husband died' => 'Maken dog',
+  'The wife died' => 'Makan dog',
+  'They divorced' => 'De separerade',
+  'They separated' => 'De separerade',
+  'at' => 'Jag är',
+  'b.' => 'född',
+  'by' => 'av',
+  'child of' => 'barn till',
+  'generation' => 'generation',
+  'he was born at' => 'Han föddes på',
+  'she was born at' => 'Hon föddes den',
+);

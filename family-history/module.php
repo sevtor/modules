@@ -30,11 +30,6 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     }
 
     /**
-     * Where does this module store its resources
-     *
-     * @return string
-     */
-    /**
      * The person or organisation who created this module.
      *
      * @return string
@@ -43,6 +38,20 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     {
         return 'Seved Torstendahl';
     }
+
+    /**
+     * Additional translations for module.
+     *
+     * @param string $language
+     *
+     * @return string[]
+     */
+
+     //public function customTranslations(string $language): array
+     // The function customTranslations() is called too late!
+     // title and description below are *not* translated, and thus the report presentation
+     // when 'Reports' is clicked shows the un-translated strings :(
+     // A solution where ModuleCustomTrait.php is modified gives better result!
 
     /**
      * The version of this module.
@@ -58,25 +67,6 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     {
         return __DIR__ . '/resources/';
     }
-
-    /**
-     * Additional translations for module.
-     *
-     * @param string $language
-     *
-     * @return string[]
-     */
-
-     public function customTranslations(string $language): array
-     {
-         $lang_dir   = $this->resourcesFolder() . 'lang/';
-         $file       = $lang_dir . $language . '.mo';
-         if (file_exists($file)) {
-             return (new Translation($file))->asArray();
-         } else {
-             return [];
-         }
-     }
 
     /**
      * A sentence describing what this module does.

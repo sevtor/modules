@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#  resources/descendants-overview.xml:4
+msgid "An overview of the descendants of an individual."
+msgstr "Ein Überblick über die Nachkommen eines Person."
+
+#  resources/descendants-overview.xml:3
+msgid "Descendants overview"
+msgstr "Nachkommenübersicht"
+
+#  resources/descendants-overview.xml:318 // TODO dont know what this stands for or where used
+msgid "Emig"
+msgstr "emig"
+
+#  resources/descendants-overview.xml:323
+msgid "Married within this tree, see above!"
+msgstr "Verheiratet in diesem Baum, siehe oben!"
+
+#  resources/descendants-overview.xml:292 // TODO dont know what this stands for or where used
+msgid "sp"
+msgstr "ma"
