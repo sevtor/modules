@@ -1,9 +1,14 @@
 <?php
 
 return array (
+  'née' => 'f.',
   'A report of an individual’s relatives, in a narrative style.' => 'En rapport om en persons släktingar, i en berättande stil.',
+  'by' => 'av',
+  'at' => 'den',
+  'child of' => 'barn till',
   'Children, see spouse above.' => 'Barn, se make/maka ovan.',
   'Family history' => 'Släkthistoria',
+  'generation' => 'generation',
   'He emigrated to' => 'Han utvandrade till',
   'He engaged' => 'Han förlovade sig med',
   'He moved in with' => 'Han flyttade ihop med',
@@ -16,11 +21,7 @@ return array (
   'The wife died' => 'Makan dog',
   'They divorced' => 'De separerade',
   'They separated' => 'De separerade',
-  'at' => 'Jag är',
-  'b.' => 'född',
-  'by' => 'av',
-  'child of' => 'barn till',
-  'generation' => 'generation',
-  'he was born at' => 'Han föddes på',
-  'she was born at' => 'Hon föddes den',
+  'He was born on' => 'Han föddes den',
+  'She was born on' => 'Hon föddes den',
+  'Death of spouse' => 'Makes/makas död',
 );

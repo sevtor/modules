@@ -130,6 +130,7 @@
 	<SetVar name="title" value="$startname: $explain" />
 	<SetVar name="mdash" value=" %26emsp; %26mdash; %26emsp; " />
 	<SetVar name="format" value="@format" />
+	<SetVar name="namesep" value="I18N::translate('née')"/>
 	<Doc pageSize="$pageSize" rightmargin="50" headermargin="15" bottommargin="50" footermargin="0" >
 		<Header>
 			<Textbox newline="1" pos="rel">
@@ -161,7 +162,7 @@
 				<SetVar name="generation" value="@generation"/>
 				<!-- Individual name -->
 				<TextBox newline="1">
-					<Text style="pageheader"><GetPersonName id="" select="combined" fam_relation="1" /></Text>
+					<Text style="pageheader"><GetPersonName id="" select="combined" fam_relation="1" name_sep="$namesep"/></Text>
 					<!-- level 1 sources -->
 					<if condition="$sources=='on'">
 						<RepeatTag tag="SOUR" >

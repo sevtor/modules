@@ -90,6 +90,7 @@
 	<if condition="$pageSize=='A3'">
 		<SetVar name="ww" value="750-$lpos1" />
 	</if>
+	<SetVar name="namesep" value="I18N::translate('née')"/>
 	<Doc pageSize="$pageSize" headermargin="15" topmargin="40" leftmargin="40" rightmargin="30" bottommargin="40" >
 		<Header comment="only used for html output" >
 			<Textbox newline="1" pos="rel">
@@ -165,7 +166,7 @@
 					<SetVar name="cpid" value="@ID" />
 					<TextBox left="$lpos1" newline="1" pagecheck="0" height="$hph" pos="$postxt" width="0" >
 						<!-- Sentence 1 Individual, name... -->
-						<Text style="name"><GetPersonName id="" select="combined" fam_relation="1" /></Text>
+						<Text style="name"><GetPersonName id="" select="combined" fam_relation="1" name_sep="$namesep" /></Text>
 						<!-- level 1 sources -->
 					<if condition="$sources=='on'">
 						<RepeatTag tag="SOUR" >
@@ -202,8 +203,8 @@
 						<if condition="$fact=='BIRT'" >
 						<!-- Individual, birth... -->
 							<Text style="text">
-								<if condition="$gender=='m'"> <var var="I18N::translate('he was born at')" /></if>
-								<if condition="$gender=='f'"> <var var="I18N::translate('she was born at')" /></if>
+								<if condition="$gender=='m'"> <var var="I18N::translate('He was born')" /></if>
+								<if condition="$gender=='f'"> <var var="I18N::translate('She was born')" /></if>
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
@@ -359,7 +360,7 @@
 									</Gedcom>
 									</Gedcom>
 							</if>
-							<if condition="@DATE!=''"> <var var="I18N::translate(' at ')" /> <GedcomValue tag="DATE" level="2" /></if>
+							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
