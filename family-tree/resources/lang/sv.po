@@ -1,4 +1,0 @@
-#  resources/family_tree_report.xml:242
-msgid    "same person!" 
-msgstr   "samma person!"
-
