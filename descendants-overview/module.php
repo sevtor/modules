@@ -66,11 +66,16 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      * @return string[]
      */
 
-     //public function customTranslations(string $language): array
-     // The function customTranslations() is called too late!
-     // title and description below are *not* translated, and thus the report presentation
-     // when 'Reports' is clicked shows the un-translated strings :(
-     // A solution where ModuleCustomTrait.php is modified gives better result!
+     public function customTranslations(string $language): array
+     {
+         $lang_dir   = $this->resourcesFolder() . 'lang/';
+         $file       = $lang_dir . $language . '/messages.po';
+         if (file_exists($file)) {
+             return (new Translation($file))->asArray();
+         } else {
+             return [];
+         }
+     }
 
     /**
      * A sentence describing what this module does.
