@@ -1,0 +1,16 @@
+#  resources/family_ext_report.xml:5
+msgid "A report of an individual’s relatives, one per page."
+msgstr ""
+
+#  resources/family_ext_report.xml:4
+msgid "Family individuals"
+msgstr ""
+
+#  resources/family_ext_report.xml:9
+msgid "generation"
+msgstr ""
+
+#  resources/family_ext_report.xml:133
+msgid "née"
+msgstr ""
+

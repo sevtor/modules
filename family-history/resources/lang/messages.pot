@@ -1,0 +1,76 @@
+#  resources/family_history_report.xml:6
+msgid "A report of an individual’s relatives, in a narrative style."
+msgstr ""
+
+#  resources/family_history_report.xml:213
+msgid "by"
+msgstr ""
+
+#  resources/family_history_report.xml:354
+msgid "child of"
+msgstr ""
+
+#  resources/family_history_report.xml:755
+msgid "Children, see spouse above."
+msgstr ""
+
+#  resources/family_history_report.xml:5
+msgid "Family history"
+msgstr ""
+
+#  resources/family_history_report.xml:20
+msgid "generation"
+msgstr ""
+
+#  resources/family_history_report.xml:611
+msgid "He emigrated to"
+msgstr ""
+
+#  resources/family_history_report.xml:343
+msgid "He engaged"
+msgstr ""
+
+#  resources/family_history_report.xml:341
+msgid "He moved in with"
+msgstr ""
+
+#  resources/family_history_report.xml:284
+msgid "He was adopted"
+msgstr ""
+
+#  resources/family_history_report.xml:93
+msgid "née"
+msgstr ""
+
+#  resources/family_history_report.xml:612
+msgid "She emigrated to"
+msgstr ""
+
+#  resources/family_history_report.xml:344
+msgid "She engaged"
+msgstr ""
+
+#  resources/family_history_report.xml:342
+msgid "She moved in with"
+msgstr ""
+
+#  resources/family_history_report.xml:285
+msgid "She was adopted"
+msgstr ""
+
+#  resources/family_history_report.xml:536
+msgid "The husband died"
+msgstr ""
+
+#  resources/family_history_report.xml:535
+msgid "The wife died"
+msgstr ""
+
+#  resources/family_history_report.xml:494
+msgid "They divorced"
+msgstr ""
+
+#  resources/family_history_report.xml:529
+msgid "They separated"
+msgstr ""
+

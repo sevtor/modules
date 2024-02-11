@@ -1,19 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Holger Eisold <github@eisold.family>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2024-02-11 10:45+0100\n"
+"Last-Translator: Seved Torstendahl <sevedt@gmail.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
-
-#  app/Report/ReportParserGenerate.php
-msgid "b."
-msgstr "född"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
@@ -22,10 +16,6 @@ msgstr "En rapport om en persons släktingar, i en berättande stil."
 #  resources/family_history_report.xml:212
 msgid "by"
 msgstr "av"
-
-#  resources/family_history_report.xml:362
-msgid "at"
-msgstr "Jag är"
 
 #  resources/family_history_report.xml:353
 msgid "child of"
@@ -59,6 +49,10 @@ msgstr "Han flyttade ihop med"
 msgid "He was adopted"
 msgstr "Han adopterades"
 
+#  resources/family_history_report.xml:93
+msgid "née"
+msgstr ""
+
 #  resources/family_history_report.xml:611
 msgid "She emigrated to"
 msgstr "Hon utvandrade till"
@@ -91,15 +85,22 @@ msgstr "De separerade"
 msgid "They separated"
 msgstr "De separerade"
 
+#  app/Report/ReportParserGenerate.php
+#~ msgid "b."
+#~ msgstr "född"
+
+#  resources/family_history_report.xml:362
+#~ msgid "at"
+#~ msgstr "Jag är"
+
 #  resources/family_history_report.xml:205
-msgid "He was born on"
-msgstr "Han föddes den"
+#~ msgid "He was born on"
+#~ msgstr "Han föddes den"
 
 #  resources/family_history_report.xml:206
-msgid "She was born on"
-msgstr "Hon föddes den"
+#~ msgid "She was born on"
+#~ msgstr "Hon föddes den"
 
 #  app/Gedcom.php:760
-msgid "Death of spouse"
-msgstr "Makes/makas död"
-
+#~ msgid "Death of spouse"
+#~ msgstr "Makes/makas död"
