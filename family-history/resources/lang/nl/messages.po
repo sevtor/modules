@@ -51,21 +51,25 @@ msgstr "Hij trok in bij"
 msgid "He was adopted"
 msgstr "Hij werd geadopteerd"
 
+#  resources/family_history_report.xml:93
+msgid "née"
+msgstr "geb."
+
 #  resources/family_history_report.xml:611
 msgid "She emigrated to"
-msgstr "Ze emigreerde naar"
+msgstr "Zij emigreerde naar"
 
 #  resources/family_history_report.xml:343
 msgid "She engaged"
-msgstr "Ze verloofde zich met"
+msgstr "Zij verloofde zich met"
 
 #  resources/family_history_report.xml:341
 msgid "She moved in with"
-msgstr "Ze trok in bij"
+msgstr "Zij trok in bij"
 
 #  resources/family_history_report.xml:284
 msgid "She was adopted"
-msgstr "Ze werd geadopteerd"
+msgstr "Zij werd geadopteerd"
 
 #  resources/family_history_report.xml:535
 msgid "The husband died"
@@ -82,3 +86,23 @@ msgstr "Ze scheidden"
 #  resources/family_history_report.xml:528
 msgid "They separated"
 msgstr "Ze gingen uit elkaar"
+
+#  app/Report/ReportParserGenerate.php
+#~ msgid "b."
+#~ msgstr "geb."
+
+#  resources/family_history_report.xml:362
+#~ msgid "at"
+#~ msgstr "op"
+
+#  resources/family_history_report.xml:205
+#~ msgid "He was born on"
+#~ msgstr "Hij werd geboren op"
+
+#  resources/family_history_report.xml:206
+#~ msgid "She was born on"
+#~ msgstr "Zij werd geboren op"
+
+#  app/Gedcom.php:760
+#~ msgid "Death of spouse"
+#~ msgstr "Overlijden van echtgeno(o)t(e)"
