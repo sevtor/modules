@@ -22,3 +22,11 @@ msgstr "Gezinsleden"
 #  resources/family_ext_report.xml:9
 msgid "generation"
 msgstr "generatie"
+
+#  resources/family_ext_report.xml:133
+msgid "née"
+msgstr "geb."
+
+#  app/Gedcom.php:760
+#~ msgid "Death of spouse"
+#~ msgstr "Overlijden van echtgeno(o)t(e)"
