@@ -14,7 +14,10 @@ Four new report definitions:
 
 ## Requirements
 
-This module requires some changes of the app/Report part of **webtrees** that can be installed from here: <a href="https://github.com/sevtor/modules/files/14256693/new-reports.zip">new-reports.zip</a>. 
+This module requires some changes of the app/Report part of **webtrees** that can be installed from here: 
+1. <a href="https://www.webtrees.net/index.php/forum/attachment/9259?download=1">new-reports-2.1.x.zip</a> for webtrees versions 2.1.x,
+2. <a href="https://www.webtrees.net/index.php/forum/attachment/9258?download=1">new-reports-2.2.x.zip</a> for webtrees versions 2.2.x 
+
 Hopefully version 2.1.19(?) or later, with will have these changes included to support the new xml report features.
 
 <a name="Installation"></a>
