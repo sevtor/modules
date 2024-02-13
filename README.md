@@ -18,6 +18,8 @@ This module requires some changes of the app/Report part of **webtrees** that ca
 1. <a href="https://www.webtrees.net/index.php/forum/attachment/9259?download=1">new-reports-2.1.x.zip</a> for webtrees versions 2.1.x,
 2. <a href="https://www.webtrees.net/index.php/forum/attachment/9258?download=1">new-reports-2.2.x.zip</a> for webtrees versions 2.2.x 
 
+Unzip the archive and copy the the files to their corresponding place in your webtrees installation.
+
 Hopefully version 2.1.19(?) or later, with will have these changes included to support the new xml report features.
 
 <a name="Installation"></a>
