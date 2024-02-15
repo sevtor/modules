@@ -14,7 +14,7 @@ msgstr ""
 msgid "née"
 msgstr ""
 
-#  app/Gedcom.php:760
+#  resources/family_ext_report.xml:263
 msgid "Death of spouse"
 msgstr ""
 

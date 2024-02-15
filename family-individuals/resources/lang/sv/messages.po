@@ -26,6 +26,6 @@ msgstr "generation"
 msgid "née"
 msgstr "f."
 
-#  resources/family_ext_report.xml:243
+#  resources/family_ext_report.xml:263
 msgid "Death of spouse"
 msgstr "Makes/makas död"
