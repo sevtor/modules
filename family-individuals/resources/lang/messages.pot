@@ -14,3 +14,7 @@ msgstr ""
 msgid "née"
 msgstr ""
 
+#  app/Gedcom.php:760
+msgid "Death of spouse"
+msgstr ""
+

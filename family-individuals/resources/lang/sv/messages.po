@@ -26,6 +26,6 @@ msgstr "generation"
 msgid "née"
 msgstr "f."
 
-#  app/Gedcom.php:760
-#~ msgid "Death of spouse"
-#~ msgstr "Makes/makas död"
+#  resources/family_ext_report.xml:243
+msgid "Death of spouse"
+msgstr "Makes/makas död"

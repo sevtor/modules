@@ -260,7 +260,12 @@
 					</if>
 					<if condition="@fact!='FAMS' and @fact!='_XXX'">
 					<TextBox bgcolor="$fbbgcolor" border="1" width="$width" newline="1">
-						<Text color="$tcolor" style="fact"><var var="@fact"/> </Text>
+						<if condition="@fact=='_SP_DEAT'">
+							<Text color="$tcolor" style="fact"><var var="I18N::translate('Death of spouse')"/> </Text>
+						</if>
+						<if condition="@fact!='_SP_DEAT'">
+							<Text color="$tcolor" style="fact"><var var="@fact"/> </Text>
+						</if>
 						<Text color="$tcolor" style="text"><GedcomValue tag="@fact:DATE"/> </Text>
 						<!-- look for fact level 2 sources -->
 					<if condition="$sources=='on'">
