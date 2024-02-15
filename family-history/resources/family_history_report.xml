@@ -65,6 +65,11 @@
 	<SetVar name="ignore" value="CHAN,CHIL,FAMC,NAME,NOTE,OBJE,RESN,SEX,TITL,_UID,_WT_OBJE_SORT"/>
 	<setvar name="dump" value="dval" />
 	<setvar name="dval" value="25" comment="don't show all the first 25 variables" />
+	<setvar name="lang" value="@lang"/>
+	<setvar name="lc1" value="1"/>
+	<if condition="$lang=='de'">
+		<setvar name="lc1" value="0"/>
+	</if>
 	<if condition="$relatives=='child-family'"><SetVar name="explain" value="I18N::translate('Parents and siblings')"/></if>
 	<if condition="$relatives=='spouse-family'"><SetVar name="explain" value="I18N::translate('Spouses and children')"/></if>
 	<if condition="$relatives=='direct-ancestors'"><SetVar name="explain" value="I18N::translate('Direct line ancestors')"/></if>
@@ -210,7 +215,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="@fact:SOUR" >
@@ -249,7 +254,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="CHR:SOUR" >
@@ -288,7 +293,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="CHR:SOUR" >
@@ -363,7 +368,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="MARR:SOUR" >
@@ -410,7 +415,7 @@
 						<if condition="$fact=='OCCU'">
 						<if condition="$occu=='on'">
 						<!-- Individual, occupation... -->
-							<setvar name="occup" value="@OCCU" lcfirst="1"/>
+							<setvar name="occup" value="@OCCU" lcfirst="$lc1"/>
 							<Text style="text">
 								<if condition="$gender=='m'"> <var var="I18N::translate('His occupation was')" /> <var var="occup" /></if>
 								<if condition="$gender=='f'"> <var var="I18N::translate('Her occupation was')" /> <var var="occup" /></if>
@@ -419,7 +424,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="OCCU:SOUR" >
@@ -460,7 +465,7 @@
 							<if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="RESI:SOUR" >
@@ -496,7 +501,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="DIV:SOUR" >
@@ -539,7 +544,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="DEAT:SOUR" >
@@ -577,7 +582,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="DEAT:SOUR" >
@@ -615,7 +620,7 @@
 							<if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="EMIG:SOUR" >
@@ -653,7 +658,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="CREM:SOUR" >
@@ -691,7 +696,7 @@
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
-							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="1" /></if>
+							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
 						<if condition="$sources=='on'">
 							<RepeatTag tag="BURI:SOUR" >
