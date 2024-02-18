@@ -15,7 +15,7 @@ Four new report definitions:
 ## Requirements
 
 This module requires some changes of the app/Report part of **webtrees** that can be installed from here: 
-1. <a href="https://www.webtrees.net/index.php/forum/attachment/9260?download=1">new-reports.zip</a> for webtrees all versions
+1. <a href="https://www.webtrees.net/index.php/forum/attachment/9273?download=1">new-reports.zip</a> for webtrees all versions
 
 Unzip the archive and copy the the files to their corresponding place in your webtrees installation.
 
