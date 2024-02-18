@@ -26,4 +26,3 @@ Hopefully version 2.1.19(?) or later, with will have these changes included to s
 ## Installation
 
 Use the Code->download link to get a zip archive. Unzip the files and upload the modules to the **webtrees** /modules_v4/ folder on your web server. 
-
