@@ -1,0 +1,6 @@
+1.0	Started from old pedigree-report and generalized it to supress empty branches and to allow more generations 
+	but still within the paper size
+
+1.0.1	published on GitHub with version and latest-version to facilitate upgrade notifications
+
+

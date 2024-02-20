@@ -1,0 +1,7 @@
+1.0	Started from individual_ext_report.xml and added lines with marriages, death of spouse when applicable, 
+	and some other details. Included feedback.
+
+1.0.1	published on GitHub with version and latest-version to facilitate upgrade notifications.
+
+
+

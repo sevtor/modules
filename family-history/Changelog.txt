@@ -1,0 +1,5 @@
+1.0	Started from ahnentafel_report.xml and descendancy_report.xml and added more information.
+
+1.0.1	published on GitHub with version and latest-version to facilitate upgrade notifications
+
+
