@@ -65,7 +65,27 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      */
     public function customModuleVersion(): string
     {
-        return '1.0';
+        return '1.0.1';
+    }
+
+    /**
+     * A URL that will provide the latest version of this module.
+     *
+     * @return string
+     */
+    public function customModuleLatestVersionUrl(): string
+    {
+        return 'https://raw.githubusercontent.com/sevtor/modules/master/family-history/latest-version.txt';
+    }
+
+    /**
+     * Where to get support for this module.  Perhaps a github respository?
+     *
+     * @return string
+     */
+    public function customModuleSupportUrl(): string
+    {
+        return 'https://github.com/sevtor/modules/';
     }
 
     public function resourcesFolder(): string
