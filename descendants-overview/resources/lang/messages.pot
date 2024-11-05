@@ -6,7 +6,14 @@ msgstr ""
 msgid "Descendants overview"
 msgstr ""
 
-#  resources/descendants-overview.xml:318
+#  resources/descendants-overview.xml:85
+msgid "née"
+msgstr ""
+
+#  resources/descendants-overview.xml:318  
+#  earlier emigration was shown as 'emig yyyy, '
+#  emigration now has an arrow as symbol as seen below
+#  |   ├— 2. Gunnar Alexis Berlin ( ⁕1902, ⇨ 1925, ✝1960)
 msgid "emig"
 msgstr ""
 
@@ -15,6 +22,7 @@ msgid "Married within this tree, see above!"
 msgstr ""
 
 #  resources/descendants-overview.xml:292
+#  sp is short for spouse, two letters give a pretty layout, but longer are ok
 msgid "sp"
 msgstr ""
 

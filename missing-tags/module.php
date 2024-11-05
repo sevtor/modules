@@ -25,7 +25,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      */
     public function title(): string
     {
-        return I18N::translate('Descendants overview');
+        return I18N::translate('Missing tags');
     }
 
     /**
@@ -60,7 +60,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      */
     public function customModuleLatestVersionUrl(): string
     {
-        return 'https://raw.githubusercontent.com/sevtor/modules/master/descendants-overview/latest-version.txt';
+        return 'https://raw.githubusercontent.com/sevtor/modules/master/missing-tags/latest-version.txt';
     }
 
     /**
@@ -106,7 +106,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     {
         // This text also appears in the .XML file - update both together
         /* I18N: Description of the “Ancestors” module */
-        return I18N::translate('An overview of the descendants of an individual.');
+        return I18N::translate('A list of missing tags for all registered individuals');
     }
 
     /**
@@ -116,6 +116,6 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      */
     public function xmlFilename(): string
     {
-        return 'descendants-overview.xml';
+        return 'missing_tags_report.xml';
     }
 };

@@ -10,22 +10,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #  resources/descendants-overview.xml:4
-msgid "An overview of the descendants of an individual." 
+msgid "An overview of the descendants of an individual."
 msgstr "En översikt av ättlingarna till en person."
 
 #  resources/descendants-overview.xml:3
-msgid "Descendants overview" 
+msgid "Descendants overview"
 msgstr "Ättlingar översikt"
+
+#  resources/descendants-overview.xml:85
+msgid "née"
+msgstr "f."
 
 #  resources/descendants-overview.xml:318
 msgid "emig"
-msgstr "emig"
+msgstr "&#x21E8;"
 
 #  resources/descendants-overview.xml:323
-msgid "Married within this tree, see above!" 
+msgid "Married within this tree, see above!"
 msgstr "Gift inom detta träd, se ovan!"
 
 #  resources/descendants-overview.xml:292
-msgid "sp" 
+msgid "sp"
 msgstr "ma"
+
 

@@ -2,5 +2,6 @@
 
 1.0.1	published on GitHub with version and latest-version to facilitate upgrade notifications
 
-1.0.2	Modified some translations
+1.0.2	Added translations for 'de' and 'nl' with help from Google translate
+	Corrected conditionla expression for operator precedence
 

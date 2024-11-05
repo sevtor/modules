@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2024-02-11 10:45+0100\n"
+"Last-Translator: Seved Torstendahl <sevedt@gmail.com>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#  resources/missing-tags.xml:4
+msgid "A report of missing birth or death records."
+msgstr "En rapport över saknade födelse- och dödsposter"
+
+#  resources/missing_tags.xml:7
+msgid "Do not report missing death records for individuals born after"
+msgstr "Rapportera inte saknande död-poster för personer födda efter"
+
+#  resources/missing_tags.xml:122
+msgid "engagement"
+msgstr ""
+
+#  resources/missing_tags.xml:5
+msgid "generation"
+msgstr "generation"
+
+#  resources/missing_tags.xml:168
+msgid "marriage"
+msgstr "äktenskap/partner"
+
+#  resources/missing-tags.xml:3
+msgid "Missing tags"
+msgstr "Saknade poster"
+
+#  resources/missing-tags.xml:306
+msgid "Missing records"
+msgstr "Saknade poster"
+

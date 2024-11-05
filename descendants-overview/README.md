@@ -6,11 +6,11 @@ Released: February 2024
 
 ## Description
 
-This report will show an overview of the direct descendents of a person, and each spouse or partner. For each person the name and the years of birth, marriage or partnership, divorce or separation, and death are given if known (and occurred). 
+This report will show an overview of the direct descendents of a person, and each spouse or partner. For each person the name and the years of birth, marriage or partnership, divorce or separation, emigration and death are given if known (and occurred).
 
 ## Requirements
 
-This module requires **webtrees** version 2.1.19(?) or later, with support for the new xml report features.
+This module requires **webtrees** version 2.1.18 or later, with support for the new xml report features. These additions can be added by applying the corresponding version of **new-reports.zip**.
 
 <a name="Installation"></a>
 

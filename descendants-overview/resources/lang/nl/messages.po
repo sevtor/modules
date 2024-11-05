@@ -20,6 +20,7 @@ msgid "Descendants overview"
 msgstr "Afstammelingenoverzicht"
 
 #  resources/descendants-overview.xml:318
+#  emigration is now shown with an arrow pointing right
 msgid "emig"
 msgstr "emig"
 
