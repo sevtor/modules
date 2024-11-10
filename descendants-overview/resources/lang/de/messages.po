@@ -37,4 +37,4 @@ msgstr "Verheiratet in diesem Baum, siehe oben!"
 #  resources/descendants-overview.xml:292
 #  sp is short for spouse, two letters give a pretty layout, but longer are ok
 msgid "sp"
-msgstr "Ehep."
+msgstr "Ehep"
