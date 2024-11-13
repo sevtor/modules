@@ -116,7 +116,7 @@
     <SetVar name="leftmargin" value="10" />
 
 
-		<Doc pageSize="$pageSize" orientation="$orientation" leftmargin="$leftmargin" rightmargin="10" topmargin="25" bottommargin="10" headermargin="15" footermargin="0" showGeneratedBy="0" >
+		<Doc pageSize="$pageSize" orientation="$orientation" leftmargin="$leftmargin" rightmargin="10" topmargin="40" bottommargin="10" headermargin="15" footermargin="0" showGeneratedBy="0" >
 			<Header>  <!-- only used for html -->
 				<Textbox newline="1" pos="rel">
 					<Text style="header"><var var="I18N::translate('Pedigree')" /> — <GetPersonName id="$pid" /></Text>

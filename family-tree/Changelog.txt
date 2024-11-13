@@ -3,4 +3,4 @@
 
 1.0.1	published on GitHub with version and latest-version to facilitate upgrade notifications
 
-
+1.0.2	Minor adjustment of paper margins

@@ -95,7 +95,7 @@
 		<SetVar name="ww" value="750-$lpos1" />
 	</if>
 	<SetVar name="namesep" value="I18N::translate('née')"/>
-	<Doc pageSize="$pageSize" headermargin="15" topmargin="40" leftmargin="40" rightmargin="30" bottommargin="40" >
+	<Doc pageSize="$pageSize" headermargin="15" topmargin="56" leftmargin="40" rightmargin="30" bottommargin="40" >
 		<Header comment="only used for html output" >
 			<Textbox newline="1" pos="rel">
 				<Text style="header"><GetPersonName id="$pid" />: <var var="$explain"/></Text>
@@ -155,11 +155,11 @@
 					<SetVar name="postxt" value="rel_f2" />
 					<if condition="$photos=='on' and @OBJE!=''" >
 						<SetVar name="lpos11" value="$lpos1-35" />
-						<SetVar name="hph" value="50" />
+						<SetVar name="hph" value="70" />
 						<SetVar name="postxt" value="rel_f2_ph" />
 					</if>
 					<!-- Individual counter height="$hph" -->
-					<TextBox width="50" pos="rel" height="$hph">
+					<TextBox width="50" pos="rel" height="$hph" reseth="1">
 						<Text style="text"><var var="num" />.</Text>
 					</TextBox>
 					<if condition="$photos=='on' and @OBJE!=''" >
@@ -755,7 +755,7 @@
 								<SetVar name="chfam" value="ch$famid" />
 								<SetVar name="nn" value="@$chfam" />
 								<if condition="$nn != 0 and $relatives!='direct-ancestors'">
-									<TextBox height="20" left="$lpos2" newline="1" pagecheck="0" pos="rel">
+									<TextBox height="20" left="$lpos2" newline="1" pagecheck="0" pos="rel_f2">
 									<Text style="label1"><var var="I18N::translate('Children, see spouse above.')" /></Text>
 									</TextBox>
 								</if>
@@ -763,7 +763,7 @@
 								<!-- Only show children once for each couple -->
 								<SetVar name="$chfam" value="1" /> <!-- Indicates that the children of this family are shown -->
 								<if condition="($individual == @WIFE || @WIFE == '') and $relatives == 'direct-ancestors' || $relatives != 'direct-ancestors' " >
-									<TextBox height="20" left="$lpos2" newline="1" pos="rel">
+									<TextBox height="20" left="$lpos2" newline="1" pos="rel_f2">
 										<if condition="$numberOfChildren==1">
 											<Text style="label1"><var var="I18N::translate('Child of ')" /></Text>
 										</if>
@@ -800,7 +800,7 @@
 											<if condition="$familyChildNumber==18"><SetVar name="familyChildRoman" value="xviii" /></if>
 											<if condition="$familyChildNumber==19"><SetVar name="familyChildRoman" value="xix" /></if>
 											<if condition="$familyChildNumber==20"><SetVar name="familyChildRoman" value="xx" /></if>
-											<TextBox left="$lpos2" height="20" newline="1" pos="rel">
+											<TextBox left="$lpos2" height="20" newline="1" pos="rel_f2">
 												<Text style="label1"><var var="familyChildRoman" /></Text>
 												<Text style="namech"> <GetPersonName id="" /></Text>
 					<if condition="$sources=='on'">
