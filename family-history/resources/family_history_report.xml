@@ -86,6 +86,7 @@
 	<SetVar name="title" value="$startname: $explain" />
 	<SetVar name="lpos1" value="25" />
 	<SetVar name="lpos2" value="40" />
+	<SetVar name="format" value="@format" />
 	<if condition="$photos=='on'">
 		<SetVar name="lpos1" value="65" />
 		<SetVar name="lpos2" value="80" />
@@ -152,23 +153,26 @@
 						<SetVar name="empty_name" value="f" />
 					</if>
 					<SetVar name="hph" value="$minheight" />
-					<SetVar name="postxt" value="rel_f2" />
+					<SetVar name="top_adj" value="-18" />
 					<if condition="$photos=='on' and @OBJE!=''" >
 						<SetVar name="lpos11" value="$lpos1-35" />
 						<SetVar name="hph" value="70" />
-						<SetVar name="postxt" value="rel_f2_ph" />
 					</if>
 					<!-- Individual counter height="$hph" -->
 					<TextBox width="50" pos="rel" height="$hph" reseth="1">
 						<Text style="text"><var var="num" />.</Text>
 					</TextBox>
 					<if condition="$photos=='on' and @OBJE!=''" >
-						<TextBox newline="1" pagecheck="0" padding="1" reseth="1" width="30" left="$lpos11" pos="rel_fh_html" >
+						<if condition="$format=='HTML'">
+							<SetVar name="top_adj_ph" value="-10" />
+							<SetVar name="top_adj" value="-28" x="$top_adj+$top_adj_ph" />
+						</if>
+						<TextBox newline="0" pagecheck="0" padding="1" reseth="1" width="30" left="$lpos11" pos="rel" top_adj="$top_adj_ph">
 							<Image file="@FILE" width="30" ln="T" />
 						</TextBox>
 					</if>
 					<SetVar name="cpid" value="@ID" />
-					<TextBox left="$lpos1" newline="1" pagecheck="0" height="$hph" pos="$postxt" width="0" >
+					<TextBox left="$lpos1" newline="1" pagecheck="0" height="$hph" pos="rel" top_adj="$top_adj" width="0" >
 						<!-- Sentence 1 Individual, name... -->
 						<Text style="name"><GetPersonName id="" select="combined" fam_relation="1" name_sep="$namesep" /></Text>
 						<!-- level 1 sources -->
@@ -755,7 +759,7 @@
 								<SetVar name="chfam" value="ch$famid" />
 								<SetVar name="nn" value="@$chfam" />
 								<if condition="$nn != 0 and $relatives!='direct-ancestors'">
-									<TextBox height="20" left="$lpos2" newline="1" pagecheck="0" pos="rel_f2">
+									<TextBox height="20" left="$lpos2" newline="1" pagecheck="0" pos="rel" top_adj="$top_adj" >
 									<Text style="label1"><var var="I18N::translate('Children, see spouse above.')" /></Text>
 									</TextBox>
 								</if>
@@ -763,7 +767,7 @@
 								<!-- Only show children once for each couple -->
 								<SetVar name="$chfam" value="1" /> <!-- Indicates that the children of this family are shown -->
 								<if condition="($individual == @WIFE || @WIFE == '') and $relatives == 'direct-ancestors' || $relatives != 'direct-ancestors' " >
-									<TextBox height="20" left="$lpos2" newline="1" pos="rel_f2">
+									<TextBox height="20" left="$lpos2" newline="1" pos="rel" top_adj="$top_adj" >
 										<if condition="$numberOfChildren==1">
 											<Text style="label1"><var var="I18N::translate('Child of ')" /></Text>
 										</if>
@@ -800,7 +804,7 @@
 											<if condition="$familyChildNumber==18"><SetVar name="familyChildRoman" value="xviii" /></if>
 											<if condition="$familyChildNumber==19"><SetVar name="familyChildRoman" value="xix" /></if>
 											<if condition="$familyChildNumber==20"><SetVar name="familyChildRoman" value="xx" /></if>
-											<TextBox left="$lpos2" height="20" newline="1" pos="rel_f2">
+											<TextBox left="$lpos2" height="20" newline="1" pos="rel" top_adj="$top_adj" >
 												<Text style="label1"><var var="familyChildRoman" /></Text>
 												<Text style="namech"> <GetPersonName id="" /></Text>
 					<if condition="$sources=='on'">

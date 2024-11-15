@@ -133,7 +133,7 @@
 	<SetVar name="namesep" value="I18N::translate('née')"/>
 	<Doc pageSize="$pageSize" rightmargin="50" headermargin="15" bottommargin="50" footermargin="0" >
 		<Header>
-			<TextBox pos="abs" top="." newline="1">
+			<TextBox pos="abs" newline="1">
 				<Text style="header"><GetPersonName id="$pid" />: <var var="$explain"/></Text>
 			</TextBox>
 			<!--Cell align="center" newline="1" style="header"><GetPersonName id="$pid" />: <var var="$explain"/></Cell-->
@@ -147,11 +147,11 @@
 						<NewPage/>
 					</if>
 					<if condition="$format=='HTML'">
-						<TextBox pos="abs" top="." newline="1" >
+						<TextBox pos="abs" newline="1" >
 							<Text style="text"><br/><sp/> </Text>
 						</TextBox>
 						<Line />
-						<TextBox pos="abs" top="." newline="1" >
+						<TextBox pos="abs" newline="1" >
 							<Text style="text"><br/><sp/> </Text>
 						</TextBox>
 					</if>
@@ -161,7 +161,7 @@
 				<SetVar name="mid" value="@ID"/>
 				<SetVar name="generation" value="@generation"/>
 				<!-- Individual name -->
-				<TextBox pos="abs" top="." newline="1">
+				<TextBox pos="abs" newline="1">
 					<Text style="pageheader"><GetPersonName id="" select="combined" fam_relation="1" name_sep="$namesep"/></Text>
 					<!-- level 1 sources -->
 					<if condition="$sources=='on'">
@@ -201,7 +201,7 @@
 					Reset also the last height after all the images has been printed
 					set pagecheck to 0, the image function check is too
 					and "trick" the X-position back to the margin with a newline -->
-					<TextBox pos="abs" top="." left="$pwidth" newline="1" pagecheck="0" padding="0" reseth="1" width="80">
+					<TextBox pos="abs" left="$pwidth" newline="0" pagecheck="0" padding="0" reseth="1" width="80">
 						<RepeatTag tag="OBJE">
 							<Image file="@FILE" width="80" ln="N"/>
 						</RepeatTag>
@@ -209,12 +209,12 @@
 				</if>
 				<!-- show the person''s Highlighted Image -->
 				<if condition="$photos=='on'">
-					<TextBox pos="abs" top="." left="$pwidth" newline="1" pagecheck="0" padding="0" reseth="1" width="80">
+					<TextBox pos="abs" left="$pwidth" newline="0" pagecheck="0" padding="0" reseth="1" width="80">
 						<HighlightedImage width="80"/>
 					</TextBox>
 				</if>
 				<!-- Print the individuals facts -->
-				<TextBox pos="abs" top="." bgcolor="$stbgcolor" left="0" border="1" newline="1" width="$width">
+				<TextBox pos="abs" bgcolor="$stbgcolor" left="0" border="1" newline="1" width="$width">
 					<Text style="title" color="$tcolor"><var var="I18N::translate('Facts and events')"/></Text>
 				</TextBox>
 				<Facts ignore="$ignore2" families="1">
@@ -226,7 +226,7 @@
 							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="Engagement"/><SetVar name="marrdate" value="ENGA:DATE"/></if>
 							<if condition="@MARR:DATE!=''"><SetVar name="marrtype" value="Marriage"/><SetVar name="marrdate" value="MARR:DATE"/></if>
 							<if condition="@MARR=='Y'"><SetVar name="marrtype" value="Marriage"/><SetVar name="marrdate" value="MARR:DATE"/></if>
-							<TextBox pos="abs" top="." bgcolor="$factbox_bgcolor" border="1" width="$dwidth" newline="0">
+							<TextBox pos="abs" bgcolor="$factbox_bgcolor" border="1" width="$dwidth" newline="0">
 								<Text color="$tcolor" style="fact"><var var="I18N::translate($marrtype)" /> </Text>
 								<Text color="$tcolor" style="text"><GedcomValue tag="$marrdate" /> </Text>
 					<if condition="$sources=='on'">
@@ -244,7 +244,7 @@
 						</RepeatTag>
 					</if>
 							</TextBox>
-							<TextBox pos="abs" top="." bgcolor="$factbox_bgcolor" border="1" width="$width2" newline="1">
+							<TextBox pos="abs" bgcolor="$factbox_bgcolor" border="1" width="$width2" newline="1">
 								<if condition="$sex=='M'">
 									<SetVar name="spid" value="@WIFE"/>
 								</if>
@@ -261,7 +261,7 @@
 					</Gedcom>
 					</if>
 					<if condition="@fact!='FAMS' and @fact!='_XXX'">
-					<TextBox pos="abs" top="." bgcolor="$fbbgcolor" border="1" width="$dwidth" newline="0">
+					<TextBox pos="abs" bgcolor="$fbbgcolor" border="1" width="$dwidth" newline="0">
 						<if condition="@fact=='_SP_DEAT'">
 							<Text color="$tcolor" style="fact"><var var="I18N::translate('Death of spouse')"/> </Text>
 						</if>
@@ -287,7 +287,7 @@
 					</TextBox>
 					<!-- print a different layout for facts with descriptions -->
 					<if condition="@desc!='' or @fact=='xxDEAT' or @fact=='xxRESI'">
-					<TextBox pos="abs" top="." bgcolor="$fbbgcolor" border="1" width="$width2" newline="1" >
+					<TextBox pos="abs" bgcolor="$fbbgcolor" border="1" width="$width2" newline="1" >
 							<if condition="@desc=='Y'">
 								<Text color="$tcolor" style="text"><var var="I18N::translate('yes')" /> <GedcomValue tag="@fact:PLAC"/> </Text>
 							</if>
@@ -316,7 +316,7 @@
 					</if>
 					<!-- facts without descriptions -->
 					<if condition="@desc==''">
-					<TextBox bgcolor="$factbox_bgcolor" border="1" width="$width2" newline="1" pos="abs" top=".">
+					<TextBox bgcolor="$factbox_bgcolor" border="1" width="$width2" newline="1" pos="abs">
 						<if condition="@ADDR!=''">
 							<Text color="$tcolor" style="text"><GedcomValue tag="@fact:ADDR" />, </Text>
 						</if>
@@ -337,20 +337,20 @@
 					<RepeatTag tag="@fact:SOUR">
 						<if condition="@DATA:TEXT!=''">
 						<if condition="@PAGE!=''">
-							<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs" top=".">
+							<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs">
 							<Text color="$tcolor" style="btext"><GedcomValue tag="SOUR:PAGE" nline="1"/>: </Text>
 							</TextBox>
 						</if>
-						<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs" top=".">
+						<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs">
 							<Text color="$tcolor" style="text"><GedcomValue tag="SOUR:DATA:TEXT" /></Text>
 						</TextBox>
 						</if>
 					</RepeatTag>
 					<if condition="@NOTE!=''">
-						<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs" top=".">
+						<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs">
 						<Text color="$tcolor" style="btext"><var var="I18N::translate('Note')" />: </Text>
 						</TextBox>
-						<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs" top=".">
+						<TextBox bgcolor="$factbox_bgcolor" border="1" left="$srcleft" width="$srcwidth" newline="1" pos="abs">
 						<Text color="$tcolor" style="text" newline="1"><GedcomValue tag="@fact:NOTE" /></Text>
 						</TextBox>
 					</if>
@@ -358,24 +358,24 @@
 				</Facts>
 				<!-- print any level 1 notes, but only if exist -->
 				<if condition="$notes=='on'">
-					<TextBox pos="abs" top="." height="$sheight" newline="1" padding="0" width="15"/>
+					<TextBox pos="abs" height="$sheight" newline="1" padding="0" width="15"/>
 					<setvar name="nh" value="1" />
 					<RepeatTag tag="NOTE">
 						<if condition="$nh==1">
-							<TextBox pos="abs" top="." bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Notes')"/></Text></TextBox>
+							<TextBox pos="abs" bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Notes')"/></Text></TextBox>
 							<setvar name="nh" value="0" />
 						</if>
-						<TextBox pos="abs" top="." bgcolor="$fbbgcolor" border="1" newline="1" width="$width"><Text style="text" color="$tcolor"><GedcomValue tag="NOTE"/></Text></TextBox>
+						<TextBox pos="abs" bgcolor="$fbbgcolor" border="1" newline="1" width="$width"><Text style="text" color="$tcolor"><GedcomValue tag="NOTE"/></Text></TextBox>
 					</RepeatTag>
 				</if>
 				<!-- print family with parents and siblings -->
-				<TextBox pos="abs" top="." height="$sheight" newline="1" padding="0" width="15"/>
-				<TextBox pos="abs" top="." bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Family with parents')"/></Text></TextBox>
+				<TextBox pos="abs" height="$sheight" newline="1" padding="0" width="15"/>
+				<TextBox pos="abs" bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Family with parents')"/></Text></TextBox>
 				<RepeatTag tag="FAMC">
 					<Gedcom id="@FAMC">
 						<!-- father -->
 						<Gedcom id="@HUSB">
-							<TextBox pos="abs" top="." bgcolor="$mbgcolor" border="1" newline="1" width="$width">
+							<TextBox pos="abs" bgcolor="$mbgcolor" border="1" newline="1" width="$width">
 								<Text color="$tcolor" style="text"><var var="I18N::translate('Father')"/> </Text>
 								<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 								<!-- level 1 sources -->
@@ -413,7 +413,7 @@
 						</Gedcom>
 						<!-- mother -->
 						<Gedcom id="@WIFE">
-							<TextBox pos="abs" top="." bgcolor="$fbgcolor" border="1" newline="1" width="$width">
+							<TextBox pos="abs" bgcolor="$fbgcolor" border="1" newline="1" width="$width">
 								<Text color="$tcolor" style="text"><var var="I18N::translate('Mother')"/> </Text>
 								<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 								<!-- level 1 sources -->
@@ -455,7 +455,7 @@
 							<Gedcom id="@CHIL">
 								<!-- Brother -->
 								<if condition="@SEX=='M'">
-									<TextBox pos="abs" top="." bgcolor="$mbgcolor" border="1" left="15" newline="1" width="$width1">
+									<TextBox pos="abs" bgcolor="$mbgcolor" border="1" left="15" newline="1" width="$width1">
 										<Text color="$tcolor" style="text"><var var="I18N::translate('Brother')"/> </Text>
 										<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 										<!-- level 1 sources -->
@@ -493,7 +493,7 @@
 								</if>
 								<!-- Sister -->
 								<if condition="@SEX=='F'">
-									<TextBox pos="abs" top="." bgcolor="$fbgcolor" border="1" left="15" newline="1" width="$width1">
+									<TextBox pos="abs" bgcolor="$fbgcolor" border="1" left="15" newline="1" width="$width1">
 										<Text color="$tcolor" style="text"><var var="I18N::translate('Sister')"/> </Text>
 										<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 										<!-- level 1 sources -->
@@ -531,7 +531,7 @@
 								</if>
 								<!-- Unknown gender for Sibling -->
 								<if condition="@SEX=='U'">
-									<TextBox pos="abs" top="." bgcolor="$ugbgcolor" border="1" left="15" newline="1" width="$width1">
+									<TextBox pos="abs" bgcolor="$ugbgcolor" border="1" left="15" newline="1" width="$width1">
 										<Text color="$tcolor" style="text"><var var="I18N::translate('Gender')"/> <var var="I18N::translateContext('unknown gender', 'Unknown')"/> </Text>
 										<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 										<!-- level 1 sources -->
@@ -577,21 +577,21 @@
 					<Gedcom id="@FAMS">
 						<!-- print wife if person is husband -->
 						<if condition="$sex=='M'">
-							<TextBox pos="abs" top="." height="$sheight" newline="1" padding="0" width="15"/>
-							<TextBox pos="abs" top="." bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Family with wife')"/></Text></TextBox>
+							<TextBox pos="abs" height="$sheight" newline="1" padding="0" width="15"/>
+							<TextBox pos="abs" bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Family with wife')"/></Text></TextBox>
 							<SetVar name="spid" value="@WIFE"/>
 						</if>
 						<!-- print husband if person is wife -->
 						<if condition="$sex=='F'">
-							<TextBox pos="abs" top="." height="$sheight" newline="1" padding="0" width="15"/>
-							<TextBox pos="abs" top="." bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Family with husband')"/></Text></TextBox>
+							<TextBox pos="abs" height="$sheight" newline="1" padding="0" width="15"/>
+							<TextBox pos="abs" bgcolor="$stbgcolor" border="1" newline="1" width="$width"><Text style="title" color="$tcolor"><var var="I18N::translate('Family with husband')"/></Text></TextBox>
 							<SetVar name="spid" value="@HUSB"/>
 						</if>
 						<!-- print information for spouse -->
 						<Gedcom id="$spid">
 							<!-- husband -->
 							<if condition="@SEX!='F'">
-								<TextBox pos="abs" top="." bgcolor="$mbgcolor" border="1" newline="1" width="$width">
+								<TextBox pos="abs" bgcolor="$mbgcolor" border="1" newline="1" width="$width">
 									<Text color="$tcolor" style="text"><var var="I18N::translate('Husband')"/> </Text>
 									<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 									<!-- level 1 sources -->
@@ -629,7 +629,7 @@
 							</if>
 							<!-- wife -->
 							<if condition="@SEX=='F'">
-								<TextBox pos="abs" top="." bgcolor="$fbgcolor" border="1" newline="1" width="$width">
+								<TextBox pos="abs" bgcolor="$fbgcolor" border="1" newline="1" width="$width">
 									<Text color="$tcolor" style="text"><var var="I18N::translate('Wife')"/> </Text>
 									<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 									<!-- level 1 sources -->
@@ -672,7 +672,7 @@
 								<Gedcom id="@CHIL">
 								<!-- Son -->
 								<if condition="@SEX=='M'">
-									<TextBox pos="abs" top="." bgcolor="$mbgcolor" border="1" left="15" newline="1" width="$width1">
+									<TextBox pos="abs" bgcolor="$mbgcolor" border="1" left="15" newline="1" width="$width1">
 										<Text color="$tcolor" style="text"><var var="I18N::translate('Son')"/> </Text>
 										<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 										<!-- level 1 sources -->
@@ -710,7 +710,7 @@
 								</if>
 								<!-- Daughter -->
 								<if condition="@SEX=='F'">
-									<TextBox pos="abs" top="." bgcolor="$fbgcolor" border="1" left="15" newline="1" width="$width1">
+									<TextBox pos="abs" bgcolor="$fbgcolor" border="1" left="15" newline="1" width="$width1">
 										<Text color="$tcolor" style="text"><var var="I18N::translate('Daughter')"/> </Text>
 										<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 										<!-- level 1 sources -->
@@ -748,7 +748,7 @@
 								</if>
 								<!-- Unknown gender for Child -->
 								<if condition="@SEX=='U'">
-									<TextBox pos="abs" top="." bgcolor="$ugbgcolor" border="1" left="15" newline="1" width="$width1">
+									<TextBox pos="abs" bgcolor="$ugbgcolor" border="1" left="15" newline="1" width="$width1">
 										<Text color="$tcolor" style="text"><var var="I18N::translate('Gender')"/> <var var="I18N::translateContext('unknown gender', 'Unknown')"/> </Text>
 										<Text color="$tcolor" style="name"><GetPersonName id=""/></Text>
 										<!-- level 1 sources -->
@@ -789,10 +789,10 @@
 						</RepeatTag>
 						<!-- print any level 1 notes, but only if exist -->
 						<if condition="($notes=='on') and (@NOTE!='')">
-							<TextBox pos="abs" top="." height="$sheight" left="15" newline="1" padding="0" width="15"/>
-							<TextBox pos="abs" top="." bgcolor="$stbgcolor" left="15" border="1" newline="1" width="$width1"><Text style="title" color="$tcolor"><var var="I18N::translate('Notes')"/></Text></TextBox>
+							<TextBox pos="abs" height="$sheight" left="15" newline="1" padding="0" width="15"/>
+							<TextBox pos="abs" bgcolor="$stbgcolor" left="15" border="1" newline="1" width="$width1"><Text style="title" color="$tcolor"><var var="I18N::translate('Notes')"/></Text></TextBox>
 							<RepeatTag tag="NOTE">
-								<TextBox pos="abs" top="." bgcolor="$fbbgcolor" left="15" border="1" newline="1" width="$width1"><Text style="text" color="$tcolor"><GedcomValue tag="NOTE"/></Text></TextBox>
+								<TextBox pos="abs" bgcolor="$fbbgcolor" left="15" border="1" newline="1" width="$width1"><Text style="text" color="$tcolor"><GedcomValue tag="NOTE"/></Text></TextBox>
 							</RepeatTag>
 						</if>
 					</Gedcom>
@@ -802,14 +802,14 @@
 		<if condition="$source_exist==1">
 			<!-- add a new page -->
 			<NewPage/>
-				<TextBox pos="abs" top="." newline="1">
+				<TextBox pos="abs" newline="1">
 					<Text style="pageheader"><var var="I18N::translate('Sources')"/><br /><br /></Text>
 					<FootnoteTexts/>
 				</TextBox>
 		</if>
 		</Body>
 		<Footer>
-			<TextBox pos="abs" top="." align="rightrtl" newline="1" ><Text style="date"><Now /></Text></TextBox>
+			<TextBox pos="abs" align="rightrtl" newline="1" ><Text style="date"><Now /></Text></TextBox>
 		</Footer>
 	</Doc>
 </Report>
