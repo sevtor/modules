@@ -16,10 +16,10 @@ Five new report definitions:
 I was optimistic on compatibility between the app/Report module of different versions of **webtrees**. Therefore there are now more versions!
 This module requires some changes of the app/Report part of **webtrees** that can be installed from here:
 1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> for webtrees versions 2.1.17-18
-2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.2/new-reports-2.1.20.zip">new-reports.zip</a> for webtrees version 2.1.20
+2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.2/new-reports-v3.zip">new-reports.zip</a> for webtrees version 2.1.20
 Other version may be added when new versions of **webtrees** are released.
 
-Unzip the archive and copy the the files to their corresponding place in your webtrees installation.
+Unzip the archive and copy the the files to their corresponding place in your webtrees installation. The new-reports.zip must also be installed in the same way. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
 
 The list of report modules is now very long and I recommend to disable some. In the control panel one can select Modules --> Reports and uncheck some reports. Ancestors is replaced by Family tree, Ancestors and Descendents are replaced by Family history, Related families and related individuals are replaced by Family individuals. Some other reports may also be unused and can be disabled.
 
@@ -27,4 +27,4 @@ Hopefully a later version of **webtrees** will have the changes included to supp
 
 ## Installation
 
-Use the Code->download link to get a zip archive. Unzip the files and upload the modules to the **webtrees** /modules_v4/ folder on your web server.
+Use the Code->download link to get a zip archive. Unzip the files and upload the modules to the **webtrees** /modules_v4/ folder on your web server. **N.B.** The corresponding new-reports.zip archive must also be installed!
