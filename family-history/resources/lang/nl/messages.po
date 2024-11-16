@@ -9,23 +9,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr "Een verhalend rapport van de afstammelingen van een persoon."
 
-#  resources/family_history_report.xml:212
+#  resources/family_history_report.xml:213
 msgid "by"
 msgstr "door"
 
-#  resources/family_history_report.xml:353
+#  resources/family_history_report.xml:354
 msgid "child of"
 msgstr "kind van"
 
-#  resources/family_history_report.xml:754
+#  resources/family_history_report.xml:755
 msgid "Children, see spouse above."
-msgstr "Kinderen, zie echtgeno(o)t(e) hierboven."
+msgstr "Kinderen, zie partner hierboven."
 
 #  resources/family_history_report.xml:5
 msgid "Family history"
@@ -35,19 +35,19 @@ msgstr "Familiegeschiedenis"
 msgid "generation"
 msgstr "generatie"
 
-#  resources/family_history_report.xml:610
+#  resources/family_history_report.xml:611
 msgid "He emigrated to"
 msgstr "Hij emigreerde naar"
 
-#  resources/family_history_report.xml:342
+#  resources/family_history_report.xml:343
 msgid "He engaged"
 msgstr "Hij verloofde zich met"
 
-#  resources/family_history_report.xml:340
+#  resources/family_history_report.xml:341
 msgid "He moved in with"
 msgstr "Hij trok in bij"
 
-#  resources/family_history_report.xml:283
+#  resources/family_history_report.xml:284
 msgid "He was adopted"
 msgstr "Hij werd geadopteerd"
 
@@ -55,35 +55,35 @@ msgstr "Hij werd geadopteerd"
 msgid "née"
 msgstr "geb."
 
-#  resources/family_history_report.xml:611
+#  resources/family_history_report.xml:612
 msgid "She emigrated to"
 msgstr "Zij emigreerde naar"
 
-#  resources/family_history_report.xml:343
+#  resources/family_history_report.xml:344
 msgid "She engaged"
 msgstr "Zij verloofde zich met"
 
-#  resources/family_history_report.xml:341
+#  resources/family_history_report.xml:342
 msgid "She moved in with"
 msgstr "Zij trok in bij"
 
-#  resources/family_history_report.xml:284
+#  resources/family_history_report.xml:285
 msgid "She was adopted"
 msgstr "Zij werd geadopteerd"
 
-#  resources/family_history_report.xml:535
+#  resources/family_history_report.xml:536
 msgid "The husband died"
-msgstr "De echtgenoot overleed"
+msgstr "De partner overleed"
 
-#  resources/family_history_report.xml:534
+#  resources/family_history_report.xml:535
 msgid "The wife died"
-msgstr "De echtgenote overleed"
+msgstr "De partner overleed"
 
-#  resources/family_history_report.xml:493
+#  resources/family_history_report.xml:494
 msgid "They divorced"
 msgstr "Ze scheidden"
 
-#  resources/family_history_report.xml:528
+#  resources/family_history_report.xml:529
 msgid "They separated"
 msgstr "Ze gingen uit elkaar"
 
@@ -105,4 +105,4 @@ msgstr "Ze gingen uit elkaar"
 
 #  app/Gedcom.php:760
 #~ msgid "Death of spouse"
-#~ msgstr "Overlijden van echtgeno(o)t(e)"
+#~ msgstr "Overlijden van partner"
