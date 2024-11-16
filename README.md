@@ -17,7 +17,8 @@ I was optimistic on compatibility between the app/Report module of different ver
 This module requires some changes of the app/Report part of **webtrees** that can be installed from here:
 1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> for webtrees versions 2.1.17-18
 2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.2/new-reports-v3.zip">new-reports.zip</a> for webtrees version 2.1.20
-Other version may be added when new versions of **webtrees** are released.
+
+Other versions may be added when new versions of **webtrees** are released.
 
 Unzip the archive and copy the the files to their corresponding place in your webtrees installation. The new-reports.zip must also be installed in the same way. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
 
