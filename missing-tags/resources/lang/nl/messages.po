@@ -13,7 +13,7 @@ msgstr ""
 
 #  resources/missing-tags.xml:4
 msgid "A report of missing birth or death records."
-msgstr "Een rapport van ontbrekende geboorte- of overlijdensakten."
+msgstr "Een rapport van ontbrekende geboorte- of overlijdensgegevens."
 
 #  resources/missing-tags.xml:7
 msgid "Do not report missing death records for individuals born after"
@@ -37,4 +37,4 @@ msgstr "Ontbrekende labels"
 
 # resources/missing_tags_report.xml:306
 msgid "Missing records"
-msgstr "Ontbrekende records"
+msgstr "Ontbrekende gegevens"
