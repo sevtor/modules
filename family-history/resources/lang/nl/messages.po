@@ -87,17 +87,9 @@ msgstr "Ze scheidden"
 msgid "They separated"
 msgstr "Ze gingen uit elkaar"
 
-#  app/Report/ReportParserGenerate.php
-#~ msgid "b."
-#~ msgstr "geb."
-
-#  resources/family_history_report.xml:362
-#~ msgid "at"
-#~ msgstr "op"
-
-#  resources/family_history_report.xml:205
-#~ msgid "He was born on"
-#~ msgstr "Hij werd geboren op"
+#  resources/family_history_report.xml:220
+msgid " but the details are unknown"
+msgstr " maar de details zijn niet bekend"
 
 #  resources/family_history_report.xml:206
 #~ msgid "She was born on"
