@@ -85,22 +85,7 @@ msgstr "De separerade"
 msgid "They separated"
 msgstr "De separerade"
 
-#  app/Report/ReportParserGenerate.php
-#~ msgid "b."
-#~ msgstr "född"
+#  resources/family_history_report.xml:220
+msgid " but the details are unknown"
+msgstr " men detaljerna är okända"
 
-#  resources/family_history_report.xml:362
-#~ msgid "at"
-#~ msgstr "Jag är"
-
-#  resources/family_history_report.xml:205
-#~ msgid "He was born on"
-#~ msgstr "Han föddes den"
-
-#  resources/family_history_report.xml:206
-#~ msgid "She was born on"
-#~ msgstr "Hon föddes den"
-
-#  app/Gedcom.php:760
-#~ msgid "Death of spouse"
-#~ msgstr "Makes/makas död"

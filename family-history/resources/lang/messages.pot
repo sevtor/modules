@@ -74,3 +74,6 @@ msgstr ""
 msgid "They separated"
 msgstr ""
 
+#  resources/family_history_report.xml:220
+msgid " but the details are unknown"
+msgstr ""
