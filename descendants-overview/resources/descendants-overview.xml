@@ -338,7 +338,7 @@
 
 		</Body>
 		<Footer>
-			<Cell align="rightrtl" newline="1" style="date" pos="rel" ><Now/></Cell>
+			<Cell align="rightrtl" newline="1" style="date"><Now/></Cell>
 		</Footer>
 	</Doc>
 </Report>
