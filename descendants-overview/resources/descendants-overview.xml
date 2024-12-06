@@ -99,7 +99,7 @@
 			<setvar name="dupl_gen" value="999" />
 			<setvar name="spxref" value="X0" />
 			<setvar name="prev_xref" value="X0" />
-			<TextBox padding="0" left="$lpos" pagecheck="0" pos="rel">
+			<TextBox padding="0" left="$lpos" pagecheck="0" reseth="1" newline="1" pos="rel">
 			<Relatives id="$pid" group="$relatives" maxgen="$maxgen" sortby="none">
 				<setvar name="xref" value="@ID" />
 				<setvar name="pgen" value="$gen" />
@@ -338,7 +338,7 @@
 
 		</Body>
 		<Footer>
-			<Cell align="rightrtl" newline="1" style="date"><Now/></Cell>
+			<Cell align="rightrtl" newline="1" style="date" pos="rel" ><Now/></Cell>
 		</Footer>
 	</Doc>
 </Report>
