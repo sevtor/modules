@@ -16,7 +16,7 @@ Five new report definitions:
 I was optimistic on compatibility between the app/Report module of different versions of **webtrees**. Therefore there are now more versions!
 This module requires some changes of the app/Report part of **webtrees** that can be installed from here:
 1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> for webtrees versions 2.1.17-18
-2. <a href="https://github.com/sevtor/modules/releases/latest/new-reports-v3.zip">new-reports.zip</a> for webtrees version 2.1.20
+2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> for webtrees version 2.1.20
 
 Other versions may be added when new versions of **webtrees** are released.
 
