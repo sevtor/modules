@@ -18,7 +18,7 @@ This module requires some changes to the app/Report part of **webtrees** and the
 
 1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> for **webtrees versions 2.1.17-18**
 
-2. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v3.zip">new-reports.zip</a> **for webtrees version 2.1.20-22**
+2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **for webtrees version 2.1.20-22**
 
 3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v4.zip">new-reports.zip</a> **for webtrees version 2.2.1**
 
