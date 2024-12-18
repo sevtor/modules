@@ -96,6 +96,7 @@
 		<Body>
 
 			<setvar name="gen" value="0" />
+			<setvar name="dupl" value="no" comment="set by ReportParserGenerate! ='yes' if the current pid already found, otherwise ='no' "/>
 			<setvar name="dupl_gen" value="999" />
 			<setvar name="spxref" value="X0" />
 			<setvar name="prev_xref" value="X0" />

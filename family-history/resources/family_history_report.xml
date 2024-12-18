@@ -96,6 +96,7 @@
 		<SetVar name="ww" value="750-$lpos1" />
 	</if>
 	<SetVar name="namesep" value="I18N::translate('née')"/>
+	<SetVar name="dupl" value="no" comment="set by ReportParserGenerate! ='yes' if the current pid already found, otherwise ='no' "/>
 	<Doc pageSize="$pageSize" headermargin="15" topmargin="56" leftmargin="40" rightmargin="30" bottommargin="40" >
 		<Header comment="only used for html output" >
 			<Textbox newline="1" pos="rel">
