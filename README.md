@@ -1,6 +1,6 @@
 #  Five new modules for report generation in webtrees
 
-Released: November 2024
+Released: November 2024, December 2024
 
 ## Description
 
