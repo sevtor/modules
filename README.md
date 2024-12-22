@@ -20,7 +20,9 @@ This module requires some changes to the app/Report part of **webtrees** and the
 
 2. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v3.zip">new-reports.zip</a> **for webtrees version 2.1.20-22**
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v4.zip">new-reports.zip</a> **for webtrees version 2.2.1**
+3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v5.zip">new-reports.zip</a> **for webtrees version 2.2.1**
+
+The latest change to new-reports.zip (v5) adds footers to PDF-farmatted reports. And when they are viewed in a browser they are saved by default with the report title as filename. The download option still uses an anonymous name.
 
 Other versions may be added when new versions of **webtrees** are released.
 
