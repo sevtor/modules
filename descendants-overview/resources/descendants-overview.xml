@@ -78,10 +78,10 @@
 	<setvar name="dump" value="dval" />
 	<setvar name="top" value="38" />
 	<setvar name="lpos" value="0" />
-	<setvar name="marg1" value="%26#xA0;%26#x2570;%26mdash; " comment="%26#x2570; only html! changed to \ in pdf"/>
-	<setvar name="marg2" value="%26#xA0;%26#x251C;%26mdash; " comment="251C changed to | in pdf"/>
-	<setvar name="marg_vl" value="%26#xA0;|%26#xA0; " comment="A0 is nbsp, non-breakable space"/>
-	<setvar name="marg_bl" value="%26#xA0; %26#xA0; " />
+	<setvar name="marg1" value="%26nbsp;%26#x2570;%26mdash; " comment="%26#x2570; only html! changed to \ in pdf"/>
+	<setvar name="marg2" value="%26nbsp;%26#x251C;%26mdash; " comment="251C changed to | in pdf"/>
+	<setvar name="marg_vl" value="%26nbsp;|%26nbsp; " />
+	<setvar name="marg_bl" value="%26nbsp; %26nbsp; " />
 	<SetVar name="namesep" value="I18N::translate('née')"/>
 
 	<Doc pageSize="$pageSize" orientation="$orientation" headermargin="15" leftmargin="40" rightmargin="20" showGeneratedBy="0" >

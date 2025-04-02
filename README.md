@@ -20,11 +20,13 @@ This module requires some changes to the app/Report part of **webtrees** and the
 
 2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **for webtrees version 2.1.20-22**
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v5.zip">new-reports.zip</a> **for webtrees version 2.2.1**
+3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v7.zip">new-reports.zip</a> **for webtrees version 2.2.1**
 
-The latest change to new-reports.zip (v5) adds footers to PDF-formatted reports. And when they are viewed in a browser they are saved by default with the report title as filename. The download option still uses an anonymous name.
+The latest change to new-reports.zip (v7) adds footers to PDF-formatted reports. And when they are viewed in a browser they are saved by default with the report title as filename. The download option still uses an anonymous name. In V7 treament of non-UTF-8 strings is corrected.
 
 Other versions may be added when new versions of **webtrees** are released.
+
+## Installation
 
 Unzip the archive and copy the files to their corresponding place in your **webtrees** installation. The new-reports.zip  must also be installed in the same way. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
 
@@ -32,5 +34,4 @@ The list of report modules is now very long and I  recommend disabling some. In 
 
 Hopefully, a later version of **webtrees** will include these changes to support the new xml report features.
 
-## Installation
 Use the Code->download link to get a zip archive. Unzip the files and upload the modules to the webtrees /modules_v4/ folder on your web server. **N.B. The corresponding new-reports.zip archive must also be installed!**
