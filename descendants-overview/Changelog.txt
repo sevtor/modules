@@ -4,3 +4,6 @@
 
 1.0.2	Modified some translations
 
+1.0.3	Changed use of #xA0 (UTF-8 non-breaking space) to html-defined nbsp
+	to avoid destroyed non-latin letters
+

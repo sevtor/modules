@@ -1,36 +1,36 @@
-#  resources/family_history_report.xml:6
+#  resources/family_history_report.xml:5
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr ""
 
-#  resources/family_history_report.xml:213
+#  resources/family_history_report.xml:209
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:354
+#  resources/family_history_report.xml:356
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:755
+#  resources/family_history_report.xml:779
 msgid "Children, see spouse above."
 msgstr ""
 
-#  resources/family_history_report.xml:5
+#  resources/family_history_report.xml:4
 msgid "Family history"
 msgstr ""
 
-#  resources/family_history_report.xml:20
+#  resources/family_history_report.xml:14
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:611
+#  resources/family_history_report.xml:629
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:343
+#  resources/family_history_report.xml:345
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:341
+#  resources/family_history_report.xml:343
 msgid "He moved in with"
 msgstr ""
 
@@ -38,19 +38,23 @@ msgstr ""
 msgid "He was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:93
+#  resources/family_history_report.xml:89
 msgid "née"
 msgstr ""
 
-#  resources/family_history_report.xml:612
+#  resources/family_history_report.xml:11
+msgid "Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
+msgstr ""
+
+#  resources/family_history_report.xml:630
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:344
+#  resources/family_history_report.xml:346
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:342
+#  resources/family_history_report.xml:344
 msgid "She moved in with"
 msgstr ""
 
@@ -58,22 +62,23 @@ msgstr ""
 msgid "She was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:536
+#  resources/family_history_report.xml:11
+msgid "Show family relationship"
+msgstr ""
+
+#  resources/family_history_report.xml:550
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:535
+#  resources/family_history_report.xml:549
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:494
+#  resources/family_history_report.xml:506
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:529
+#  resources/family_history_report.xml:543
 msgid "They separated"
 msgstr ""
 
-#  resources/family_history_report.xml:220
-msgid " but the details are unknown"
-msgstr ""

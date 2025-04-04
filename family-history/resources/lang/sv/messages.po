@@ -53,6 +53,12 @@ msgstr "Han adopterades"
 msgid "née"
 msgstr ""
 
+#  resources/family_history_report.xml:11
+msgid ""
+"Relationship to the selected individual: f=father, m=mother, s=son, "
+"d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
+msgstr ""
+
 #  resources/family_history_report.xml:611
 msgid "She emigrated to"
 msgstr "Hon utvandrade till"
@@ -68,6 +74,10 @@ msgstr "Hon flyttade ihop med"
 #  resources/family_history_report.xml:284
 msgid "She was adopted"
 msgstr "Hon adopterades"
+
+#  resources/family_history_report.xml:11
+msgid "Show family relationship"
+msgstr ""
 
 #  resources/family_history_report.xml:535
 msgid "The husband died"
@@ -86,6 +96,5 @@ msgid "They separated"
 msgstr "De separerade"
 
 #  resources/family_history_report.xml:220
-msgid " but the details are unknown"
-msgstr " men detaljerna är okända"
-
+#~ msgid " but the details are unknown"
+#~ msgstr " men detaljerna är okända"

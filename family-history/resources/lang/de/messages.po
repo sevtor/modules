@@ -13,7 +13,7 @@ msgstr ""
 
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
-msgstr "Ein Bericht im Erzähl-Stil über die Verwandten einer Person.."
+msgstr "Ein Bericht im Erzähl-Stil über die Verwandten einer Person."
 
 #  resources/family_history_report.xml:213
 msgid "by"
@@ -55,6 +55,12 @@ msgstr "Er wurde adoptiert"
 msgid "née"
 msgstr "geb."
 
+#  resources/family_history_report.xml:11
+msgid ""
+"Relationship to the selected individual: f=father, m=mother, s=son, "
+"d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
+msgstr ""
+
 #  resources/family_history_report.xml:612
 msgid "She emigrated to"
 msgstr "Sie wanderte aus nach"
@@ -70,6 +76,10 @@ msgstr "Sie zog ein mit"
 #  resources/family_history_report.xml:285
 msgid "She was adopted"
 msgstr "Sie wurde adoptiert"
+
+#  resources/family_history_report.xml:11
+msgid "Show family relationship"
+msgstr ""
 
 #  resources/family_history_report.xml:536
 msgid "The husband died"

@@ -55,6 +55,12 @@ msgstr "Hij werd geadopteerd"
 msgid "née"
 msgstr "geb."
 
+#  resources/family_history_report.xml:11
+msgid ""
+"Relationship to the selected individual: f=father, m=mother, s=son, "
+"d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
+msgstr ""
+
 #  resources/family_history_report.xml:612
 msgid "She emigrated to"
 msgstr "Zij emigreerde naar"
@@ -70,6 +76,10 @@ msgstr "Zij trok in bij"
 #  resources/family_history_report.xml:285
 msgid "She was adopted"
 msgstr "Zij werd geadopteerd"
+
+#  resources/family_history_report.xml:11
+msgid "Show family relationship"
+msgstr ""
 
 #  resources/family_history_report.xml:536
 msgid "The husband died"
@@ -87,14 +97,3 @@ msgstr "Ze scheidden"
 msgid "They separated"
 msgstr "Ze gingen uit elkaar"
 
-#  resources/family_history_report.xml:220
-msgid " but the details are unknown"
-msgstr " maar de details zijn niet bekend"
-
-#  resources/family_history_report.xml:206
-#~ msgid "She was born on"
-#~ msgstr "Zij werd geboren op"
-
-#  app/Gedcom.php:760
-#~ msgid "Death of spouse"
-#~ msgstr "Overlijden van partner"
