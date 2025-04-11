@@ -14,13 +14,14 @@ Five new report definitions:
 ## Requirements
 
 I was optimistic about the compatibility between the app/Report module of the different versions of **webtrees**. Therefore there are now more versions!
-This module requires some changes to the app/Report part of **webtrees** and they can be downloaded here:
 
-1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> for **webtrees versions 2.1.17-18**
+**This module requires some changes to the app/Report AND resources/xml/reports parts of webtrees** and they can be downloaded here:
 
-2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **for webtrees version 2.1.20-22**
+1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> **v1.0.1 for webtrees versions 2.1.17-18**
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v8.zip">new-reports.zip</a> **for webtrees version 2.2.1-**
+2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **v3 for webtrees version 2.1.20-22**
+
+3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v8.zip">new-reports.zip</a> **v8 for webtrees version 2.2.1-**
 
 In version v7 treament of non-UTF-8 strings is corrected. In version v8 the relationship indicator (fmf...) can be hidden and some security issues are handled.
 
