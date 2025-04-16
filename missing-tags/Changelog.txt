@@ -5,3 +5,5 @@
 1.0.2	Added translations for 'de' and 'nl' with help from Google translate
 	Corrected conditionla expression for operator precedence
 
+1.1	Added information about emigration and residence for persons with missing death records
+

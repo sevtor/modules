@@ -19,6 +19,10 @@ msgstr "Ein Bericht über fehlende Geburts- oder Sterbedaten."
 msgid "Do not report missing death records for individuals born after"
 msgstr "Keine fehlenden Sterbedaten für später geborene Personen zeigen"
 
+#  resources/missing_tags_report.xml:250
+msgid "emigrated to"
+msgstr ""
+
 #  resources/missing-tags.xml:122
 msgid "engagement"
 msgstr "Verlobung"
@@ -36,5 +40,5 @@ msgid "Missing tags"
 msgstr "Fehlende Tags"
 
 # resources/missing_tags_report.xml:306
-msgid "Missing records"
-msgstr "Fehlende Datensätze"
+#~ msgid "Missing records"
+#~ msgstr "Fehlende Datensätze"

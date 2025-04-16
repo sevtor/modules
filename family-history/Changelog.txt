@@ -7,3 +7,5 @@
 1.0.3	Added possibility to suppress relationship indicators
 	Suppress all notes when the 'Show notes' box is unchecked
 
+1.2	Added functionality to remember and apply previous option settings
+	Added explanation text for relationships when active

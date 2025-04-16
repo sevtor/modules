@@ -25,9 +25,19 @@ msgstr "barn till"
 msgid "Children, see spouse above."
 msgstr "Barn, se make/maka ovan."
 
+#  resources/family_history_report.xml:103
+msgid "Explanation"
+msgstr "Förklaring"
+
 #  resources/family_history_report.xml:5
 msgid "Family history"
 msgstr "Släkthistoria"
+
+#  resources/family_history_report.xml:105
+msgid ""
+"f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's "
+"mother's father, ...)"
+msgstr ""
 
 #  resources/family_history_report.xml:20
 msgid "generation"
@@ -51,13 +61,20 @@ msgstr "Han adopterades"
 
 #  resources/family_history_report.xml:93
 msgid "née"
-msgstr ""
+msgstr "f."
 
 #  resources/family_history_report.xml:11
 msgid ""
 "Relationship to the selected individual: f=father, m=mother, s=son, "
 "d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
-msgstr ""
+msgstr "Släktrelation till den valda personen: f=far, m=mor, s=son, "
+"d=dotter, x=bror/syster/partner (fmf=fars mors far, ...)"
+
+#  resources/family_history_report.xml:104
+msgid ""
+"Relationship to the selected individual is shown in parenthesis after the "
+"name: "
+msgstr "Släktrelation till den valda personen visas inom parentes efter namnet: "
 
 #  resources/family_history_report.xml:611
 msgid "She emigrated to"
@@ -77,7 +94,7 @@ msgstr "Hon adopterades"
 
 #  resources/family_history_report.xml:11
 msgid "Show family relationship"
-msgstr ""
+msgstr "Visa släktskap"
 
 #  resources/family_history_report.xml:535
 msgid "The husband died"
@@ -95,6 +112,3 @@ msgstr "De separerade"
 msgid "They separated"
 msgstr "De separerade"
 
-#  resources/family_history_report.xml:220
-#~ msgid " but the details are unknown"
-#~ msgstr " men detaljerna är okända"

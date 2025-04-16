@@ -1,0 +1,140 @@
+<?php
+
+declare(strict_types=1);
+
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Session;
+
+/**
+ * @var string               $title
+ * @var string               $description
+ * @var string               $destination
+ * @var string               $format
+ * @var array<array<string>> $inputs
+ */
+
+error_log("\n\n==============   ".$title."   ".date("Y-m-d H:i")."\n",3,"rep-setup.log");
+//error_log("descr=".var_export($description,true)."\n",3,"rep-setup.log");
+//error_log("dest=".var_export($destination,true)."\n",3,"rep-setup.log");
+//error_log("title=".var_export($title,true)."\n",3,"rep-setup.log");
+//error_log("url2=".var_export($_SERVER["REQUEST_URI"],true)."\n",3,"rep-setup.log");
+if (isset($_SERVER["REQUEST_URI"])) {
+    $fid = filter_var(urldecode($_SERVER["REQUEST_URI"]), FILTER_SANITIZE_URL);
+    $fid = basename(substr($fid,0,strpos($fid,"?")));
+    error_log("fid=".var_export($fid,true)."\n",3,"rep-setup.log");
+    $last = Session::get($fid);
+}
+if (isset($last)) {
+    error_log("prev=".var_export($last,true)."\n",3,"rep-setup.log");
+    foreach ($last as $key => $value) {
+        foreach ($inputs as $n => $input) {
+            if (($input["name"] == $key) and ($input["default"] != $value["id"])) {
+                $inputs[$n]["default"] = $value["id"];
+                if ($input["type"] == "select") {
+                    $c1 = mb_ereg_replace(' selected="selected"',"",$input["control"]);
+                    $c2 = mb_ereg_replace('(value="'.$value["id"].'")',"\\1 selected=\"selected\"",$c1);
+                    $inputs[$n]["control"] = $c2;
+                }
+                if ($input["type"] == "checkbox") {
+                    if ($inputs[$n]["default"] == "") $inputs[$n]["default"] = 0;
+                    $c1 = mb_ereg_replace(' checked="checked"',"",$input["control"]);
+                    if ($inputs[$n]["default"] == "on") {
+                        $inputs[$n]["default"] = 1;
+                        $c1 = mb_ereg_replace('(type="checkbox")',"\\1 checked=\"checked\"",$c1);
+                    }
+                    $inputs[$n]["control"] = $c1;
+                    error_log("chbx.".$key.": default=".$inputs[$n]["default"]."\n",3,"rep-setup.log");
+                    error_log("chbk.".$key.": control=".$c1."\n",3,"rep-setup.log");
+                }
+            }
+        }
+    }
+}
+?>
+
+<h2 class="wt-page-title">
+    <?= $title ?>
+</h2>
+
+<form method="post" class="wt-page-options wt-page-options-report-setup">
+    <div class="row">
+        <div class="col-sm-3 col-form-label wt-page-options-label">
+            <?= I18N::translate('Description') ?>
+        </div>
+        <div class="col-sm-9 wt-page-options-value">
+            <?= $description ?>
+        </div>
+    </div>
+
+    <?php foreach ($inputs as $n => $input) : ?>
+        <input type="hidden" name="varnames[]" value="<?= e($input['name']) ?>">
+        <div class="row">
+            <label class="col-sm-3 col-form-label wt-page-options-label" for="input-<?= $n ?>">
+                <?= I18N::translate($input['value']) ?>
+            </label>
+            <div class="col-sm-9 wt-page-options-value">
+                <?php if ($input['extra'] !== '') : ?>
+                    <div class="input-group">
+                        <?= $input['control'] ?>
+                        <?= $input['extra'] ?>
+                    </div>
+                    <div id="caldivinput-<?= e($n) ?>" style="position:absolute;visibility:hidden;background-color:white;z-index:1000"></div>
+                <?php else : ?>
+                    <?= $input['control'] ?>
+                <?php endif ?>
+            </div>
+        </div>
+    <?php endforeach ?>
+
+    <div class="row">
+        <div class="col-sm-3 col-form-label wt-page-options-label">
+            <?= I18N::translate('Format') ?>
+        </div>
+
+        <div class="col-sm-9 wt-page-options-value d-flex justify-content-around">
+            <div class="text-center">
+                <label for="HTML" title="HTML">
+                    <?= view('icons/mime', ['type' => 'text/html']) ?>
+                    <span class="visually-hidden">HTML</span>
+                </label>
+                <br>
+                <input type="radio" name="format" id="HTML" value="HTML" <?= $format === 'HTML' ? 'checked' : '' ?>>
+            </div>
+            <div class="text-center">
+                <label for="PDF" title="PDF">
+                    <?= view('icons/mime', ['type' => 'application/pdf']) ?>
+                    <span class="visually-hidden">PDF</span>
+                </label>
+                <br>
+                <input type="radio" name="format" value="PDF" id="PDF" <?= $format === 'PDF' ? 'checked' : '' ?>>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 col-form-label wt-page-options-label"></div>
+        <div class="col-sm-9 wt-page-options-value">
+            <?php if ($destination === 'download') : ?>
+                <button type="submit" name="destination" value="download" class="btn btn-primary">
+                    <?= view('icons/download') ?>
+                    <?= I18N::translate('download') ?>
+                </button>
+                <button type="submit" name="destination" value="view" class="btn btn-secondary">
+                    <?= view('icons/report') ?>
+                    <?= I18N::translate('view') ?>
+                </button>
+            <?php else : ?>
+                <button type="submit" name="destination" value="view" class="btn btn-primary">
+                    <?= view('icons/report') ?>
+                    <?= I18N::translate('view') ?>
+                </button>
+                <button type="submit" name="destination" value="download" class="btn btn-secondary">
+                    <?= view('icons/download') ?>
+                    <?= I18N::translate('download') ?>
+                </button>
+            <?php endif ?>
+        </div>
+    </div>
+
+    <?= csrf_field() ?>
+</form>

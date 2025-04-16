@@ -21,14 +21,17 @@ I was optimistic about the compatibility between the app/Report module of the di
 
 2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **v3 for webtrees version 2.1.20-22**
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v8.zip">new-reports.zip</a> **v8 for webtrees version 2.2.1-**
+3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v9.zip">new-reports.zip</a> **v9 for webtrees version 2.2.1-**
 
 In version v7 treament of non-UTF-8 strings is corrected. In version v8 the relationship indicator (fmf...) can be hidden and some security issues are handled.
+
+Version v9 includes enhancements and correction from issues 24-34.
 
 Other versions may be added when new versions of **webtrees** are released.
 
 ## Installation
 
+Get the modules by tapping the 'Code' button and then 'Download zip'.
 Unzip the archive and copy the files to their corresponding place in your **webtrees** installation. The new-reports.zip  must also be installed in the same way. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
 
 The list of report modules is now very long and I  recommend disabling some. In the control panel one can select Modules --> Reports and uncheck some reports. Ancestors is replaced by Family tree, Ancestors and Descendents are replaced by Family history, Related families and related individuals are replaced by Family individuals.  Some other reports may also be unused and can be disabled.

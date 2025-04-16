@@ -27,9 +27,19 @@ msgstr "Kind von"
 msgid "Children, see spouse above."
 msgstr "Kinder, siehe Ehepartner darüber."
 
+#  resources/family_history_report.xml:103
+msgid "Explanation"
+msgstr ""
+
 #  resources/family_history_report.xml:5
 msgid "Family history"
 msgstr "Familiengeschichte"
+
+#  resources/family_history_report.xml:105
+msgid ""
+"f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's "
+"mother's father, ...)"
+msgstr ""
 
 #  resources/family_history_report.xml:20
 msgid "generation"
@@ -59,6 +69,12 @@ msgstr "geb."
 msgid ""
 "Relationship to the selected individual: f=father, m=mother, s=son, "
 "d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
+msgstr ""
+
+#  resources/family_history_report.xml:104
+msgid ""
+"Relationship to the selected individual is shown in parenthesis after the "
+"name: "
 msgstr ""
 
 #  resources/family_history_report.xml:612

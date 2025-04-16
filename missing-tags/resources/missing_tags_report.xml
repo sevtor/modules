@@ -76,9 +76,9 @@ End it with DEAT and BURI
 				<!-- Birth -->
 				<if condition="$fbirt=='on'">
 					<SetVar name="evnt" value="I18N::translate('Birth')" lcfirst="$lc1"/>
-					<SetVar name="fact" value="BIRT"/>
 					<SetVar name="str_date" value="I18N::translate('Date of birth')" lcfirst="$lc1"/>
 					<SetVar name="str_plac" value="I18N::translate('Place of birth')" lcfirst="$lc1"/>
+					<setvar name="fact" value="BIRT"/>
 					<!-- Total Event Counter -->
 					<setvar name="ffound" value="N"/>
 					<Gedcom id="$fact" >
@@ -87,18 +87,11 @@ End it with DEAT and BURI
 						<setvar name="fplac" value="@PLAC" />
 						<setvar name="fsrc" value="@SOUR" />
 					</Gedcom>
-					<if condition="$fact=='MARR' and $ffound=='N'">
-					<Gedcom id="EVEN" > <!-- partnership without marriage recorded as Event:Type -->
-						<setvar name="ffound" value="Y"/>
-						<setvar name="fdate" value="@DATE" />
-						<setvar name="fplac" value="@PLAC" />
-						<setvar name="fsrc" value="@SOUR" />
-					</Gedcom>
-					</if>
+					<SetVar name="evnt2" value=""/>
 					<if condition="$ffound=='N'">
 						<SetVar name="nrevent" value="$nrevent + 1" />
 						<SetVar name="nrmissingevent" value="$nrmissingevent + 1" />
-						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),"/>
+						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),$evnt2"/>
 						<SetVar name="no_fact" value="$no_fact1"/>
 					</if>
 					<if condition="$ffound=='Y'">
@@ -130,10 +123,10 @@ End it with DEAT and BURI
 				<!-- ENGA -->
 				<if condition="$fenga=='on'">
 					<SetVar name="evnt" value="I18N::translate('engagement')" lcfirst="$lc1"/>
-					<SetVar name="fact" value="ENGA"/>
 					<SetVar name="str_date" value="I18N::translate('Date of engagement')"/>
 					<SetVar name="str_plac" value="I18N::translate('Place of engagement')"/>
 					<Gedcom id="@FAMS">
+					<setvar name="fact" value="ENGA"/>
 					<!-- Total Event Counter -->
 					<setvar name="ffound" value="N"/>
 					<Gedcom id="$fact" >
@@ -142,18 +135,11 @@ End it with DEAT and BURI
 						<setvar name="fplac" value="@PLAC" />
 						<setvar name="fsrc" value="@SOUR" />
 					</Gedcom>
-					<if condition="$fact=='MARR' and $ffound=='N'">
-					<Gedcom id="EVEN" > <!-- partnership without marriage recorded as Event:Type -->
-						<setvar name="ffound" value="Y"/>
-						<setvar name="fdate" value="@DATE" />
-						<setvar name="fplac" value="@PLAC" />
-						<setvar name="fsrc" value="@SOUR" />
-					</Gedcom>
-					</if>
+					<SetVar name="evnt2" value=""/>
 					<if condition="$ffound=='N'">
 						<SetVar name="nrevent" value="$nrevent + 1" />
 						<SetVar name="nrmissingevent" value="$nrmissingevent + 1" />
-						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),"/>
+						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),$evnt2"/>
 						<SetVar name="no_fact" value="$no_fact1"/>
 					</if>
 					<if condition="$ffound=='Y'">
@@ -186,10 +172,10 @@ End it with DEAT and BURI
 				<!-- MARR -->
 				<if condition="$fmarr=='on'">
 					<SetVar name="evnt" value="I18N::translate('marriage')" lcfirst="$lc1"/>
-					<SetVar name="fact" value="MARR"/>
 					<SetVar name="str_date" value="I18N::translate('Date of marriage')" lcfirst="$lc1"/>
 					<SetVar name="str_plac" value="I18N::translate('Place of marriage')" lcfirst="$lc1"/>
 					<Gedcom id="@FAMS">
+					<setvar name="fact" value="MARR"/>
 					<!-- Total Event Counter -->
 					<setvar name="ffound" value="N"/>
 					<Gedcom id="$fact" >
@@ -206,10 +192,11 @@ End it with DEAT and BURI
 						<setvar name="fsrc" value="@SOUR" />
 					</Gedcom>
 					</if>
+					<SetVar name="evnt2" value=""/>
 					<if condition="$ffound=='N'">
 						<SetVar name="nrevent" value="$nrevent + 1" />
 						<SetVar name="nrmissingevent" value="$nrmissingevent + 1" />
-						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),"/>
+						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),$evnt2"/>
 						<SetVar name="no_fact" value="$no_fact1"/>
 					</if>
 					<if condition="$ffound=='Y'">
@@ -242,9 +229,9 @@ End it with DEAT and BURI
 				<!-- DEAT -->
 				<if condition="$fdeat=='on' and ($birth_date LT $b_year_lim)" >
 					<SetVar name="evnt" value="I18N::translate('Death')" lcfirst="$lc1"/>
-					<SetVar name="fact" value="DEAT"/>
 					<SetVar name="str_date" value="I18N::translate('Date of death')" lcfirst="$lc1"/>
 					<SetVar name="str_plac" value="I18N::translate('Place of death')" lcfirst="$lc1"/>
+					<setvar name="fact" value="DEAT"/>
 					<!-- Total Event Counter -->
 					<setvar name="ffound" value="N"/>
 					<Gedcom id="$fact" >
@@ -253,18 +240,47 @@ End it with DEAT and BURI
 						<setvar name="fplac" value="@PLAC" />
 						<setvar name="fsrc" value="@SOUR" />
 					</Gedcom>
-					<if condition="$fact=='MARR' and $ffound=='N'">
-					<Gedcom id="EVEN" > <!-- partnership without marriage recorded as Event:Type -->
-						<setvar name="ffound" value="Y"/>
+					<SetVar name="evnt2" value=""/>
+					<if condition="$fact=='DEAT' and $ffound=='N'">
+					<Gedcom id="EMIG" > <!-- extra info for persons that have emigrated -->
+						<!--setvar name="ffound" value="Y"/-->
 						<setvar name="fdate" value="@DATE" />
 						<setvar name="fplac" value="@PLAC" />
 						<setvar name="fsrc" value="@SOUR" />
+						<SetVar name="evntx" value="I18N::translate('emigrated to')" lcfirst="$lc1"/>
+						<SetVar name="evnt2" value=" $evntx $fplac $fdate," lcfirst="$lc1"/>
 					</Gedcom>
+					<if condition="$evnt2==''">
+					<Gedcom id="RESI" > <!-- extra info -->
+						<!--setvar name="ffound" value="Y"/-->
+						<setvar name="fdate" value="@DATE" />
+						<setvar name="fplac" value="@PLAC" />
+						<setvar name="fsrc" value="@SOUR" />
+						<setvar name="in" value="I18N::translate(' in ')" />
+						<SetVar name="evntx" value="I18N::translate('Residence')" lcfirst="$lc1"/>
+						<SetVar name="evnt2" value=" $evntx $in$fplac $fdate," lcfirst="$lc1"/>
+					</Gedcom>
+					</if>
+					<if condition="$evnt2==''"> <!-- Check if family has residence info -->
+					<!--SetVar name="xxx" value="@$dump" dumpvar="gedrec" /-->
+					<Gedcom id="@FAMS" > <!-- extra info -->
+					<!--SetVar name="xxx" value="@$dump" dumpvar="gedrec" /-->
+					<Gedcom id="RESI" > <!-- extra info -->
+						<!--setvar name="ffound" value="Y"/-->
+						<setvar name="fdate" value="@DATE" />
+						<setvar name="fplac" value="@PLAC" />
+						<setvar name="fsrc" value="@SOUR" />
+						<setvar name="in" value="I18N::translate(' in ')" />
+						<SetVar name="evntx" value="I18N::translate('Residence')" lcfirst="$lc1"/>
+						<SetVar name="evnt2" value=" $evntx $in$fplac $fdate," lcfirst="$lc1"/>
+					</Gedcom>
+					</Gedcom>
+					</if>
 					</if>
 					<if condition="$ffound=='N'">
 						<SetVar name="nrevent" value="$nrevent + 1" />
 						<SetVar name="nrmissingevent" value="$nrmissingevent + 1" />
-						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),"/>
+						<SetVar name="no_fact1" value="$no_fact $evnt ($fact),$evnt2"/>
 						<SetVar name="no_fact" value="$no_fact1"/>
 					</if>
 					<if condition="$ffound=='Y'">
@@ -292,7 +308,7 @@ End it with DEAT and BURI
 						</if>
 					</if>
 					</if>
-					</if>
+				</if>
 				<!-- print result -->
 				<if condition="$no_fact!='' and $printname=='1'">
 					<Cell style="list_value" width="$name"> </Cell>

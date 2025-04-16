@@ -16,6 +16,7 @@ use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleReportInterface;
 use Fisharebest\Webtrees\Module\ModuleReportTrait;
 use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\View;
 
 return new class extends AbstractModule implements ModuleCustomInterface, ModuleReportInterface {
     use ModuleCustomTrait;
@@ -65,7 +66,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      */
     public function customModuleVersion(): string
     {
-        return '1.0.3';
+        return '1.0.4';
     }
 
     /**
@@ -113,5 +114,14 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     public function xmlFilename(): string
     {
         return 'family_history_report.xml';
+    }
+
+    public function boot(): void
+    {
+        // Register a namespace for our views.
+        View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
+
+        // Replace an existing view with our own version.
+        View::registerCustomView('::report-setup-page', $this->name() . '::report-setup-page');
     }
 };

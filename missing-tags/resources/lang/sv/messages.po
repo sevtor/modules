@@ -17,9 +17,13 @@ msgstr "En rapport över saknade födelse- och dödsposter"
 msgid "Do not report missing death records for individuals born after"
 msgstr "Rapportera inte saknande död-poster för personer födda efter"
 
+#  resources/missing_tags_report.xml:250
+msgid "emigrated to"
+msgstr "emigrerade till"
+
 #  resources/missing_tags.xml:122
 msgid "engagement"
-msgstr ""
+msgstr "förlovning"
 
 #  resources/missing_tags.xml:5
 msgid "generation"
@@ -31,9 +35,5 @@ msgstr "äktenskap/partner"
 
 #  resources/missing-tags.xml:3
 msgid "Missing tags"
-msgstr "Saknade poster"
-
-#  resources/missing-tags.xml:306
-msgid "Missing records"
 msgstr "Saknade poster"
 

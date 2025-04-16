@@ -2,43 +2,51 @@
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr ""
 
-#  resources/family_history_report.xml:209
+#  resources/family_history_report.xml:221
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:356
+#  resources/family_history_report.xml:368
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:779
+#  resources/family_history_report.xml:791
 msgid "Children, see spouse above."
+msgstr ""
+
+#  resources/family_history_report.xml:103
+msgid "Explanation"
 msgstr ""
 
 #  resources/family_history_report.xml:4
 msgid "Family history"
 msgstr ""
 
-#  resources/family_history_report.xml:14
+#  resources/family_history_report.xml:105
+msgid "f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
+msgstr ""
+
+#  resources/family_history_report.xml:15
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:629
+#  resources/family_history_report.xml:641
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:345
+#  resources/family_history_report.xml:357
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:343
+#  resources/family_history_report.xml:355
 msgid "He moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:284
+#  resources/family_history_report.xml:296
 msgid "He was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:89
+#  resources/family_history_report.xml:91
 msgid "née"
 msgstr ""
 
@@ -46,39 +54,43 @@ msgstr ""
 msgid "Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
-#  resources/family_history_report.xml:630
+#  resources/family_history_report.xml:104
+msgid "Relationship to the selected individual is shown in parenthesis after the name: "
+msgstr ""
+
+#  resources/family_history_report.xml:642
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:346
+#  resources/family_history_report.xml:358
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:344
+#  resources/family_history_report.xml:356
 msgid "She moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:285
+#  resources/family_history_report.xml:297
 msgid "She was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:11
+#  resources/family_history_report.xml:12
 msgid "Show family relationship"
 msgstr ""
 
-#  resources/family_history_report.xml:550
+#  resources/family_history_report.xml:562
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:549
+#  resources/family_history_report.xml:561
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:506
+#  resources/family_history_report.xml:518
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:543
+#  resources/family_history_report.xml:555
 msgid "They separated"
 msgstr ""
 
