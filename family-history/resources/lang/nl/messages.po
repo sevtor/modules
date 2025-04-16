@@ -29,20 +29,19 @@ msgstr "Kinderen, zie partner hierboven."
 
 #  resources/family_history_report.xml:103
 msgid "Explanation"
-msgstr ""
+msgstr "Toelichting"
 
 #  resources/family_history_report.xml:5
 msgid "Family history"
 msgstr "Familiegeschiedenis"
 
 #  resources/family_history_report.xml:11
-#, fuzzy
 msgid ""
 "f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's "
 "mother's father, ...)"
 msgstr ""
-"Relatie tot de geselecteerde persoon: f=vader, m=moeder, s=zoon, d=dochter, "
-"x=broer/zus/echtgenoot (fmf=vader's moeders vader, ...)"
+"f=vader, m=moeder, s=zoon, d=dochter, x=broer/zus/echtgenoot (fmf=vader's "
+"moeders vader, ...)"
 
 #  resources/family_history_report.xml:20
 msgid "generation"
@@ -73,17 +72,16 @@ msgid ""
 "Relationship to the selected individual: f=father, m=mother, s=son, "
 "d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
-"Relatie tot de geselecteerde persoon: f=vader, m=moeder, s=zoon, d=dochter, "
-"x=broer/zus/echtgenoot (fmf=vader's moeders vader, ...)"
+"Verwantschap tot de geselecteerde persoon: f=vader, m=moeder, s=zoon, "
+"d=dochter, x=broer/zus/echtgenoot (fmf=vader's moeders vader, ...)"
 
 #  resources/family_history_report.xml:11
-#, fuzzy
 msgid ""
 "Relationship to the selected individual is shown in parenthesis after the "
 "name: "
 msgstr ""
-"Relatie tot de geselecteerde persoon: f=vader, m=moeder, s=zoon, d=dochter, "
-"x=broer/zus/echtgenoot (fmf=vader's moeders vader, ...)"
+"Verwantschap tot de geselecteerde persoon staat tussen haakjes achter de "
+"naam:"
 
 #  resources/family_history_report.xml:612
 msgid "She emigrated to"
@@ -103,7 +101,7 @@ msgstr "Zij werd geadopteerd"
 
 #  resources/family_history_report.xml:11
 msgid "Show family relationship"
-msgstr "Toon familierelatie"
+msgstr "Toon familieverwantschap"
 
 #  resources/family_history_report.xml:536
 msgid "The husband died"
