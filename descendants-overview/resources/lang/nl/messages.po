@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #  resources/descendants-overview.xml:4
 msgid "An overview of the descendants of an individual."
@@ -36,7 +36,7 @@ msgstr "geb."
 
 #  resources/descendants-overview.xml:9
 msgid "Show nicknames"
-msgstr ""
+msgstr "Toon roepnamen"
 
 #  resources/descendants-overview.xml:292
 #  sp is short for spouse, two letters give a pretty layout, but longer are ok
@@ -45,4 +45,4 @@ msgstr "e.v"
 
 #  resources/descendants-overview.xml:9
 msgid "Yes, but note that names are handled somewhat simplified"
-msgstr ""
+msgstr "Ja, maar merk op dat namen enigszins vereenvoudigd worden behandeld"
