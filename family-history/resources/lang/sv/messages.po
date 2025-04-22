@@ -121,4 +121,4 @@ msgstr "De separerade"
 
 #  resources/family_history_report.xml:16
 msgid "Yes, but note that names are handled somewhat simplified"
-msgstr "Ja, men observera att nmnen hanteras något förenklat"
+msgstr "Ja, men observera att namnen hanteras något förenklat"
