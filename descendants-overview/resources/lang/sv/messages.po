@@ -17,10 +17,6 @@ msgstr "En översikt av ättlingarna till en person."
 msgid "Descendants overview"
 msgstr "Ättlingar översikt"
 
-#  resources/descendants-overview.xml:85
-msgid "née"
-msgstr "f."
-
 #  resources/descendants-overview.xml:318
 msgid "emig"
 msgstr "&#x21E8;"
@@ -29,8 +25,18 @@ msgstr "&#x21E8;"
 msgid "Married within this tree, see above!"
 msgstr "Gift inom detta träd, se ovan!"
 
+#  resources/descendants-overview.xml:85
+msgid "née"
+msgstr "f."
+
+#  resources/descendants-overview.xml:9
+msgid "Show nicknames"
+msgstr "Visa smeknamn"
+
 #  resources/descendants-overview.xml:292
 msgid "sp"
 msgstr "ma"
 
-
+#  resources/descendants-overview.xml:9
+msgid "Yes, but note that names are handled somewhat simplified"
+msgstr "Ja, men observera att nmnen hanteras något förenklat"

@@ -103,6 +103,10 @@ msgstr "Zij werd geadopteerd"
 msgid "Show family relationship"
 msgstr "Toon familieverwantschap"
 
+#  resources/family_history_report.xml:16
+msgid "Show nicknames"
+msgstr ""
+
 #  resources/family_history_report.xml:536
 msgid "The husband died"
 msgstr "De partner overleed"
@@ -118,3 +122,7 @@ msgstr "Ze scheidden"
 #  resources/family_history_report.xml:529
 msgid "They separated"
 msgstr "Ze gingen uit elkaar"
+
+#  resources/family_history_report.xml:16
+msgid "Yes, but note that names are handled somewhat simplified"
+msgstr ""

@@ -38,6 +38,7 @@ msgid ""
 "f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's "
 "mother's father, ...)"
 msgstr ""
+"f=far, m=mor, s=son, d=dotter, x=bror/syster/partner (fmf=fars mors far, ...)"
 
 #  resources/family_history_report.xml:20
 msgid "generation"
@@ -67,14 +68,16 @@ msgstr "f."
 msgid ""
 "Relationship to the selected individual: f=father, m=mother, s=son, "
 "d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
-msgstr "Släktrelation till den valda personen: f=far, m=mor, s=son, "
-"d=dotter, x=bror/syster/partner (fmf=fars mors far, ...)"
+msgstr ""
+"Släktrelation till den valda personen: f=far, m=mor, s=son, d=dotter, x=bror/"
+"syster/partner (fmf=fars mors far, ...)"
 
 #  resources/family_history_report.xml:104
 msgid ""
 "Relationship to the selected individual is shown in parenthesis after the "
 "name: "
-msgstr "Släktrelation till den valda personen visas inom parentes efter namnet: "
+msgstr ""
+"Släktrelation till den valda personen visas inom parentes efter namnet: "
 
 #  resources/family_history_report.xml:611
 msgid "She emigrated to"
@@ -96,6 +99,10 @@ msgstr "Hon adopterades"
 msgid "Show family relationship"
 msgstr "Visa släktskap"
 
+#  resources/family_history_report.xml:16
+msgid "Show nicknames"
+msgstr "Visa smeknamn"
+
 #  resources/family_history_report.xml:535
 msgid "The husband died"
 msgstr "Maken dog"
@@ -112,3 +119,6 @@ msgstr "De separerade"
 msgid "They separated"
 msgstr "De separerade"
 
+#  resources/family_history_report.xml:16
+msgid "Yes, but note that names are handled somewhat simplified"
+msgstr "Ja, men observera att nmnen hanteras något förenklat"
