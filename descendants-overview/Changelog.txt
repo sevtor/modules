@@ -7,3 +7,5 @@
 1.0.3	Changed use of #xA0 (UTF-8 non-breaking space) to html-defined nbsp
 	to avoid destroyed non-latin letters
 
+1.1	Added possibility to print nicknames. Somewhat simplified handling of names which may
+	give unwanted result for non-latin languages and for more than one surname.

@@ -13,6 +13,7 @@
 	<SetVar name="occu" value="on" />
 	<SetVar name="resi" value="on" />
 	<Input name="sortby" type="select" default="generation" options="none=>I18N::translate('none')|generation=>I18N::translate('generation')|BIRT:DATE=>I18N::translate('sort by date of birth')|NAME=>I18N::translate('sort by name')"><var var="I18N::translate('Sort order')"/></Input>
+	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, but note that names are handled somewhat simplified')"><var var="I18N::translate('Show nicknames')"/></Input>
 	<Input name="photos" type="checkbox" default="1"><var var="I18N::translate('Show photos')"/></Input>
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
@@ -174,7 +175,7 @@
 					<SetVar name="cpid" value="@ID" />
 					<TextBox left="$lpos1" newline="1" pagecheck="0" height="$hph" pos="rel" top_adj="$top_adj" width="0" >
 						<!-- Sentence 1 Individual, name... -->
-						<Text style="name"><GetPersonName id="" select="combined" fam_relation="$famrel" name_sep="$namesep" /></Text>
+						<Text style="name"><GetPersonName id="" select="combined" fam_relation="$famrel" name_sep="$namesep" nickname="$nick" /></Text>
 						<!-- level 1 sources -->
 					<if condition="$sources=='on'">
 						<RepeatTag tag="SOUR" >

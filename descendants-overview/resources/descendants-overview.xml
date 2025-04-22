@@ -6,6 +6,7 @@
 	<Input name="maxgen" type="select" options="3=>I18N::number(3)|4=>I18N::number(4)|5=>I18N::number(5)|6=>I18N::number(6)|7=>I18N::number(7)|8=>I18N::number(8)|9=>I18N::number(9)|10=>I18N::number(10)|-1=>I18N::translate('All')" default="-1"><var var="I18N::translate('Generations')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
 	<Input name="orientation" type="select" default="portrait" options="portrait=>I18N::translate('Portrait')|landscape=>I18N::translate('Landscape')"><var var="I18N::translate('Orientation')"/></Input>
+	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, but note that names are handled somewhat simplified')"><var var="I18N::translate('Show nicknames')"/></Input>
 	<!--
 	<Input name="relatives" type="select" default="ancestors" options="child-family=>I18N::translate('Parents and siblings')|spouse-family=>I18N::translate('Spouses and children')|direct-ancestors=>I18N::translate('Direct line ancestors')|ancestors=>I18N::translate('Direct line ancestors and their families')|descendants=>I18N::translate('Descendants')|all=>I18N::translate('All')"><var var="I18N::translate('Choose relatives')"/></Input>
 	<Input name="birthdate1" lookup="DATE" type="text"><var var="I18N::translate('Birth date range start')" /></Input>
@@ -51,10 +52,9 @@
 	<SetVar name="w_current" value="@$w_name" />
 	<SetVar name="h_current" value="@$h_name" />
 	<if condition="$orientation=='landscape'">
-	  <SetVar name="w_current" value="@$h_name" />
-	  <SetVar name="h_current" value="@$w_name" />
+		<SetVar name="w_current" value="@$h_name" />
+		<SetVar name="h_current" value="@$w_name" />
 	</if>
-
 	<!-- Header -->
 	<Style name="header" font="$fonts" size="16" style="b"/>
 	<!-- Page numbers text -->
@@ -300,7 +300,7 @@
 				<if condition="$dupl_gen GT $gen or $dupl_gen == $gen ">
 				<setvar name="dupl_gen" value="999" />
 				<Text style="fixfont"><var var="$marg" amp="1" /></Text>
-				<Text style="text"><var var="$gnum_i18n"/>. <GetPersonName select="combined" name_sep="$namesep"/> (</Text>
+				<Text style="text"><var var="$gnum_i18n"/>. <GetPersonName select="combined" name_sep="$namesep" nickname="$nick"/> (</Text>
 				<if condition="@BIRT:DATE!=''"><Text style="text"> &#x2055;<GedcomValue tag="BIRT:DATE" truncate="$trunc_date" /></Text></if>
 				<setvar name="fam" value="marr$xref" />
 				<setvar name="famid" value="@$fam" />

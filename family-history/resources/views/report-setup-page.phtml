@@ -13,23 +13,20 @@ use Fisharebest\Webtrees\Session;
  * @var array<array<string>> $inputs
  */
 
-error_log("\n\n==============   ".$title."   ".date("Y-m-d H:i")."\n",3,"rep-setup.log");
-//error_log("descr=".var_export($description,true)."\n",3,"rep-setup.log");
-//error_log("dest=".var_export($destination,true)."\n",3,"rep-setup.log");
-//error_log("title=".var_export($title,true)."\n",3,"rep-setup.log");
-//error_log("url2=".var_export($_SERVER["REQUEST_URI"],true)."\n",3,"rep-setup.log");
 if (isset($_SERVER["REQUEST_URI"])) {
     $fid = filter_var(urldecode($_SERVER["REQUEST_URI"]), FILTER_SANITIZE_URL);
     $fid = basename(substr($fid,0,strpos($fid,"?")));
-    error_log("fid=".var_export($fid,true)."\n",3,"rep-setup.log");
     $last = Session::get($fid);
 }
 if (isset($last)) {
-    error_log("prev=".var_export($last,true)."\n",3,"rep-setup.log");
     foreach ($last as $key => $value) {
         foreach ($inputs as $n => $input) {
             if (($input["name"] == $key) and ($input["default"] != $value["id"])) {
                 $inputs[$n]["default"] = $value["id"];
+                if ($input["type"] == "text") {
+                    $c1 = mb_ereg_replace(' value="[^"]*"',' value="'.$value["id"].'"',$input["control"]);
+                    $inputs[$n]["control"] = $c1;
+                }
                 if ($input["type"] == "select") {
                     $c1 = mb_ereg_replace(' selected="selected"',"",$input["control"]);
                     $c2 = mb_ereg_replace('(value="'.$value["id"].'")',"\\1 selected=\"selected\"",$c1);
@@ -43,8 +40,6 @@ if (isset($last)) {
                         $c1 = mb_ereg_replace('(type="checkbox")',"\\1 checked=\"checked\"",$c1);
                     }
                     $inputs[$n]["control"] = $c1;
-                    error_log("chbx.".$key.": default=".$inputs[$n]["default"]."\n",3,"rep-setup.log");
-                    error_log("chbk.".$key.": control=".$c1."\n",3,"rep-setup.log");
                 }
             }
         }
