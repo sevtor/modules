@@ -60,6 +60,14 @@ msgstr "Han flyttade ihop med"
 msgid "He was adopted"
 msgstr "Han adopterades"
 
+#  resources/family_history_report.xml:17
+msgid "Latest recorded name"
+msgstr "Senaste bokförda namn"
+
+#  resources/family_history_report.xml:17
+msgid "Name at birth"
+msgstr "Namn vid födseln"
+
 #  resources/family_history_report.xml:93
 msgid "née"
 msgstr "f."
@@ -118,6 +126,10 @@ msgstr "De separerade"
 #  resources/family_history_report.xml:528
 msgid "They separated"
 msgstr "De separerade"
+
+#  resources/family_history_report.xml:17
+msgid "Which names to show"
+msgstr "Välj namn som ska visas"
 
 #  resources/family_history_report.xml:16
 msgid "Yes, but note that names are handled somewhat simplified"

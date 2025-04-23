@@ -4,11 +4,17 @@
 
 1.0.2	Minor adjustment for new Report module
 
-1.0.3	Added possibility to suppress relationship indicators
-	Suppress all notes when the 'Show notes' box is unchecked
+1.0.3	Added possibility to suppress relationship indicators.
+	Suppress all notes when the 'Show notes' box is unchecked.
 
-1.2	Added functionality to remember and apply previous option settings
-	Added explanation text for relationships when active
+1.2	Added functionality to remember and apply previous option settings.
+	Added explanation text for relationships when active.
 
 1.3	Added possibility to print nicknames. Somewhat simplified handling of names which may
 	give unwanted result for non-latin languages and for more than one surname.
+
+1.4	Extended the support for nicknames, now possible to use in most cases
+	when a name is printed.
+	Added a possibility to select which name to print: the first name, normally birth name,
+	or latest name, normally at death or now if still living.
+

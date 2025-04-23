@@ -63,6 +63,14 @@ msgstr "Hij trok in bij"
 msgid "He was adopted"
 msgstr "Hij werd geadopteerd"
 
+#  resources/family_history_report.xml:17
+msgid "Latest recorded name"
+msgstr ""
+
+#  resources/family_history_report.xml:17
+msgid "Name at birth"
+msgstr ""
+
 #  resources/family_history_report.xml:93
 msgid "née"
 msgstr "geb."
@@ -122,6 +130,10 @@ msgstr "Ze scheidden"
 #  resources/family_history_report.xml:529
 msgid "They separated"
 msgstr "Ze gingen uit elkaar"
+
+#  resources/family_history_report.xml:17
+msgid "Which names to show"
+msgstr ""
 
 #  resources/family_history_report.xml:16
 msgid "Yes, but note that names are handled somewhat simplified"

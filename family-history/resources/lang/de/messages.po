@@ -61,6 +61,14 @@ msgstr "Er zog ein mit"
 msgid "He was adopted"
 msgstr "Er wurde adoptiert"
 
+#  resources/family_history_report.xml:17
+msgid "Latest recorded name"
+msgstr ""
+
+#  resources/family_history_report.xml:17
+msgid "Name at birth"
+msgstr ""
+
 #  resources/family_history_report.xml:93
 msgid "née"
 msgstr "geb."
@@ -116,6 +124,10 @@ msgstr "Sie wurden geschieden"
 #  resources/family_history_report.xml:529
 msgid "They separated"
 msgstr "Sie trennten sich"
+
+#  resources/family_history_report.xml:17
+msgid "Which names to show"
+msgstr ""
 
 #  resources/family_history_report.xml:16
 msgid "Yes, but note that names are handled somewhat simplified"

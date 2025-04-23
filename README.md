@@ -29,6 +29,8 @@ Version v9 includes enhancements and correction from issues 24-34.
 
 Version v10 includes a possibility to print nicknames (if given) in the reports family-history and descendants-overview. Note that nicknames are normally not shown in the user interface unless other modules are added to support it. See issue 29 for a discussion about nicknames.
 
+Version v11 has more consistent support for nicknames plus a possibility to choose which name to show: the first, normally at birth, or the latest, normally at death or now if still living (applies to family-history report).
+
 Other versions may be added when new versions of **webtrees** are released.
 
 ## Installation

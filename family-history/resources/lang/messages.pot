@@ -2,19 +2,19 @@
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr ""
 
-#  resources/family_history_report.xml:222
+#  resources/family_history_report.xml:225
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:369
+#  resources/family_history_report.xml:372
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:792
+#  resources/family_history_report.xml:797
 msgid "Children, see spouse above."
 msgstr ""
 
-#  resources/family_history_report.xml:104
+#  resources/family_history_report.xml:107
 msgid "Explanation"
 msgstr ""
 
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Family history"
 msgstr ""
 
-#  resources/family_history_report.xml:106
+#  resources/family_history_report.xml:109
 msgid "f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
@@ -30,23 +30,31 @@ msgstr ""
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:642
+#  resources/family_history_report.xml:647
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:358
+#  resources/family_history_report.xml:361
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:356
+#  resources/family_history_report.xml:359
 msgid "He moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:297
+#  resources/family_history_report.xml:300
 msgid "He was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:92
+#  resources/family_history_report.xml:17
+msgid "Latest recorded name"
+msgstr ""
+
+#  resources/family_history_report.xml:17
+msgid "Name at birth"
+msgstr ""
+
+#  resources/family_history_report.xml:93
 msgid "née"
 msgstr ""
 
@@ -54,23 +62,23 @@ msgstr ""
 msgid "Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
-#  resources/family_history_report.xml:105
+#  resources/family_history_report.xml:108
 msgid "Relationship to the selected individual is shown in parenthesis after the name: "
 msgstr ""
 
-#  resources/family_history_report.xml:643
+#  resources/family_history_report.xml:648
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:359
+#  resources/family_history_report.xml:362
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:357
+#  resources/family_history_report.xml:360
 msgid "She moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:298
+#  resources/family_history_report.xml:301
 msgid "She was adopted"
 msgstr ""
 
@@ -82,20 +90,24 @@ msgstr ""
 msgid "Show nicknames"
 msgstr ""
 
-#  resources/family_history_report.xml:563
+#  resources/family_history_report.xml:568
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:562
+#  resources/family_history_report.xml:567
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:519
+#  resources/family_history_report.xml:524
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:556
+#  resources/family_history_report.xml:561
 msgid "They separated"
+msgstr ""
+
+#  resources/family_history_report.xml:17
+msgid "Which names to show"
 msgstr ""
 
 #  resources/family_history_report.xml:16

@@ -14,6 +14,7 @@
 	<SetVar name="resi" value="on" />
 	<Input name="sortby" type="select" default="generation" options="none=>I18N::translate('none')|generation=>I18N::translate('generation')|BIRT:DATE=>I18N::translate('sort by date of birth')|NAME=>I18N::translate('sort by name')"><var var="I18N::translate('Sort order')"/></Input>
 	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, but note that names are handled somewhat simplified')"><var var="I18N::translate('Show nicknames')"/></Input>
+	<Input name="nmselct" type="select" default="$nmselct" options="first=>I18N::translate('Name at birth')|latest=>I18N::translate('Latest recorded name')"><var var="I18N::translate('Which names to show')"/></Input>
 	<Input name="photos" type="checkbox" default="1"><var var="I18N::translate('Show photos')"/></Input>
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
@@ -92,9 +93,11 @@
 	<SetVar name="namesep" value="I18N::translate('née')"/>
 	<Doc pageSize="$pageSize" headermargin="15" topmargin="56" leftmargin="40" rightmargin="30" bottommargin="40" >
 		<Header comment="only used for html output" >
+		<GedCom id="$pid">
 			<Textbox newline="1" pos="rel">
-				<Text style="header"><GetPersonName id="$pid" />: <var var="$explain"/></Text>
+				<Text style="header"><GetPersonName id="$pid" nickname="$nick" select="$nmselct" />: <var var="$explain"/></Text>
 			</Textbox>
+		</GedCom>
 			<!--Cell style="header" align="center" height="30" newline="1"><GetPersonName id="$pid" />: <var var="$explain" /></Cell>
 			<Cell align="rightrtl" newline="1" style="pagenum"><var var="I18N::translate('Page')" /> <PageNum /> <var var="I18N::translate('of')" /> <TotalPages /></Cell-->
 		</Header>
@@ -103,7 +106,7 @@
 			<Textbox newline="1" pos="rel">
 				<Text style="name"><var var="I18N::translate('Explanation')"/>: </Text>
 				<Text style="text"><var var="I18N::translate('Relationship to the selected individual is shown in parenthesis after the name: ')"/><br />
-																																								<var var="I18N::translate('f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)')"/><br /><br /></Text>
+			<var var="I18N::translate('f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)')"/><br /><br /></Text>
 			</Textbox>
 			</if>
 			<Relatives id="$pid" group="$relatives" sortby="$sortby" maxgen="$maxgen">
@@ -367,11 +370,13 @@
 										<if condition="$gender=='m'">, <var var="I18N::translate('daughter of')" /> </if>
 										<if condition="$gender=='f'">, <var var="I18N::translate('son of')" /> </if>
 										<if condition="$gender!='m' and $gender!='f'">, <var var="I18N::translate('child of')" /> </if>
-											<GetPersonName id="@HUSB" />
 										<Gedcom id="@HUSB">
+											<GetPersonName select="$nmselct" nickname="$nick" />
 											<sp /><var var="I18N::translate('and')" />
 										</Gedcom>
-										<sp /><GetPersonName id="@WIFE" />,
+										<Gedcom id="@WIFE">
+										<sp /><GetPersonName select="$nmselct" nickname="$nick" />,
+										</Gedcom>
 									</Gedcom>
 									</Gedcom>
 							</if>
@@ -803,11 +808,15 @@
 										<if condition="$numberOfChildren>1">
 											<Text style="label1"><var var="I18N::translate('Children of ')" /></Text>
 										</if>
-										<Text style="namech"><GetPersonName id="@HUSB" /></Text>
+										<Gedcom id="@HUSB">
+										<Text style="namech"><GetPersonName nickname="$nick" select="$nmselct" /></Text>
+										</Gedcom>
 										<if condition="@HUSB!='' and @WIFE!=''">
 											<Text style="label1"> <var var="I18N::translate('and')" /> </Text>
 										</if>
-										<Text style="namech"><GetPersonName id="@WIFE" /></Text>
+										<Gedcom id="@WIFE">
+										<Text style="namech"><GetPersonName nickname="$nick" select="$nmselct" /></Text>
+										</Gedcom>
 										<Text style="label1">:</Text>
 									</TextBox>
 									<SetVar name="familyChildNumber" value ="1" />
