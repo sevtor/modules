@@ -95,7 +95,7 @@
 		<Header comment="only used for html output" >
 		<GedCom id="$pid">
 			<Textbox newline="1" pos="rel">
-				<Text style="header"><GetPersonName id="$pid" nickname="$nick" select="$nmselct" />: <var var="$explain"/></Text>
+				<Text style="header"><GetPersonName nickname="$nick" select="$nmselct" name_sep="$namesep" />: <var var="$explain"/></Text>
 			</Textbox>
 		</GedCom>
 			<!--Cell style="header" align="center" height="30" newline="1"><GetPersonName id="$pid" />: <var var="$explain" /></Cell>
@@ -364,8 +364,8 @@
 										<if condition="$gender=='f' and $marrtype=='MARR'"> <var var="I18N::translate('She married')" /></if>
 									</Text>
 						<Text style="text">
-							<if condition="$spid!=''"> <GetPersonName id="$spid" />
-									<Gedcom id="$spid">
+							<Gedcom id="$spid">
+							<if condition="$spid!=''"> <GetPersonName id="$spid" select="$nmselct" nickname="$nick" />
 									<Gedcom id="@FAMC">
 										<if condition="$gender=='m'">, <var var="I18N::translate('daughter of')" /> </if>
 										<if condition="$gender=='f'">, <var var="I18N::translate('son of')" /> </if>
@@ -378,8 +378,8 @@
 										<sp /><GetPersonName select="$nmselct" nickname="$nick" />,
 										</Gedcom>
 									</Gedcom>
-									</Gedcom>
 							</if>
+							</Gedcom>
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
