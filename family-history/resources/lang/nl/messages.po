@@ -65,11 +65,11 @@ msgstr "Hij werd geadopteerd"
 
 #  resources/family_history_report.xml:17
 msgid "Latest recorded name"
-msgstr ""
+msgstr "Laatste geregistreerde naam"
 
 #  resources/family_history_report.xml:17
 msgid "Name at birth"
-msgstr ""
+msgstr "Naam bij geboorte"
 
 #  resources/family_history_report.xml:93
 msgid "née"
@@ -133,7 +133,7 @@ msgstr "Ze gingen uit elkaar"
 
 #  resources/family_history_report.xml:17
 msgid "Which names to show"
-msgstr ""
+msgstr "Welke namen tonen"
 
 #  resources/family_history_report.xml:16
 msgid "Yes, but note that names are handled somewhat simplified"
