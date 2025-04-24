@@ -21,7 +21,7 @@ I was optimistic about the compatibility between the app/Report module of the di
 
 2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **v3 for webtrees version 2.1.20-22**
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v10.zip">new-reports.zip</a> **v10 for webtrees version 2.2.1-**
+3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v11.zip">new-reports.zip</a> **v10 for webtrees version 2.2.1-**
 
 In version v7 treament of non-UTF-8 strings is corrected. In version v8 the relationship indicator (fmf...) can be hidden and some security issues are handled.
 
