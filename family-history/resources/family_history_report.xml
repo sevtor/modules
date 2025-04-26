@@ -13,7 +13,7 @@
 	<SetVar name="occu" value="on" />
 	<SetVar name="resi" value="on" />
 	<Input name="sortby" type="select" default="generation" options="none=>I18N::translate('none')|generation=>I18N::translate('generation')|BIRT:DATE=>I18N::translate('sort by date of birth')|NAME=>I18N::translate('sort by name')"><var var="I18N::translate('Sort order')"/></Input>
-	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, but note that names are handled somewhat simplified')"><var var="I18N::translate('Show nicknames')"/></Input>
+	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, between double quotes: &quot;nick&quot;')|2=>I18N::translate('Yes, between parenthsis: (nick)')"><var var="I18N::translate('Show nicknames')"/></Input>
 	<Input name="nmselct" type="select" default="$nmselct" options="first=>I18N::translate('Name at birth')|latest=>I18N::translate('Latest recorded name')"><var var="I18N::translate('Which names to show')"/></Input>
 	<Input name="photos" type="checkbox" default="1"><var var="I18N::translate('Show photos')"/></Input>
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
@@ -348,21 +348,22 @@
 								<SetVar name="spid" value="@HUSB" />
 							</if>
 							<SetVar name="marrtype" value="_XXX"/>
-							<if condition="@EVEN:DATE!=''"><SetVar name="marrtype" value="EVEN"/></if> <!-- Common Law Partner, handled as EVEN:TYPE -->
-							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="ENGA"/></if>
+							<!--if condition="@EVEN:DATE!=''"><SetVar name="marrtype" value="EVEN"/></if>
+							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="ENGA"/></if-->
 							<if condition="@MARR:DATE!=''"><SetVar name="marrtype" value="MARR"/></if>
 							<if condition="@MARR=='Y'"><SetVar name="marrtype" value="MARR"/></if>
+							<SetVar name="mtype2" value="$marrtype"/>
+							<if condition="@MARR:TYPE=='Common law'"><SetVar name="mtype2" value="EVEN"/><SetVar name="marrtype" value="MARR"/></if>
+							<Text style="text"><br /><br /><sp />
+								<if condition="$gender=='m' and $mtype2=='EVEN'"> <var var="I18N::translate('He moved in with')" /></if>
+								<if condition="$gender=='f' and $mtype2=='EVEN'"> <var var="I18N::translate('She moved in with')" /></if>
+								<if condition="$gender=='m' and $mtype2=='ENGA'"> <var var="I18N::translate('He engaged')" /></if>
+								<if condition="$gender=='f' and $mtype2=='ENGA'"> <var var="I18N::translate('She engaged')" /></if>
+								<if condition="$gender=='m' and $mtype2=='MARR'"> <var var="I18N::translate('He married')" /></if>
+								<if condition="$gender=='f' and $mtype2=='MARR'"> <var var="I18N::translate('She married')" /></if>
+							</Text>
 							<Gedcom id="$marrtype">
-								<!--Text style="label3" color="#dc143c" > <var var="@fact" /> </Text-->
 								<if condition="(($spid != '') and (@DATE != '' or @PLAC != '' or @desc == 'Y'))">
-									<Text style="text"><br /><br /><sp />
-										<if condition="$gender=='m' and $marrtype=='EVEN'"> <var var="I18N::translate('He moved in with')" /></if>
-										<if condition="$gender=='f' and $marrtype=='EVEN'"> <var var="I18N::translate('She moved in with')" /></if>
-										<if condition="$gender=='m' and $marrtype=='ENGA'"> <var var="I18N::translate('He engaged')" /></if>
-										<if condition="$gender=='f' and $marrtype=='ENGA'"> <var var="I18N::translate('She engaged')" /></if>
-										<if condition="$gender=='m' and $marrtype=='MARR'"> <var var="I18N::translate('He married')" /></if>
-										<if condition="$gender=='f' and $marrtype=='MARR'"> <var var="I18N::translate('She married')" /></if>
-									</Text>
 						<Text style="text">
 							<Gedcom id="$spid">
 							<if condition="$spid!=''"> <GetPersonName id="$spid" select="$nmselct" nickname="$nick" />
@@ -844,7 +845,7 @@
 											<if condition="$familyChildNumber==20"><SetVar name="familyChildRoman" value="xx" /></if>
 											<TextBox left="$lpos2" height="20" newline="1" pos="rel_f2">
 												<Text style="label1"><var var="familyChildRoman" /></Text>
-												<Text style="namech"> <GetPersonName id="" /></Text>
+												<Text style="namech"> <GetPersonName id="" select="$nmselct" nickname="$nick" /></Text>
 					<if condition="$sources=='on'">
 						<RepeatTag tag="SOUR" >
 							<Footnote>
@@ -870,12 +871,20 @@
 												</if>
 												<RepeatTag tag="FAMS">
 													<Gedcom id="@FAMS">
-														<if condition="@MARR!=''">
-														<Text style="label1"> <var var="I18N::translate('Marriage')" /> </Text>
-														<if condition="$gender=='male'"><Text style="namech"><GetPersonName id="@WIFE" /></Text></if>
-														<if condition="$gender=='female'"><Text style="namech"><GetPersonName id="@HUSB" /></Text></if>
-														<Text style="label1"><Gedcom id="MARR"><if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if><if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if></Gedcom> <br /></Text>
-														</if>
+														<setvar name="hid" value="@HUSB" />
+														<setvar name="wid" value="@WIFE" />
+														<Gedcom id="MARR" comment="this is equivalent to 'if married'" >
+														<setvar name="marr" value="I18N::translate('Marriage')" />
+														<if condition="@TYPE=='Common law'"><setvar name="marr" value="I18N::translate('Common law marriage')" /></if>
+														<Text style="label1"> <var var="I18N::translate($marr)" /> </Text>
+														<if condition="$gender=='male'"><Text style="namech"><Gedcom id="$wid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
+														<if condition="$gender=='female'"><Text style="namech"><Gedcom id="$hid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
+														<Text style="label1"><if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if><if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if> <br /></Text>
+														</Gedcom>
+														<Gedcom id="DIV" comment="this is equivalent to 'if divorced'" >
+														<Text style="label1"> <var var="I18N::translate('Separation')" /> </Text>
+														<Text style="label1"><if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if><br /></Text>
+												</Gedcom>
 													</Gedcom>
 												</RepeatTag>
 												<!-- End BIRT start DEAT -->

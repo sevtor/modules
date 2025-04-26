@@ -132,5 +132,10 @@ msgid "Which names to show"
 msgstr "Välj namn som ska visas"
 
 #  resources/family_history_report.xml:16
-msgid "Yes, but note that names are handled somewhat simplified"
-msgstr "Ja, men observera att namnen hanteras något förenklat"
+msgid "Yes, between double quotes: &quot;nick&quot;"
+msgstr "Ja, mellan dubbla citattecken: &quot;nick&quot;"
+
+#  resources/family_history_report.xml:16
+msgid "Yes, between parenthsis: (nick)"
+msgstr "Ja, inom parentes: (nick)"
+

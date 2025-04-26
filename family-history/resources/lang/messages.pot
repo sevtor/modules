@@ -6,11 +6,11 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:372
+#  resources/family_history_report.xml:373
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:797
+#  resources/family_history_report.xml:798
 msgid "Children, see spouse above."
 msgstr ""
 
@@ -30,15 +30,15 @@ msgstr ""
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:647
+#  resources/family_history_report.xml:648
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:361
+#  resources/family_history_report.xml:360
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:359
+#  resources/family_history_report.xml:358
 msgid "He moved in with"
 msgstr ""
 
@@ -66,15 +66,15 @@ msgstr ""
 msgid "Relationship to the selected individual is shown in parenthesis after the name: "
 msgstr ""
 
-#  resources/family_history_report.xml:648
+#  resources/family_history_report.xml:649
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:362
+#  resources/family_history_report.xml:361
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:360
+#  resources/family_history_report.xml:359
 msgid "She moved in with"
 msgstr ""
 
@@ -90,19 +90,19 @@ msgstr ""
 msgid "Show nicknames"
 msgstr ""
 
-#  resources/family_history_report.xml:568
+#  resources/family_history_report.xml:569
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:567
+#  resources/family_history_report.xml:568
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:524
+#  resources/family_history_report.xml:525
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:561
+#  resources/family_history_report.xml:562
 msgid "They separated"
 msgstr ""
 
@@ -111,6 +111,10 @@ msgid "Which names to show"
 msgstr ""
 
 #  resources/family_history_report.xml:16
-msgid "Yes, but note that names are handled somewhat simplified"
+msgid "Yes, between double quotes: &quot;nick&quot;"
+msgstr ""
+
+#  resources/family_history_report.xml:16
+msgid "Yes, between parenthsis: (nick)"
 msgstr ""
 

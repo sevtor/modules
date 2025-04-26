@@ -136,5 +136,13 @@ msgid "Which names to show"
 msgstr "Welke namen tonen"
 
 #  resources/family_history_report.xml:16
-msgid "Yes, but note that names are handled somewhat simplified"
-msgstr "Ja, maar merk op dat namen enigszins vereenvoudigd worden behandeld"
+msgid "Yes, between double quotes: &quot;nick&quot;"
+msgstr ""
+
+#  resources/family_history_report.xml:16
+msgid "Yes, between parenthsis: (nick)"
+msgstr ""
+
+#  resources/family_history_report.xml:16
+#~ msgid "Yes, but note that names are handled somewhat simplified"
+#~ msgstr "Ja, maar merk op dat namen enigszins vereenvoudigd worden behandeld"

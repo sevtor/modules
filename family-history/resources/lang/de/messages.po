@@ -130,5 +130,9 @@ msgid "Which names to show"
 msgstr ""
 
 #  resources/family_history_report.xml:16
-msgid "Yes, but note that names are handled somewhat simplified"
+msgid "Yes, between double quotes: &quot;nick&quot;"
+msgstr ""
+
+#  resources/family_history_report.xml:16
+msgid "Yes, between parenthsis: (nick)"
 msgstr ""
