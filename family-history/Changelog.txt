@@ -18,3 +18,7 @@
 	Added a possibility to select which name to print: the first name, normally birth name,
 	or latest name, normally at death or now if still living.
 
+1.5	Support for nicknames in parenthesis.
+	All names of partners and children shall naow follow the selected alternatives:
+	first or latest name, without nickname or with nickname in qoutes or parenthesis
+
