@@ -21,7 +21,7 @@ I was optimistic about the compatibility between the app/Report module of the di
 
 2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **v3 for webtrees version 2.1.20-22**
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v12.zip">new-reports.zip</a> **v12 for webtrees version 2.2.1-**
+3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v14.zip">new-reports.zip</a> **v14 for webtrees version 2.2.1-**
 
 In version v7 treament of non-UTF-8 strings is corrected. In version v8 the relationship indicator (fmf...) can be hidden and some security issues are handled.
 
@@ -31,7 +31,7 @@ Version v10 includes a possibility to print nicknames (if given) in the reports 
 
 Version v11 has more consistent support for nicknames plus a possibility to choose which name to show: the first, normally at birth, or the latest, normally at death or now if still living (applies to family-history report).
 
-Version v12 has extended support for nicknames.
+Version v12 - v14 has extended support for nicknames.
 
 Other versions may be added when new versions of **webtrees** are released.
 
