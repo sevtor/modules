@@ -13,7 +13,7 @@
 	<SetVar name="occu" value="on" />
 	<SetVar name="resi" value="on" />
 	<Input name="sortby" type="select" default="generation" options="none=>I18N::translate('none')|generation=>I18N::translate('generation')|BIRT:DATE=>I18N::translate('sort by date of birth')|NAME=>I18N::translate('sort by name')"><var var="I18N::translate('Sort order')"/></Input>
-	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, between double quotes: &quot;nick&quot;')|2=>I18N::translate('Yes, between parenthsis: (nick)')"><var var="I18N::translate('Show nicknames')"/></Input>
+	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, between double quotes: &quot;nick&quot;')|2=>I18N::translate('Yes, between parenthesis: (nick)')"><var var="I18N::translate('Show nicknames')"/></Input>
 	<Input name="nmselct" type="select" default="$nmselct" options="first=>I18N::translate('Name at birth')|latest=>I18N::translate('Latest recorded name')"><var var="I18N::translate('Which names to show')"/></Input>
 	<Input name="photos" type="checkbox" default="1"><var var="I18N::translate('Show photos')"/></Input>
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
@@ -241,7 +241,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -251,7 +251,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='CHR'">
 						<!-- Sentence 2 Individual, christened... -->
@@ -282,7 +282,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -292,7 +292,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='ADOP'">
 						<!-- Sentence 2 Individual, adopted... -->
@@ -323,7 +323,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -333,7 +333,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='FAMS'">
 						<SetVar name="fam" value="@FAMS"/>
@@ -348,19 +348,19 @@
 								<SetVar name="spid" value="@HUSB" />
 							</if>
 							<SetVar name="marrtype" value="_XXX"/>
-							<!--if condition="@EVEN:DATE!=''"><SetVar name="marrtype" value="EVEN"/></if>
-							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="ENGA"/></if-->
 							<if condition="@MARR:DATE!=''"><SetVar name="marrtype" value="MARR"/></if>
 							<if condition="@MARR=='Y'"><SetVar name="marrtype" value="MARR"/></if>
 							<SetVar name="mtype2" value="$marrtype"/>
-							<if condition="@MARR:TYPE=='Common law'"><SetVar name="mtype2" value="EVEN"/><SetVar name="marrtype" value="MARR"/></if>
-							<Text style="text"><br /><br /><sp />
-								<if condition="$gender=='m' and $mtype2=='EVEN'"> <var var="I18N::translate('He moved in with')" /></if>
-								<if condition="$gender=='f' and $mtype2=='EVEN'"> <var var="I18N::translate('She moved in with')" /></if>
-								<if condition="$gender=='m' and $mtype2=='ENGA'"> <var var="I18N::translate('He engaged')" /></if>
-								<if condition="$gender=='f' and $mtype2=='ENGA'"> <var var="I18N::translate('She engaged')" /></if>
-								<if condition="$gender=='m' and $mtype2=='MARR'"> <var var="I18N::translate('He married')" /></if>
-								<if condition="$gender=='f' and $mtype2=='MARR'"> <var var="I18N::translate('She married')" /></if>
+							<if condition="@MARR:TYPE=='COMMON LAW'"><SetVar name="mtype2" value="EVEN"/><SetVar name="marrtype" value="MARR"/></if>
+							<SetVar name="sp" value="%26emsp;" />
+							<Text style="text"><br /><br />
+								<if condition="$lang=='sv'"><sp /><var var="sp" amp="1"/></if>
+								<if condition="$gender=='m' and $mtype2=='EVEN'"><var var="I18N::translate('He moved in with')" /></if>
+								<if condition="$gender=='f' and $mtype2=='EVEN'"><var var="I18N::translate('She moved in with')" /></if>
+								<if condition="$gender=='m' and $mtype2=='ENGA'"><var var="I18N::translate('He engaged')" /></if>
+								<if condition="$gender=='f' and $mtype2=='ENGA'"><var var="I18N::translate('She engaged')" /></if>
+								<if condition="$gender=='m' and $mtype2=='MARR'"><var var="I18N::translate('He married')" /></if>
+								<if condition="$gender=='f' and $mtype2=='MARR'"><var var="I18N::translate('She married')" /></if>
 							</Text>
 							<Gedcom id="$marrtype">
 								<if condition="(($spid != '') and (@DATE != '' or @PLAC != '' or @desc == 'Y'))">
@@ -403,7 +403,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -413,7 +413,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 								</if>
 								<if condition="$notes=='on'" >
 								<RepeatTag tag="MARR:NOTE" >
@@ -465,7 +465,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -475,7 +475,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						</if>
 						<if condition="$fact=='RESI'">
@@ -508,7 +508,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -518,7 +518,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						</if>
 						<if condition="$fact=='DIV'">
@@ -546,7 +546,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -556,7 +556,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 								<if condition="$fact=='EVEN' and @EVEN:TYPE=='Separation'">
 									<Text style="text"> <var var="I18N::translate('They separated')" /></Text>
@@ -591,7 +591,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -601,7 +601,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='DEAT' and @desc!='Y'">
 							<Text style="text">
@@ -631,7 +631,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -641,7 +641,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='EMIG'">
 							<Text style="text">
@@ -671,7 +671,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -681,7 +681,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='CREM'">
 							<Text style="text">
@@ -711,7 +711,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -721,7 +721,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 						<if condition="$fact=='BURI'">
 							<Text style="text">
@@ -751,7 +751,7 @@
 						<SetVar name="dval" value="1001" />
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
-																								<Text style="note" color="#006400" >
+						<Text style="note" color="#006400" >
 							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
@@ -761,7 +761,7 @@
 							<if condition="@PAGE!='' and @DATA:TEXT!=''"><br /><sp /><sp /><GedcomValue tag="SOUR:PAGE" />:<br />"<GedcomValue tag="SOUR:DATA:TEXT" />".<br /></if>
 							</RepeatTag>
 						</Text>
-																								</if>
+						</if>
 						</if>
 					</Facts>
 					<Text style="text"><sp /></Text>
@@ -875,7 +875,7 @@
 														<setvar name="wid" value="@WIFE" />
 														<Gedcom id="MARR" comment="this is equivalent to 'if married'" >
 														<setvar name="marr" value="I18N::translate('Marriage')" />
-														<if condition="@TYPE=='Common law'"><setvar name="marr" value="I18N::translate('Common law marriage')" /></if>
+														<if condition="@TYPE=='COMMON LAW'"><setvar name="marr" value="I18N::translate('Common law marriage')" /></if>
 														<Text style="label1"> <var var="I18N::translate($marr)" /> </Text>
 														<if condition="$gender=='male'"><Text style="namech"><Gedcom id="$wid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
 														<if condition="$gender=='female'"><Text style="namech"><Gedcom id="$hid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
@@ -884,7 +884,7 @@
 														<Gedcom id="DIV" comment="this is equivalent to 'if divorced'" >
 														<Text style="label1"> <var var="I18N::translate('Separation')" /> </Text>
 														<Text style="label1"><if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if><br /></Text>
-												</Gedcom>
+														</Gedcom>
 													</Gedcom>
 												</RepeatTag>
 												<!-- End BIRT start DEAT -->

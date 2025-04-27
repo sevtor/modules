@@ -1,8 +1,6 @@
 #  Family history
 
-Released: February 2024
-
-<a name="Description"></a>
+Released: February 2024, April 2025
 
 ## Description
 
@@ -12,9 +10,7 @@ This report replaces and extends the Ancestors and Descendents reports.
 
 ## Requirements
 
-This module requires **webtrees** version 2.1.19(?) or later, with support for the new xml report features.
-
-<a name="Installation"></a>
+This module requires **new-reports-v12** (or later) which gives support for the new xml report features.
 
 ## Installation
 
