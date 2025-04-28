@@ -875,7 +875,8 @@
 														<setvar name="wid" value="@WIFE" />
 														<Gedcom id="MARR" comment="this is equivalent to 'if married'" >
 														<setvar name="marr" value="I18N::translate('Marriage')" />
-														<if condition="@TYPE=='COMMON LAW'"><setvar name="marr" value="I18N::translate('Common law marriage')" /></if>
+														<setvar name="mt" value="@TYPE" uppercase="1" />
+														<if condition="$mt=='COMMON LAW'"><setvar name="marr" value="I18N::translate('Common law marriage')" /></if>
 														<Text style="label1"> <var var="I18N::translate($marr)" /> </Text>
 														<if condition="$gender=='male'"><Text style="namech"><Gedcom id="$wid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
 														<if condition="$gender=='female'"><Text style="namech"><Gedcom id="$hid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
