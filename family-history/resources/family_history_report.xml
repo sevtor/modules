@@ -347,11 +347,13 @@
 							<if condition="$cpid==$wpid">
 								<SetVar name="spid" value="@HUSB" />
 							</if>
-							<SetVar name="marrtype" value="_XXX"/>
+							<SetVar name="marrtype" value="EVEN"/>
+							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="ENGA"/></if>
 							<if condition="@MARR:DATE!=''"><SetVar name="marrtype" value="MARR"/></if>
 							<if condition="@MARR=='Y'"><SetVar name="marrtype" value="MARR"/></if>
 							<SetVar name="mtype2" value="$marrtype"/>
-							<if condition="@MARR:TYPE=='COMMON LAW'"><SetVar name="mtype2" value="EVEN"/><SetVar name="marrtype" value="MARR"/></if>
+							<setvar name="mt" value="@TYPE" uppercase="1" />
+							<if condition="$mt=='COMMON LAW'"><SetVar name="mtype2" value="EVEN"/><SetVar name="marrtype" value="MARR"/></if>
 							<SetVar name="sp" value="%26emsp;" />
 							<Text style="text"><br /><br />
 								<if condition="$lang=='sv'"><sp /><var var="sp" amp="1"/></if>
