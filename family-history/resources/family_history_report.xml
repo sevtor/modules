@@ -18,6 +18,8 @@
 	<Input name="photos" type="checkbox" default="1"><var var="I18N::translate('Show photos')"/></Input>
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
+	<Input name="reducePlaceName" type="select" options="0=>I18N::translate('No')|2=>I18N::translate('Hide 2nd last (province)')|3=>I18N::translate('Show only first part')"><var var="Reduce place names"/></Input>
+	<Input name="hmCountry" type="text" default=""><var var="Home country to hide (if any)"/></Input>
 	<SetVar name="fonts" value="dejavusans" />
 	<!-- Header -->
 	<Style name="header" font="$fonts" size="14" style="b" />
@@ -220,7 +222,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -261,7 +263,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -302,7 +304,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -347,7 +349,8 @@
 							<if condition="$cpid==$wpid">
 								<SetVar name="spid" value="@HUSB" />
 							</if>
-							<SetVar name="marrtype" value="EVEN"/>
+							<SetVar name="marrtype" value="_XXX"/>
+							<SetVar name="marrtype" value="_XXX"/>
 							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="ENGA"/></if>
 							<if condition="@MARR:DATE!=''"><SetVar name="marrtype" value="MARR"/></if>
 							<if condition="@MARR=='Y'"><SetVar name="marrtype" value="MARR"/></if>
@@ -384,7 +387,7 @@
 							</if>
 							</Gedcom>
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -446,7 +449,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -488,7 +491,7 @@
 								<if condition="$gender=='f'"> <var var="I18N::translate('She resided at')" /> </if>
 							</Text>
 						<Text style="text">
-							<if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
@@ -527,7 +530,7 @@
 							<Text style="text"> <var var="I18N::translate('They divorced')" /></Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -572,7 +575,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -612,7 +615,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -651,7 +654,7 @@
 								<if condition="$gender=='f'"> <var var="I18N::translate('She emigrated to')" /></if>
 							</Text>
 						<Text style="text">
-							<if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
@@ -692,7 +695,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -732,7 +735,7 @@
 							</Text>
 						<Text style="text">
 							<if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if>
-							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" /></if>
+							<if condition="@PLAC!=''"><var var="I18N::translate(' in ')" /> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if>
 							<if condition="(@desc=='Y') and (@DATE=='' and @PLAC=='')"><var var="I18N::translate(' but the details are unknown')" /></if>
 							<if condition="@CAUS!=''"> <var var="I18N::translate('by')" /> <GedcomValue tag="CAUS" level="2" lcfirst="$lc1" /></if>
 						.</Text>
@@ -865,7 +868,7 @@
 												<Text style="label1" > <br /></Text>
 												<!-- Start BIRT -->
 												<Gedcom id="BIRT">
-													<Text style="label1" > <var var="I18N::translate('Birth')" /> <GedcomValue tag="DATE" level="2"/> <GedcomValue tag="PLAC" level="2"/> <br /></Text>
+													<Text style="label1" > <var var="I18N::translate('Birth')" /> <GedcomValue tag="DATE" level="2"/> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /> <br /></Text>
 												</Gedcom>
 												<SetVar name="gender" value="male" />
 												<if condition="@SEX=='F'">
@@ -882,7 +885,7 @@
 														<Text style="label1"> <var var="I18N::translate($marr)" /> </Text>
 														<if condition="$gender=='male'"><Text style="namech"><Gedcom id="$wid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
 														<if condition="$gender=='female'"><Text style="namech"><Gedcom id="$hid"><GetPersonName select="$nmselct" nickname="$nick" /></Gedcom></Text></if>
-														<Text style="label1"><if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if><if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" /></if> <br /></Text>
+														<Text style="label1"><if condition="@DATE!=''"> <GedcomValue tag="DATE" level="2" /></if><if condition="@PLAC!=''"> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /></if> <br /></Text>
 														</Gedcom>
 														<Gedcom id="DIV" comment="this is equivalent to 'if divorced'" >
 														<Text style="label1"> <var var="I18N::translate('Separation')" /> </Text>
@@ -892,7 +895,7 @@
 												</RepeatTag>
 												<!-- End BIRT start DEAT -->
 												<Gedcom id="DEAT">
-													<Text style="label1"> <var var="I18N::translate('Death')" /> <GedcomValue tag="DATE" level="2"/> <GedcomValue tag="PLAC" level="2"/> <br /></Text>
+													<Text style="label1"> <var var="I18N::translate('Death')" /> <GedcomValue tag="DATE" level="2"/> <GedcomValue tag="PLAC" level="2" country="$hmCountry" rdcName="$reducePlaceName" /> <br /></Text>
 												</Gedcom>
 											</TextBox>
 										</Gedcom>

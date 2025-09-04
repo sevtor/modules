@@ -116,12 +116,4 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
         return 'family_history_report.xml';
     }
 
-    public function boot(): void
-    {
-        // Register a namespace for our views.
-        View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
-
-        // Replace an existing view with our own version.
-        View::registerCustomView('::report-setup-page', $this->name() . '::report-setup-page');
-    }
 };
