@@ -91,6 +91,8 @@
 			<Textbox newline="1" pos="rel">
 				<Text style="header"><var var="I18N::translate('Descendants of ')" /> <GetPersonName id="$pid" /></Text>
 			</Textbox>
+			<!--Cell align="center" height="20" newline="1" style="header"><var var="I18N::translate('Descendants of ')" />  <GetPersonName id="$pid" /></Cell-->
+			<!--Cell align="rightrtl" newline="1" style="pagenum"><var var="I18N::translate('Page')" /> <PageNum /><TotalPages /></Cell-->
 		</Header>
 
 		<Body>
@@ -98,7 +100,6 @@
 			<setvar name="gen" value="0" />
 			<setvar name="dupl" value="no" comment="set by ReportParserGenerate! ='yes' if the current pid already found, otherwise ='no' "/>
 			<setvar name="dupl_gen" value="999" />
-			<setvar name="dupl_1st_gen" value="999" />
 			<setvar name="spxref" value="X0" />
 			<setvar name="prev_xref" value="X0" />
                         <setvar name="gen_adj" value="0" />
@@ -109,6 +110,7 @@
 			<TextBox padding="0" left="$lpos" pagecheck="0" reseth="1" newline="1" pos="rel">
 			<Relatives id="$pid" group="$relatives" maxgen="$maxgen" sortby="none">
 				<setvar name="xref" value="@ID" />
+				<setvar name="x" dumpvar="xref" tp="--------------------  next person  ----------------" value="@$dump" />
 				<setvar name="pgen" value="$gen" />
 				<setvar name="gen" value="@generation" />
                                 <if condition="$gen GT $pgen">
@@ -126,14 +128,24 @@
 				<SetVar name="fid" value="X0" />
 				<SetVar name="ffid" value="X0" />
 				<SetVar name="numberOfChildren" value="0" />
+				<!--Text style="red" color="#dc143c"> xref=<var var="$xref"/> gnum=<var var="$gnum"/> dupl=<var var="$dupl"/><br /></Text-->
 				<RepeatTag tag="FAMS">	<!-- all families with a primary person must be included -->
 					<setvar name="pxref" value="spx$gen" />
 					<setvar name="spxref" value="@$pxref" />
 					<SetVar name="fid" value="@FAMS" />
 					<SetVar name="tp" value="line_131" />
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="prev_xref" tp="L_136" value="@$dump"/></if>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="xref" value="@$dump"/></if>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="pxref" value="@$dump"/></if>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="spxref" value="@$dump"/></if>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="fid" value="@$dump"/></if>
 					<gedcom id="@FAMS">
+					<if condition="1 or $fid==$testfam"><setvar name="L143" dumpvar="fid" tp="--------  repeat FAMS" value="@$dump"/></if>
 					<RepeatTag tag="HUSB"><gedcom id="@HUSB">
 						<setvar name="id" value="@HUSB" />
+						<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="id" tp="husb L_144" value="@$dump"/></if>
+						<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="spxref" value="@$dump"/></if>
+						<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="prev_xref" value="@$dump"/></if>
 						<if condition="$id==$spxref">
                                                         <setvar name="gnum" value="sp" />
                                                 </if>
@@ -141,9 +153,14 @@
 							<setvar name="gnum" value="sp" />
 							<setvar name="gen" value="$pgen" />
 						</if>
+						<!--Text style="red" color="#dc143c"> spxref=<var var="$spxref" />, husb=<var var="$id"/> </Text-->
 					</gedcom></RepeatTag>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="gnum" value="@$dump"/></if>
 					<RepeatTag tag="WIFE"><gedcom id="@WIFE">
 						<setvar name="id" value="@WIFE" />
+						<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="id" tp="wife L_157" value="@$dump"/></if>
+						<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="spxref" value="@$dump"/></if>
+						<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="prev_xref" value="@$dump"/></if>
 						<if condition="$id==$spxref">
 							<setvar name="gnum" value="sp" />
 							<setvar name="husb" value="$xref" />
@@ -154,10 +171,16 @@
 							<setvar name="husb" value="$xref" />
 						</if>
 						<setvar name="ffid" value="$fid" />
+						<!--Text style="red" color="#dc143c">, wife=<var var="$id"/>, found=<var var="$found" /> , pgen=<var var="$pgen" /> </Text-->
 					</gedcom></RepeatTag>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="gnum" value="@$dump"/></if>
 					</gedcom>
 					<SetVar name="tp" value="line_170" />
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="fid" tp="L_170" value="@$dump"/></if>
+					<if condition="1 or $fid==$testfam"><setvar name="xx"  dumpvar="husb" value="@$dump"/></if>
 				</RepeatTag>
+				<!--Text style="red" color="#dc143c">, xref=<var var="$xref"/>, gnum=<var var="$gnum"/>, gen=<var var="$gen"/>, dupl_gen=<var var="$dupl_gen"/><br /></Text-->
+				<if condition="1"><setvar name="L178"  dumpvar="fid" tp="L176" value="@$dump"/></if>
 				<if condition="$ffid!='X0'" >
 					<setvar name="fid" value="$ffid" />
 				</if>
@@ -165,11 +188,21 @@
 					<setvar name="pxref" value="spx$gen" />
 					<setvar name="spxref" value="@$pxref" />
 					<SetVar name="found" value="no" />
+					<if condition="1 or $fid==$testfam"><setvar name="L182"  dumpvar="xref" tp="L_182" value="@$dump"/></if>
 					<RepeatTag tag="FAMS">	<!-- this is a spouse of a biological relative, find the "right" family -->
 						<setvar name="fid" value="@FAMS"/>
+						<!--if condition="$fid == $ffid"-->
 						<gedcom id="@FAMS">
 						<SetVar name="hbid" value="@HUSB" />
+						<SetVar name="x" dumpvar="hbid" tp="L_185" value="@$dump" />
+						<if condition="1 or $fid==$testfam"><setvar name="L_184"  dumpvar="gedrec" value="@$dump"/></if>
 						<if condition="($xref==@HUSB and $spxref==@WIFE) or ($xref==@WIFE and $spxref==@HUSB) or $hbid==''">
+						<!--SetVar name="fid" value="@ID" /-->
+						<!--SetVar name="rel1" value="marr$fid" />
+						<SetVar name="rel2" value="@$rel1" />
+						<SetVar name="x" dumpvar="rel1" value="@$dump" />
+						<SetVar name="x" dumpvar="rel2" value="@$dump" />
+						<if condition="$rel2 == $rel1" comment="this person is a native relative, not married to one" -->
 						<SetVar name="numberOfChildren" value="0" />
 						<RepeatTag tag="CHIL">
 							<Gedcom id="@CHIL">
@@ -180,13 +213,23 @@
 						<SetVar name="$fam" value="$fid" />
 						<SetVar name="nchfam" value="nch_$fid" />
                                                 <SetVar name="samefam" value="@$nchfam" undefined="---" />
+						<if condition="$fid==$testfam"><setvar name="xx"  dumpvar="samefam" value="@$dump"/></if>
 						<SetVar name="$nchfam" value="$numberOfChildren" />
+						<if condition="$fid==$testfam"><setvar name="xx"  dumpvar="$nchfam" value="@$dump"/></if>
+						<!--/if-->
+						<!--setvar name="x" value="@$dump" dumpvar="$nchfam"/-->
+						<!--if condition="$fid==$testfam"><setvar name="x" value="@$dump" dumpvar="$nchfam"/></if-->
+						<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, gen=<var var="$gen"/> spxref=<var var="$spxref"/>, no children=<var var="numberOfChildren"/><br /> </Text-->
+						<!--Text style="red" color="#dc143c"> nch1=<var var="$nch1"/>, nch2=<var var="$nch2"/>, nch3=<var var="$nch3"/>, nch4=<var var="$nch4"/>, nch5=<var var="$nch5"/>, nchfam=<var var="$nchfam"/>, nchgen=<var var="$numberOfChildren"/> <br /> </Text-->
+						<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/> </Text-->
+						<!--SetVar name="numberOfChildren" value="0" /-->
 						<RepeatTag tag="HUSB"><gedcom id="@HUSB">
 							<setvar name="id" value="@HUSB" />
 							<if condition="$id==$spxref">
 								<SetVar name="husb" value="$id" />
 								<SetVar name="found" value="$fid" />
 							</if>
+							<!--Text style="red" color="#dc143c"> pxref=<var var="$spxref" />, husb=<var var="$id"/> </Text-->
 						</gedcom></RepeatTag>
 						<RepeatTag tag="WIFE"><gedcom id="@WIFE">
 							<setvar name="id" value="@WIFE" />
@@ -196,14 +239,17 @@
 							</if>
 							<!--Text style="red" color="#dc143c"> wife=<var var="$id"/>, found=<var var="$found" /> , pgen=<var var="$pgen" /> </Text-->
 						</gedcom></RepeatTag>
+						<if condition="$fid==$testfam"><setvar name="xx"  dumpvar="found" value="@$dump"/></if>
 						<if condition="$found=='no'" comment="family with one parent">
-							<!-- how to handle such families?? cf Agne's sister!! -->
+						<!-- how to handle such families?? cf Agne's sister!! -->
+							<setvar name="x" dumpvar="found" tp="????" value="@$dump" />
 							<SetVar name="numberOfChildren" value="0" />
 							<RepeatTag tag="CHIL">
 								<Gedcom id="@CHIL">
 									<SetVar name="numberOfChildren" value="$numberOfChildren+1" />
 								</Gedcom>
 							</RepeatTag>
+							<if condition="$fid==$testfam"><setvar name="xx"  dumpvar="numberOfChildren" value="@$dump"/></if>
 						</if>
 						</if> <!-- husb=... rad 185-->
 						</gedcom>
@@ -213,6 +259,10 @@
                 			<setvar name="nch" value="nch$gen"/>
 					<SetVar name="nchfam" value="nch_$fid" />
 						<setvar name="gen_at" value="@generation" />
+		                                <SetVar name="x_188" value="@$dump" dumpvar="gen" />
+		                                <SetVar name="x_188" value="@$dump" dumpvar="gen_at" />
+		                                <SetVar name="x_188" value="@$dump" dumpvar="nch" />
+		                                <SetVar name="x_188" value="@$dump" dumpvar="nchfam" />
 					<setvar name="$nch" value="@$nchfam" v_old="$numberOfChildren"/>
 					<setvar name="pg2" value="$gen-1" />
 					<setvar name="nchg2" value="nch$pg2" />
@@ -340,6 +390,7 @@
 					<setvar name="gnum_i18n" value="I18N::translate('sp')" />
 					<setvar name="fam" value="marr$xref" />
 					<setvar name="famid" value="@$fam" />
+					<!--Text style="red" color="#dc143c" >  xref,spxref,husb,wife,famid=<var var="xref" />,<var var="spxref" />,<var var="husb" />,<var var="wife" />,<var var="famid" /><br /></Text-->
 				</if>
 
 				<if condition="$dupl_gen GT $gen or $dupl_gen == $gen ">
@@ -374,15 +425,6 @@
 					<Text style="ital">  <var var="I18N::translate('Married earlier within this tree, see above!')"/></Text>
 					<setvar name="dupl_gen" value="999" />
 				</if>
-				<if condition="$dupl!='1st'">
-                                        <setvar name="dupl_1st_gen" value="999" />
-				</if>
-				<if condition="$dupl=='1st' and $gen LT $dupl_1st_gen">
-                                        <setvar name="dupl_1st_gen" value="$gen" />
-				</if>
-				<if condition="$dupl=='1st' and $gen==$dupl_1st_gen">
-					<Text style="ital">  <var var="I18N::translate('Married within this tree, see below!')"/></Text>
-				</if>
 				<setvar name="gen_at" value="@generation" />
 				<if condition="$gnum=='sp' and $prev_gen_adj_no==1">
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
@@ -394,6 +436,8 @@
                                 </if>
 				<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, xref=<var var="$xref"/>, spxref=<var var="$spxref"/>, gen=<var var="gen"/>, gen_at=<var var="$gen_at"/>, gen_adj=<var var="$gen_adj"/>, gen_adj_no=<var var="$gen_adj_no"/>, nch=<var var="$numberOfChildren"/></Text-->
 				<Text style="text"><br /></Text>
+				<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, gen=<var var="$gen"/> spxref=<var var="$spxref"/>, no children=<var var="numberOfChildren"/><br /> </Text-->
+				<!--Text style="red" color="#dc143c"> nch1=<var var="$nch1"/>, nch2=<var var="$nch2"/>, nch3=<var var="$nch3"/>, nch4=<var var="$nch4"/>, nch5=<var var="$nch5"/>, nchfam=<var var="$nchfam"/>, nchgen=<var var="$numberOfChildren"/> <br /> </Text-->
 				<setvar name="spxref" value="$xref" />
 				<setvar name="prev_xref" value="$xref" />
 				<if condition="$gnum!='sp' and $gen_adj_no GT 0" oldc="$gnum!='sp' and $gen_adj_no GT 0">
