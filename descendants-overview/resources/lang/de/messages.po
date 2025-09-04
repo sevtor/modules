@@ -19,6 +19,10 @@ msgstr "Ein Überblick über die Nachkommen einer Person."
 msgid "Descendants overview"
 msgstr "Nachkommenübersicht"
 
+#  resources/descendants-overview.xml:85
+msgid "née"
+msgstr "geb."
+
 #  resources/descendants-overview.xml:318
 #  earlier emigration was shown as 'emig yyyy, '
 #  emigration now has an arrow as symbol as seen below
@@ -30,19 +34,7 @@ msgstr "emig"
 msgid "Married within this tree, see above!"
 msgstr "Verheiratet in diesem Baum, siehe oben!"
 
-#  resources/descendants-overview.xml:85
-msgid "née"
-msgstr "geb."
-
-#  resources/descendants-overview.xml:9
-msgid "Show nicknames"
-msgstr ""
-
 #  resources/descendants-overview.xml:292
 #  sp is short for spouse, two letters give a pretty layout, but longer are ok
 msgid "sp"
 msgstr "Ehep"
-
-#  resources/descendants-overview.xml:9
-msgid "Yes, but note that names are handled somewhat simplified"
-msgstr ""

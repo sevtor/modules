@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.5\n"
 
 #  resources/descendants-overview.xml:4
 msgid "An overview of the descendants of an individual."
@@ -18,6 +18,10 @@ msgstr "Een overzicht van de afstammelingen van een persoon."
 #  resources/descendants-overview.xml:3
 msgid "Descendants overview"
 msgstr "Afstammelingenoverzicht"
+
+#  resources/descendants-overview.xml:85
+msgid "née"
+msgstr "geb."
 
 #  resources/descendants-overview.xml:318
 #  earlier emigration was shown as 'emig yyyy, '
@@ -30,19 +34,7 @@ msgstr "emig"
 msgid "Married within this tree, see above!"
 msgstr "Getrouwd in deze boom, zie hierboven!"
 
-#  resources/descendants-overview.xml:85
-msgid "née"
-msgstr "geb."
-
-#  resources/descendants-overview.xml:9
-msgid "Show nicknames"
-msgstr "Toon roepnamen"
-
 #  resources/descendants-overview.xml:292
 #  sp is short for spouse, two letters give a pretty layout, but longer are ok
 msgid "sp"
 msgstr "e.v"
-
-#  resources/descendants-overview.xml:9
-msgid "Yes, but note that names are handled somewhat simplified"
-msgstr "Ja, maar merk op dat namen enigszins vereenvoudigd worden behandeld"

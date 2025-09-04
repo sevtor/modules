@@ -6,7 +6,7 @@
 	<Input name="maxgen" type="select" options="3=>I18N::number(3)|4=>I18N::number(4)|5=>I18N::number(5)|6=>I18N::number(6)|7=>I18N::number(7)|8=>I18N::number(8)|9=>I18N::number(9)|10=>I18N::number(10)|-1=>I18N::translate('All')" default="-1"><var var="I18N::translate('Generations')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
 	<Input name="orientation" type="select" default="portrait" options="portrait=>I18N::translate('Portrait')|landscape=>I18N::translate('Landscape')"><var var="I18N::translate('Orientation')"/></Input>
-	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, but note that names are handled somewhat simplified')"><var var="I18N::translate('Show nicknames')"/></Input>
+	<Input name="nick" type="select" default="0" options="0=>I18N::translate('No')|1=>I18N::translate('Yes, between double quotes: &quot;nick&quot;')|2=>I18N::translate('Yes, between parenthesis: (nick)')"><var var="I18N::translate('Show nicknames')"/></Input>
 	<!--
 	<Input name="relatives" type="select" default="ancestors" options="child-family=>I18N::translate('Parents and siblings')|spouse-family=>I18N::translate('Spouses and children')|direct-ancestors=>I18N::translate('Direct line ancestors')|ancestors=>I18N::translate('Direct line ancestors and their families')|descendants=>I18N::translate('Descendants')|all=>I18N::translate('All')"><var var="I18N::translate('Choose relatives')"/></Input>
 	<Input name="birthdate1" lookup="DATE" type="text"><var var="I18N::translate('Birth date range start')" /></Input>
@@ -78,10 +78,10 @@
 	<setvar name="dump" value="dval" />
 	<setvar name="top" value="38" />
 	<setvar name="lpos" value="0" />
-	<setvar name="marg1" value="%26nbsp;%26#x2570;%26mdash; " comment="%26#x2570; only html! changed to \ in pdf"/>
-	<setvar name="marg2" value="%26nbsp;%26#x251C;%26mdash; " comment="251C changed to | in pdf"/>
-	<setvar name="marg_vl" value="%26nbsp;|%26nbsp; " />
-	<setvar name="marg_bl" value="%26nbsp; %26nbsp; " />
+	<setvar name="marg1" value="%26#xA0;%26#x2570;%26mdash; " comment="%26#x2570; only html! changed to \ in pdf"/>
+	<setvar name="marg2" value="%26#xA0;%26#x251C;%26mdash; " comment="251C changed to | in pdf"/>
+	<setvar name="marg_vl" value="%26#xA0;|%26#xA0; " comment="A0 is nbsp, non-breakable space; A0 fools browsers:"/>
+	<setvar name="marg_bl" value="%26#xA0; %26#xA0; " comment=" more than one spaces are reduced to one SP by browsers"/>
 	<SetVar name="namesep" value="I18N::translate('née')"/>
 
 	<Doc pageSize="$pageSize" orientation="$orientation" headermargin="15" leftmargin="40" rightmargin="20" showGeneratedBy="0" >
@@ -215,8 +215,36 @@
 				</if>
 				<if condition="$g2 == 0"><setvar name="marg" value="" /></if>
 				<if condition="$gen == 1"><setvar name="marg" value="" /></if>
-				<!-- while g2 > 0 -->
+				<!-- while g2 > 0 # max g2 = 15-->
 				<setvar name="g2" value="$gen-2" />
+				<if condition="$g2 GT 0">
+					<setvar name="nchg2" value="nch$g2" />
+					<setvar name="nn" value="@$nchg2" />
+					<if condition="$nn GT 0"><setvar name="marg" value="$marg_vl$marg" /></if>
+					<if condition="$nn LT 1"><setvar name="marg" value="$marg_bl$marg" /></if>
+				</if>
+				<setvar name="g2" value="$g2-1" />
+				<if condition="$g2 GT 0">
+					<setvar name="nchg2" value="nch$g2" />
+					<setvar name="nn" value="@$nchg2" />
+					<if condition="$nn GT 0"><setvar name="marg" value="$marg_vl$marg" /></if>
+					<if condition="$nn LT 1"><setvar name="marg" value="$marg_bl$marg" /></if>
+				</if>
+				<setvar name="g2" value="$g2-1" />
+				<if condition="$g2 GT 0">
+					<setvar name="nchg2" value="nch$g2" />
+					<setvar name="nn" value="@$nchg2" />
+					<if condition="$nn GT 0"><setvar name="marg" value="$marg_vl$marg" /></if>
+					<if condition="$nn LT 1"><setvar name="marg" value="$marg_bl$marg" /></if>
+				</if>
+				<setvar name="g2" value="$g2-1" />
+				<if condition="$g2 GT 0">
+					<setvar name="nchg2" value="nch$g2" />
+					<setvar name="nn" value="@$nchg2" />
+					<if condition="$nn GT 0"><setvar name="marg" value="$marg_vl$marg" /></if>
+					<if condition="$nn LT 1"><setvar name="marg" value="$marg_bl$marg" /></if>
+				</if>
+				<setvar name="g2" value="$g2-1" />
 				<if condition="$g2 GT 0">
 					<setvar name="nchg2" value="nch$g2" />
 					<setvar name="nn" value="@$nchg2" />
@@ -306,7 +334,7 @@
 				<setvar name="famid" value="@$fam" />
 				<Gedcom id="$famid">
 				<Text style="text">, &#x26AD;<GedcomValue tag="MARR:DATE" truncate="$trunc_date" /></Text>
-				<if condition="@ENGA:DATE!=''"><Text style="text"><GedcomValue tag="ENGA:DATE" truncate="$trunc_date" /></Text></if>
+				<if condition="@ENGA:DATE!='' and @MARR:DATE==''"><Text style="text"><GedcomValue tag="ENGA:DATE" truncate="$trunc_date" /></Text></if>
 				<if condition="@EVEN:TYPE=='Sambo' and @EVEN:DATE!=''"><Text style="text"><GedcomValue tag="EVEN:DATE" truncate="$trunc_date" /></Text></if>
 				<if condition="@DIV:DATE!=''"><Text style="text">, &#x26AE;<GedcomValue tag="DIV:DATE" truncate="$trunc_date" /></Text></if>
 				<if condition="@DIV:DATE=='' and @DIV"><Text style="text">, &#x26AE;</Text></if>

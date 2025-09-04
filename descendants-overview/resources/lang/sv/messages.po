@@ -39,4 +39,4 @@ msgstr "ma"
 
 #  resources/descendants-overview.xml:9
 msgid "Yes, but note that names are handled somewhat simplified"
-msgstr "Ja, men observera att namnen hanteras något förenklat"
+msgstr "Ja, men observera att nmnen hanteras något förenklat"
