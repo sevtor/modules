@@ -367,11 +367,11 @@
 				<if condition="@DEAT:DATE!=''"><Text style="text">, &#x271D;<GedcomValue tag="DEAT:DATE" truncate="$trunc_date" /></Text></if>
 				<Text style="text">)</Text>
 				<if condition="$dupl=='yes' and $samefam!='---'">
-					<Text style="ital">  <var var="I18N::translate('Married within this tree, for family see above!')"/></Text>
+					<Text style="ital">  <var var="I18N::translate('Married to a relative, for family see above!')"/></Text>
 					<setvar name="dupl_gen" value="$gen" />
 				</if>
 				<if condition="$dupl=='yes' and $samefam=='---'">
-					<Text style="ital">  <var var="I18N::translate('Married earlier within this tree, see above!')"/></Text>
+					<Text style="ital">  <var var="I18N::translate('Married earlier to a relative, see above!')"/></Text>
 					<setvar name="dupl_gen" value="999" />
 				</if>
 				<if condition="$dupl!='1st'">
@@ -381,16 +381,16 @@
                                         <setvar name="dupl_1st_gen" value="$gen" />
 				</if>
 				<if condition="$dupl=='1st' and $gen==$dupl_1st_gen">
-					<Text style="ital">  <var var="I18N::translate('Married within this tree, see below!')"/></Text>
+					<Text style="ital">  <var var="I18N::translate('Married to a relative, see below!')"/></Text>
 				</if>
 				<setvar name="gen_at" value="@generation" />
 				<if condition="$gnum=='sp' and $prev_gen_adj_no==1">
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
                                 </if>
-				<if condition="$gnum=='sp' and $gen != @generation and $samefam=='---'" xtra=" or $dupl=='1st'">
+				<if condition="$gnum=='sp' and $gen != @generation and $samefam=='---'" >
                 			<setvar name="gen_adj" value="$gen-$gen_at" />
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
-                                        <Text style="ital">  <var var="I18N::translate('Married within this tree, see below!')"/></Text>
+                                        <Text style="ital">  <var var="I18N::translate('Married to a relative, see below!')"/></Text>
                                 </if>
 				<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, xref=<var var="$xref"/>, spxref=<var var="$spxref"/>, gen=<var var="gen"/>, gen_at=<var var="$gen_at"/>, gen_adj=<var var="$gen_adj"/>, gen_adj_no=<var var="$gen_adj_no"/>, nch=<var var="$numberOfChildren"/></Text-->
 				<Text style="text"><br /></Text>
