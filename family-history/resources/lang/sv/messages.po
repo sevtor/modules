@@ -9,6 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#  resources/family_history_report.xml:375
+msgid "a relative"
+msgstr "en släkting"
+
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr "En rapport om en persons släktingar, i en berättande stil."
@@ -59,6 +63,10 @@ msgstr "Han flyttade ihop med"
 #  resources/family_history_report.xml:283
 msgid "He was adopted"
 msgstr "Han adopterades"
+
+#  resources/family_history_report.xml:21
+msgid "Hide 2nd last (province)"
+msgstr "Dölj nästa sista (län/provins)"
 
 #  resources/family_history_report.xml:17
 msgid "Latest recorded name"
@@ -111,6 +119,10 @@ msgstr "Visa släktskap"
 msgid "Show nicknames"
 msgstr "Visa smeknamn"
 
+#  resources/family_history_report.xml:21
+msgid "Show only first part"
+msgstr "Visa bara första delen"
+
 #  resources/family_history_report.xml:535
 msgid "The husband died"
 msgstr "Maken dog"
@@ -132,8 +144,8 @@ msgid "Which names to show"
 msgstr "Välj namn som ska visas"
 
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: \"nick\""
-msgstr "Ja, mellan dubbla citationstecken: \"nick\""
+msgid "Yes, between double quotes: &quot;nick&quot;"
+msgstr "Ja, mellan dubbla citationstecken: &quot;nick&quot;"
 
 #  resources/family_history_report.xml:16
 msgid "Yes, between parenthesis: (nick)"

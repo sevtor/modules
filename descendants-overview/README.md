@@ -1,6 +1,6 @@
 #  Descendents overview
 
-Released: February 2024
+Released: September 2025
 
 <a name="Description"></a>
 
@@ -17,4 +17,4 @@ This module requires **webtrees** version 2.1.18 or later, with support for the 
 ## Installation
 
 Unzip the files and upload them to the **webtrees** /modules_v4/ folder on your web server. 
-
+Download and install the corresponding version of **new-reports.zip**.

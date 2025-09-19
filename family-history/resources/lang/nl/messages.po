@@ -11,6 +11,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
 
+#  resources/family_history_report.xml:375
+msgid "a relative"
+msgstr ""
+
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr "Een verhalend rapport van de afstammelingen van een persoon."
@@ -62,6 +66,10 @@ msgstr "Hij trok in bij"
 #  resources/family_history_report.xml:284
 msgid "He was adopted"
 msgstr "Hij werd geadopteerd"
+
+#  resources/family_history_report.xml:21
+msgid "Hide 2nd last (province)"
+msgstr ""
 
 #  resources/family_history_report.xml:17
 msgid "Latest recorded name"
@@ -115,6 +123,10 @@ msgstr "Toon familieverwantschap"
 msgid "Show nicknames"
 msgstr "Toon roepnamen"
 
+#  resources/family_history_report.xml:21
+msgid "Show only first part"
+msgstr ""
+
 #  resources/family_history_report.xml:536
 msgid "The husband died"
 msgstr "De partner overleed"
@@ -136,7 +148,8 @@ msgid "Which names to show"
 msgstr "Welke namen tonen"
 
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: \"nick\""
+#, fuzzy
+msgid "Yes, between double quotes: &quot;nick&quot;"
 msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
 
 #  resources/family_history_report.xml:16

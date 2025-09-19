@@ -5,7 +5,12 @@
 1.0.2	Modified some translations
 
 1.0.3	Changed use of #xA0 (UTF-8 non-breaking space) to html-defined nbsp
-	to avoid destroyed non-latin letters
+	to avoid destroyed non-latin letters.
 
 1.1	Added possibility to print nicknames. Somewhat simplified handling of names which may
 	give unwanted result for non-latin languages and for more than one surname.
+
+1.2	Reverted nbsp to #xA0 because browsers could join several sp and nbsp to one sp char.
+	Descendants overview updated to indicate when one person appears in two places,
+	e.g. when cousins have married. Their children, grandchildren et c. are hidden
+	in the second occurrance.

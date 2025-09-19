@@ -1,6 +1,6 @@
 #  Five new modules for report generation in webtrees
 
-Released: April 2025
+Released: September 2025
 
 ## Description
 
@@ -13,34 +13,20 @@ Five new report definitions:
 
 ## Requirements
 
-I was optimistic about the compatibility between the app/Report module of the different versions of **webtrees**. Therefore there are now more versions!
-
 **This module requires some changes to the app/Report AND resources/xml/reports parts of webtrees** and they can be downloaded here:
 
-1. <a href="https://github.com/sevtor/modules/releases/download/v1.0.1/new-reports.zip">new-reports.zip</a> **v1.0.1 for webtrees versions 2.1.17-18**
+<a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v15.zip">new-reports.zip</a> **v15 for webtrees version 2.2.n**
 
-2. <a href="https://github.com/sevtor/modules/releases/download/v1.0.3/new-reports-v3.zip">new-reports.zip</a> **v3 for webtrees version 2.1.20-22**
+Version v15: Descendants overview updated to indicate when one person appears in two places,
+e.g. when cousins have married. Their children, grandchildren et c. are hidden in the second occurrance.
 
-3. <a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v14a.zip">new-reports.zip</a> **v14a for webtrees version 2.2.1-**
-
-In version v7 treament of non-UTF-8 strings is corrected. In version v8 the relationship indicator (fmf...) can be hidden and some security issues are handled.
-
-Version v9 includes enhancements and correction from issues 24-34.
-
-Version v10 includes a possibility to print nicknames (if given) in the reports family-history and descendants-overview. Note that nicknames are normally not shown in the user interface unless other modules are added to support it. See issue 29 for a discussion about nicknames.
-
-Version v11 has more consistent support for nicknames plus a possibility to choose which name to show: the first, normally at birth, or the latest, normally at death or now if still living (applies to family-history report).
-
-Version v12 - v14 has extended support for nicknames.
-
-Other versions may be added when new versions of **webtrees** are released.
 
 ## Installation
 
 Get the modules by tapping the 'Code' button and then 'Download zip'.
 Unzip the archive and copy the files to their corresponding place in your **webtrees** installation. The new-reports.zip  must also be installed in the same way. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
 
-The list of report modules is now very long and I  recommend disabling some. In the control panel one can select Modules --> Reports and uncheck some reports. Ancestors is replaced by Family tree, Ancestors and Descendents are replaced by Family history, Related families and related individuals are replaced by Family individuals.  Some other reports may also be unused and can be disabled.
+The list of report modules is now very long and I  recommend disabling some. In the control panel one can select Modules --> Reports and uncheck some reports. Ancestors is replaced by Family tree, Ancestors and Descendents are replaced by Family history, Related families and Related individuals are replaced by Family individuals.  Some other reports may also be unused and can be disabled.
 
 Hopefully, a later version of **webtrees** will include these changes to support the new xml report features.
 
