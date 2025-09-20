@@ -386,22 +386,21 @@
 				<setvar name="gen_at" value="@generation" />
 				<if condition="$gnum=='sp' and $prev_gen_adj_no==1">
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
-                                </if>
+				</if>
 				<if condition="$gnum=='sp' and $gen != @generation and $samefam=='---'" >
-                			<setvar name="gen_adj" value="$gen-$gen_at" />
+                	<setvar name="gen_adj" value="$gen-$gen_at" />
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
-                                        <Text style="ital">  <var var="I18N::translate('Married to a relative, see below!')"/></Text>
-                                </if>
+				</if>
 				<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, xref=<var var="$xref"/>, spxref=<var var="$spxref"/>, gen=<var var="gen"/>, gen_at=<var var="$gen_at"/>, gen_adj=<var var="$gen_adj"/>, gen_adj_no=<var var="$gen_adj_no"/>, nch=<var var="$numberOfChildren"/></Text-->
 				<Text style="text"><br /></Text>
 				<setvar name="spxref" value="$xref" />
 				<setvar name="prev_xref" value="$xref" />
 				<if condition="$gnum!='sp' and $gen_adj_no GT 0" oldc="$gnum!='sp' and $gen_adj_no GT 0">
 					<setvar name="gen_adj_no" value="$gen_adj_no-1" />
-                                </if>
+				</if>
 				<if condition="$gnum=='sp' and $prev_gen_adj_no == 1">
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
-                                </if>
+				</if>
 				<setvar name="prev_gen_adj_no" value="$gen_adj_no" />
 				</if>
 			</Relatives>

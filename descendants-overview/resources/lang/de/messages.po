@@ -26,20 +26,17 @@ msgstr "Nachkommenübersicht"
 msgid "emig"
 msgstr "emig"
 
-#  resources/descendants-overview.xml:323
-#, fuzzy
+#  resources/descendants-overview.xml:374
 msgid "Married earlier to a relative, see above!"
-msgstr "Verheiratet in diesem Baum, siehe oben!"
+msgstr "Mit einem Verwandten verheiratet, siehe oben!"
 
-#  resources/descendants-overview.xml:323
-#, fuzzy
+#  resources/descendants-overview.xml:370
 msgid "Married to a relative, for family see above!"
-msgstr "Verheiratet in diesem Baum, siehe oben!"
+msgstr "Mit einem Verwandten verheiratet, für Familie siehe oben!"
 
-#  resources/descendants-overview.xml:323
-#, fuzzy
+#  resources/descendants-overview.xml:384
 msgid "Married to a relative, see below!"
-msgstr "Verheiratet in diesem Baum, siehe unten!"
+msgstr "Mit einem Verwandten verheiratet, siehe unten!"
 
 #  resources/descendants-overview.xml:85
 msgid "née"
@@ -47,7 +44,7 @@ msgstr "geb."
 
 #  resources/descendants-overview.xml:9
 msgid "Show nicknames"
-msgstr ""
+msgstr "Spitznamen angezeigen"
 
 #  resources/descendants-overview.xml:292
 #  sp is short for spouse, two letters give a pretty layout, but longer are ok
@@ -55,9 +52,9 @@ msgid "sp"
 msgstr "Ehep"
 
 #  resources/descendants-overview.xml:9
-msgid "Yes, between double quotes: &quot;nick&quot;"
-msgstr ""
+msgid "Yes, between double quotes: \"nick\""
+msgstr "Ja, zwischen doppelten Anfürungszeichen: \"nick\""
 
 #  resources/descendants-overview.xml:9
 msgid "Yes, between parenthesis: (nick)"
-msgstr ""
+msgstr "Ja, in Klammern: (nick)"

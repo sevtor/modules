@@ -22,19 +22,16 @@ msgid "emig"
 msgstr "&#x21E8;"
 
 #  resources/descendants-overview.xml:323
-#, fuzzy
 msgid "Married earlier to a relative, see above!"
-msgstr "Gift inom detta träd, se ovan!"
+msgstr "Gift tidigare med en släkting, se ovan!"
 
 #  resources/descendants-overview.xml:323
-#, fuzzy
 msgid "Married to a relative, for family see above!"
-msgstr "Gift inom detta träd, se ovan!"
+msgstr "Gift med en släkting, för familj se ovan!"
 
 #  resources/descendants-overview.xml:323
-#, fuzzy
 msgid "Married to a relative, see below!"
-msgstr "Gift inom detta träd, se ovan!"
+msgstr "Gift med en släkting, se nedan!"
 
 #  resources/descendants-overview.xml:85
 msgid "née"
@@ -49,8 +46,8 @@ msgid "sp"
 msgstr "ma"
 
 #  resources/descendants-overview.xml:9
-msgid "Yes, between double quotes: &quot;nick&quot;"
-msgstr "Ja, mellan dubbla citationstecken: &quot;nick&quot;"
+msgid "Yes, between double quotes: \"nick\""
+msgstr "Ja, mellan dubbla citationstecken: \"nick\""
 
 #  resources/descendants-overview.xml:9
 msgid "Yes, between parenthesis: (nick)"

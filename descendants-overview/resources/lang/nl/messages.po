@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2025-09-20\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20,26 +20,20 @@ msgid "Descendants overview"
 msgstr "Afstammelingenoverzicht"
 
 #  resources/descendants-overview.xml:318
-#  earlier emigration was shown as 'emig yyyy, '
-#  emigration now has an arrow as symbol as seen below
-#  |   ├— 2. Gunnar Alexis Berlin ( ⁕1902, ⇨ 1925, ✝1960)
 msgid "emig"
 msgstr "emig"
 
-#  resources/descendants-overview.xml:323
-#, fuzzy
+#  resources/descendants-overview.xml:374
 msgid "Married earlier to a relative, see above!"
-msgstr "Getrouwd in deze boom, zie hierboven!"
+msgstr "Getrouwd met een familielid, zie hierboven!"
 
-#  resources/descendants-overview.xml:323
-#, fuzzy
+#  resources/descendants-overview.xml:370
 msgid "Married to a relative, for family see above!"
-msgstr "Getrouwd in deze boom, zie hierboven!"
+msgstr "Getrouwd met een familielid, zie hierboven!"
 
-#  resources/descendants-overview.xml:323
-#, fuzzy
+#  resources/descendants-overview.xml:384
 msgid "Married to a relative, see below!"
-msgstr "Getrouwd in deze boom, zie hieronder!"
+msgstr "Getrouwd met een familielid, zie hieronder!"
 
 #  resources/descendants-overview.xml:85
 msgid "née"
@@ -47,7 +41,7 @@ msgstr "geb."
 
 #  resources/descendants-overview.xml:9
 msgid "Show nicknames"
-msgstr ""
+msgstr "Toon roepnamen"
 
 #  resources/descendants-overview.xml:292
 #  sp is short for spouse, two letters give a pretty layout, but longer are ok
@@ -55,9 +49,9 @@ msgid "sp"
 msgstr "e.v"
 
 #  resources/descendants-overview.xml:9
-msgid "Yes, between double quotes: &quot;nick&quot;"
-msgstr ""
+msgid "Yes, between double quotes: \"nick\""
+msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
 
 #  resources/descendants-overview.xml:9
 msgid "Yes, between parenthesis: (nick)"
-msgstr ""
+msgstr "Ja, tussen haakjes: (roepnaam)"

@@ -144,8 +144,8 @@ msgid "Which names to show"
 msgstr "Välj namn som ska visas"
 
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: &quot;nick&quot;"
-msgstr "Ja, mellan dubbla citationstecken: &quot;nick&quot;"
+msgid "Yes, between double quotes: \"nick\""
+msgstr "Ja, mellan dubbla citationstecken: \"nick\""
 
 #  resources/family_history_report.xml:16
 msgid "Yes, between parenthesis: (nick)"

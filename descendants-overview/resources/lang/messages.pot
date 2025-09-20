@@ -35,7 +35,7 @@ msgid "sp"
 msgstr ""
 
 #  resources/descendants-overview.xml:9
-msgid "Yes, between double quotes: &quot;nick&quot;"
+msgid "Yes, between double quotes: \"nick\""
 msgstr ""
 
 #  resources/descendants-overview.xml:9

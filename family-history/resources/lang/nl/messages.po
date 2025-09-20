@@ -148,14 +148,9 @@ msgid "Which names to show"
 msgstr "Welke namen tonen"
 
 #  resources/family_history_report.xml:16
-#, fuzzy
-msgid "Yes, between double quotes: &quot;nick&quot;"
+msgid "Yes, between double quotes: \"nick\""
 msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
 
 #  resources/family_history_report.xml:16
 msgid "Yes, between parenthesis: (nick)"
 msgstr "Ja, tussen haakjes: (roepnaam)"
-
-#  resources/family_history_report.xml:16
-#~ msgid "Yes, but note that names are handled somewhat simplified"
-#~ msgstr "Ja, maar merk op dat namen enigszins vereenvoudigd worden behandeld"
