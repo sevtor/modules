@@ -13,7 +13,7 @@ msgstr ""
 
 #  resources/family_history_report.xml:375
 msgid "a relative"
-msgstr ""
+msgstr "ein Verwandter"
 
 #  resources/family_history_report.xml:6
 msgid "A report of an individual’s relatives, in a narrative style."
@@ -33,7 +33,7 @@ msgstr "Kinder, siehe Ehepartner darüber."
 
 #  resources/family_history_report.xml:103
 msgid "Explanation"
-msgstr ""
+msgstr "Erläuterung"
 
 #  resources/family_history_report.xml:5
 msgid "Family history"
@@ -80,6 +80,10 @@ msgstr ""
 #  resources/family_history_report.xml:93
 msgid "née"
 msgstr "geb."
+
+#  resources/family_history_report.xml:21
+msgid "Reduce place names"
+msgstr ""
 
 #  resources/family_history_report.xml:11
 msgid ""
@@ -142,7 +146,7 @@ msgid "Which names to show"
 msgstr ""
 
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: \"nick\""
+msgid "Yes, between double quotes: &quot;nick&quot;"
 msgstr ""
 
 #  resources/family_history_report.xml:16

@@ -1,4 +1,4 @@
-#  resources/family_history_report.xml:375
+#  resources/family_history_report.xml:376
 msgid "a relative"
 msgstr ""
 
@@ -6,19 +6,19 @@ msgstr ""
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr ""
 
-#  resources/family_history_report.xml:227
+#  resources/family_history_report.xml:228
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:379
+#  resources/family_history_report.xml:380
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:804
+#  resources/family_history_report.xml:805
 msgid "Children, see spouse above."
 msgstr ""
 
-#  resources/family_history_report.xml:109
+#  resources/family_history_report.xml:110
 msgid "Explanation"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Family history"
 msgstr ""
 
-#  resources/family_history_report.xml:111
+#  resources/family_history_report.xml:112
 msgid "f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
@@ -34,23 +34,23 @@ msgstr ""
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:654
+#  resources/family_history_report.xml:655
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:365
+#  resources/family_history_report.xml:366
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:363
+#  resources/family_history_report.xml:364
 msgid "He moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:302
+#  resources/family_history_report.xml:303
 msgid "He was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:21
+#  resources/family_history_report.xml:22
 msgid "Hide 2nd last (province)"
 msgstr ""
 
@@ -62,31 +62,35 @@ msgstr ""
 msgid "Name at birth"
 msgstr ""
 
-#  resources/family_history_report.xml:95
+#  resources/family_history_report.xml:96
 msgid "née"
+msgstr ""
+
+#  resources/family_history_report.xml:21
+msgid "Reduce place names"
 msgstr ""
 
 #  resources/family_history_report.xml:11
 msgid "Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
-#  resources/family_history_report.xml:110
+#  resources/family_history_report.xml:111
 msgid "Relationship to the selected individual is shown in parenthesis after the name: "
 msgstr ""
 
-#  resources/family_history_report.xml:655
+#  resources/family_history_report.xml:656
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:366
+#  resources/family_history_report.xml:367
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:364
+#  resources/family_history_report.xml:365
 msgid "She moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:303
+#  resources/family_history_report.xml:304
 msgid "She was adopted"
 msgstr ""
 
@@ -102,19 +106,19 @@ msgstr ""
 msgid "Show only first part"
 msgstr ""
 
-#  resources/family_history_report.xml:575
+#  resources/family_history_report.xml:576
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:574
+#  resources/family_history_report.xml:575
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:531
+#  resources/family_history_report.xml:532
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:568
+#  resources/family_history_report.xml:569
 msgid "They separated"
 msgstr ""
 
@@ -123,7 +127,7 @@ msgid "Which names to show"
 msgstr ""
 
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: \"nick\""
+msgid "Yes, between double quotes: &quot;nick&quot;"
 msgstr ""
 
 #  resources/family_history_report.xml:16

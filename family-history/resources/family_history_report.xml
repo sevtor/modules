@@ -18,7 +18,8 @@
 	<Input name="photos" type="checkbox" default="1"><var var="I18N::translate('Show photos')"/></Input>
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
-	<Input name="reducePlaceName" type="select" options="0=>I18N::translate('No')|2=>I18N::translate('Hide 2nd last (province)')|3=>I18N::translate('Show only first part')"><var var="Reduce place names"/></Input>
+	<Input name="reducePlaceName" type="select" options="0=>I18N::translate('No')|3=>I18N::translate('Show only first part')"><var var="I18N::translate('Reduce place names')"/></Input>
+	<!-- secret possibility (change in the address field of the browser) : 2=>I18N::translate('Hide 2nd last (province)')| -->
 	<Input name="hmCountry" type="text" default=""><var var="Home country to hide (if any)"/></Input>
 	<SetVar name="fonts" value="dejavusans" />
 	<!-- Header -->
@@ -372,8 +373,8 @@
 						<Text style="text">
 							<Gedcom id="$spid">
 							<if condition="$spid!=''"> <GetPersonName id="$spid" select="$nmselct" nickname="$nick" />
-										<if condition="$dupl=='1st'"> (<var var="I18N::translate('a relative')"/>)</if>
-										<Gedcom id="@FAMC">
+								<if condition="$dupl=='1st'"> (<var var="I18N::translate('a relative')"/>)</if>
+								<Gedcom id="@FAMC">
 										<if condition="$gender=='m'">, <var var="I18N::translate('daughter of')" /> </if>
 										<if condition="$gender=='f'">, <var var="I18N::translate('son of')" /> </if>
 										<if condition="$gender!='m' and $gender!='f'">, <var var="I18N::translate('child of')" /> </if>

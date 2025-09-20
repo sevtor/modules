@@ -83,6 +83,10 @@ msgstr "Naam bij geboorte"
 msgid "née"
 msgstr "geb."
 
+#  resources/family_history_report.xml:21
+msgid "Reduce place names"
+msgstr ""
+
 #  resources/family_history_report.xml:11
 msgid ""
 "Relationship to the selected individual: f=father, m=mother, s=son, "
@@ -148,7 +152,8 @@ msgid "Which names to show"
 msgstr "Welke namen tonen"
 
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: \"nick\""
+#, fuzzy
+msgid "Yes, between double quotes: &quot;nick&quot;"
 msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
 
 #  resources/family_history_report.xml:16
