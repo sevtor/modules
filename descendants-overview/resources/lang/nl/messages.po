@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-09-20\n"
+"PO-Revision-Date: 2025-09-21 20:43+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 
 #  resources/descendants-overview.xml:4
 msgid "An overview of the descendants of an individual."
@@ -25,15 +25,15 @@ msgstr "emig"
 
 #  resources/descendants-overview.xml:374
 msgid "Married earlier to a relative, see above!"
-msgstr "Getrouwd met een familielid, zie hierboven!"
+msgstr "Eerder getrouwd met een verwant, zie hierboven!"
 
 #  resources/descendants-overview.xml:370
 msgid "Married to a relative, for family see above!"
-msgstr "Getrouwd met een familielid, zie hierboven!"
+msgstr "Getrouwd met een verwant, zie hierboven voor familie!"
 
 #  resources/descendants-overview.xml:384
 msgid "Married to a relative, see below!"
-msgstr "Getrouwd met een familielid, zie hieronder!"
+msgstr "Getrouwd met een verwant, zie hieronder!"
 
 #  resources/descendants-overview.xml:85
 msgid "née"
