@@ -245,7 +245,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -286,7 +285,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -327,7 +325,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -411,7 +408,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -473,7 +469,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -516,7 +511,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -554,7 +548,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -599,7 +592,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -639,7 +631,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -679,7 +670,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -719,7 +709,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>
@@ -759,7 +748,6 @@
 						<!--SetVar name="dm_xx" value="@$dump" /-->
 						<if condition="$notes=='on'" >
 						<Text style="note" color="#006400" >
-							<sp />
 							<RepeatTag tag="@fact:NOTE">
 							<br /><sp /><sp /><var var="I18N::translate('Note')" />: "<GedcomValue tag="NOTE" />". <br />
 							</RepeatTag>

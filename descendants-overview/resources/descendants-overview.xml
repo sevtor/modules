@@ -388,7 +388,7 @@
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
 				</if>
 				<if condition="$gnum=='sp' and $gen != @generation and $samefam=='---'" >
-                	<setvar name="gen_adj" value="$gen-$gen_at" />
+					<setvar name="gen_adj" value="$gen-$gen_at" />
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
 				</if>
 				<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, xref=<var var="$xref"/>, spxref=<var var="$spxref"/>, gen=<var var="gen"/>, gen_at=<var var="$gen_at"/>, gen_adj=<var var="$gen_adj"/>, gen_adj_no=<var var="$gen_adj_no"/>, nch=<var var="$numberOfChildren"/></Text-->
