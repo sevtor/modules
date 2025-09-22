@@ -20,7 +20,7 @@
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
 	<Input name="reducePlaceName" type="select" options="0=>I18N::translate('No')|3=>I18N::translate('Show only first part')"><var var="I18N::translate('Reduce place names')"/></Input>
 	<!-- secret possibility (change in the address field of the browser) : 2=>I18N::translate('Hide 2nd last (province)')| -->
-	<Input name="hmCountry" type="text" default=""><var var="Home country to hide (if any)"/></Input>
+	<Input name="hmCountry" type="text" default=""><var var="I18N::translate('Home country to hide (if any)')"/></Input>
 	<SetVar name="fonts" value="dejavusans" />
 	<!-- Header -->
 	<Style name="header" font="$fonts" size="14" style="b" />

@@ -71,6 +71,10 @@ msgstr "Hij werd geadopteerd"
 msgid "Hide 2nd last (province)"
 msgstr "Verberg één na laatste (provincie)"
 
+#  resources/family_history_report.xml:23
+msgid "Home country to hide (if any)"
+msgstr ""
+
 #  resources/family_history_report.xml:17
 msgid "Latest recorded name"
 msgstr "Laatste geregistreerde naam"
@@ -151,9 +155,11 @@ msgstr "Ze gingen uit elkaar"
 msgid "Which names to show"
 msgstr "Welke namen tonen"
 
+#  Note that messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
+#  Both for msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: &quot;nick&quot;"
-msgstr "Ja, tussen dubbele aanhalingstekens: &quot;roepnaam&quot;"
+msgid "Yes, between double quotes: \"nick\""
+msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
 
 #  resources/family_history_report.xml:16
 msgid "Yes, between parenthesis: (nick)"

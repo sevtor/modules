@@ -51,6 +51,8 @@ msgstr "Spitznamen angezeigen"
 msgid "sp"
 msgstr "Ehep"
 
+#  Note that messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
+#  Both for msgid and msgstr must use \" instead !!!
 #  resources/descendants-overview.xml:9
 msgid "Yes, between double quotes: \"nick\""
 msgstr "Ja, zwischen doppelten Anfürungszeichen: \"nick\""

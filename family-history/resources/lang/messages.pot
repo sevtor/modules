@@ -50,8 +50,8 @@ msgstr ""
 msgid "He was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:22
-msgid "Hide 2nd last (province)"
+#  resources/family_history_report.xml:23
+msgid "Home country to hide (if any)"
 msgstr ""
 
 #  resources/family_history_report.xml:17
