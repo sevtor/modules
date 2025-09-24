@@ -69,7 +69,7 @@ msgstr "Hij werd geadopteerd"
 
 #  resources/family_history_report.xml:21
 msgid "Hide 2nd last (province)"
-msgstr "Verberg één na laatste (provincie)"
+msgstr "Verberg een-na-laatste (provincie)"
 
 #  resources/family_history_report.xml:23
 msgid "Home country to hide (if any)"
