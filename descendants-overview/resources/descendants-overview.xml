@@ -74,9 +74,7 @@
 	<!-- Date text -->
 	<Style name="date" font="$fonts" size="8"/>
 
-	<setvar name="dval" value="100"/>
 	<setvar name="dump" value="dval" />
-        <setvar name="xx"  value="@$dump" comment="get time stamp"/>
 	<setvar name="dval" value="33" />
 	<setvar name="top" value="38" />
 	<setvar name="lpos" value="0" />
@@ -111,13 +109,13 @@
 				<setvar name="xref" value="@ID" />
 				<setvar name="pgen" value="$gen" />
 				<setvar name="gen" value="@generation" />
-                                <if condition="$gen GT $pgen">
+				<if condition="$gen GT $pgen">
 					<setvar name="pxref" value="spx$gen" />
 					<setvar name="$pxref" value="0" />
-                                </if>
-                                <if condition="$gen_adj_no GT 0">
-                                        <setvar name="gen" value="$gen_adj+$gen" />
-                                </if>
+				</if>
+				<if condition="$gen_adj_no GT 0">
+						<setvar name="gen" value="$gen_adj+$gen" />
+				</if>
 				<setvar name="gnum" value="$gen" />
 				<setvar name="marg" value="$marg_bl" />
 				<SetVar name="found" value="yes" />
@@ -135,8 +133,8 @@
 					<RepeatTag tag="HUSB"><gedcom id="@HUSB">
 						<setvar name="id" value="@HUSB" />
 						<if condition="$id==$spxref">
-                                                        <setvar name="gnum" value="sp" />
-                                                </if>
+							<setvar name="gnum" value="sp" />
+						</if>
 						<if condition="$id==$prev_xref">
 							<setvar name="gnum" value="sp" />
 							<setvar name="gen" value="$pgen" />
@@ -147,7 +145,7 @@
 						<if condition="$id==$spxref">
 							<setvar name="gnum" value="sp" />
 							<setvar name="husb" value="$xref" />
-                                                </if>
+						</if>
 						<if condition="$id==$prev_xref">
 							<setvar name="gnum" value="sp" />
 							<setvar name="gen" value="$pgen" />
@@ -169,7 +167,7 @@
 						<setvar name="fid" value="@FAMS"/>
 						<gedcom id="@FAMS">
 						<SetVar name="hbid" value="@HUSB" />
-						<if condition="($xref==@HUSB and $spxref==@WIFE) or ($xref==@WIFE and $spxref==@HUSB) or $hbid==''">
+						<if condition="($xref==@HUSB and $spxref==@WIFE) or ($xref==@WIFE and $spxref==@HUSB) or ($hbid=='' and $spxref!=$prev_xref)">
 						<SetVar name="numberOfChildren" value="0" />
 						<RepeatTag tag="CHIL">
 							<Gedcom id="@CHIL">
@@ -335,7 +333,7 @@
 				<!-- /while -->
 
 				<setvar name="xref" value="@ID" />
-				<setvar name="gnum_i18n" value="$gnum-1" />
+				<setvar name="gnum_i18n" value="$gnum" />
 				<if condition="$gnum == 'sp'">
 					<setvar name="gnum_i18n" value="I18N::translate('sp')" />
 					<setvar name="fam" value="marr$xref" />
@@ -388,7 +386,7 @@
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
 				</if>
 				<if condition="$gnum=='sp' and $gen != @generation and $samefam=='---'" >
-					<setvar name="gen_adj" value="$gen-$gen_at" />
+                	<setvar name="gen_adj" value="$gen-$gen_at" />
 					<setvar name="gen_adj_no" value="$gen_adj_no+$numberOfChildren" />
 				</if>
 				<!--Text style="red" color="#dc143c"> fam=<var var="$fid"/>, xref=<var var="$xref"/>, spxref=<var var="$spxref"/>, gen=<var var="gen"/>, gen_at=<var var="$gen_at"/>, gen_adj=<var var="$gen_adj"/>, gen_adj_no=<var var="$gen_adj_no"/>, nch=<var var="$numberOfChildren"/></Text-->
@@ -405,8 +403,6 @@
 				</if>
 			</Relatives>
 			</TextBox>
-
-			<setvar name="x" value="@$dump" />
 
 		</Body>
 		<Footer>

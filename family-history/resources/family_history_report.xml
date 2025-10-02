@@ -8,7 +8,6 @@
 	<Input name="maxgen" type="select" options="3=>I18N::number(3)|4=>I18N::number(4)|5=>I18N::number(5)|6=>I18N::number(6)|7=>I18N::number(7)|8=>I18N::number(8)|9=>I18N::number(9)|10=>I18N::number(10)|-1=>I18N::translate('All')" default="3"><var var="I18N::translate('Generations')" /></Input>
 	<Input name="sources" type="checkbox" default="1"><var var="I18N::translate('Show sources')" /></Input>
 	<Input name="notes" type="checkbox" default="1"><var var="I18N::translate('Show notes')" /></Input>
-	<!--SetVar name="relexpl" value="I18N::translate('Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)')" /-->
 	<Input name="famrel" type="select" default="1" options="0=>I18N::translate('No')|1=>I18N::translate('Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)')" ><var var="I18N::translate('Show family relationship')"/></Input>
 	<SetVar name="occu" value="on" />
 	<SetVar name="resi" value="on" />
@@ -19,7 +18,6 @@
 	<Input name="children" type="checkbox" default="1"><var var="I18N::translate('Show children of ancestors')" /></Input>
 	<Input name="pageSize" type="select" options="A4=>I18N::translateContext('paper size','A4')|A3=>I18N::translateContext('paper size', 'A3')|US-Letter=>I18N::translateContext('paper size','Letter')|US-Legal=>I18N::translateContext('paper size','Legal')|US-Tabloid=>I18N::translateContext('paper size','Tabloid')"><var var="I18N::translate('Page size')" /></Input>
 	<Input name="reducePlaceName" type="select" options="0=>I18N::translate('No')|3=>I18N::translate('Show only first part')"><var var="I18N::translate('Reduce place names')"/></Input>
-	<!-- secret possibility (change in the address field of the browser) : 2=>I18N::translate('Hide 2nd last (province)')| -->
 	<Input name="hmCountry" type="text" default=""><var var="I18N::translate('Home country to hide (if any)')"/></Input>
 	<SetVar name="fonts" value="dejavusans" />
 	<!-- Header -->
@@ -115,9 +113,6 @@
 			<Relatives id="$pid" group="$relatives" sortby="$sortby" maxgen="$maxgen">
 				<if condition="$dupl!='yes'">
 				<SetVar name="gender" value="m" />
-				<!--SetVar name="death_date" value="99999999" />
-				<if condition="@DEAT!=''"><SetVar name="death_date" value="DEAT:DATE" /></if>
-				<SetVar name="dxx" value="@$dump" dumpvar="death_date" /-->
 				<if condition="@SEX=='F'">
 					<SetVar name="gender" value="f" />
 				</if>
@@ -342,6 +337,7 @@
 						<SetVar name="fam" value="@FAMS"/>
 						<Gedcom id="@FAMS">
 							<SetVar name="chfam" value="ch$fam" />
+							<SetVar name="spid" value=""/>
 							<SetVar name="hpid" value="@HUSB"/>
 							<SetVar name="wpid" value="@WIFE"/>
 							<if condition="$cpid==$hpid">
@@ -366,9 +362,9 @@
 								<if condition="$gender=='f' and $mtype2=='ENGA'"><var var="I18N::translate('She engaged')" /></if>
 								<if condition="$gender=='m' and $mtype2=='MARR'"><var var="I18N::translate('He married')" /></if>
 								<if condition="$gender=='f' and $mtype2=='MARR'"><var var="I18N::translate('She married')" /></if>
-								<if condition="$mtype2=='_XXX'"><var var="I18N::translate('Partner (unknown type)')" /></if>
+								<if condition="$mtype2=='_XXX' and $spid!=''"><var var="I18N::translate('Partner (unknown type)')" /></if>
 							</Text>
-							<if condition="$mtype2=='_XXX'">
+							<if condition="$mtype2=='_XXX' and $spid!=''">
 								<Text style="text">
 									<Gedcom id="$spid">
 										<if condition="$spid!=''"> <GetPersonName id="$spid" select="$nmselct" nickname="$nick" /></if>
@@ -574,7 +570,6 @@
 							<Text style="text">.</Text>
 						</if></if>
 						<if condition="$fact=='_SP_DEAT'">
-							<!--SetVar name="sp_death" value="_SP_DEAT:DATE"/><if condition="$death_date GT $sp_death"-->
 							<Text style="text">
 								<if condition="$gender=='m'"> <var var="I18N::translate('The wife died')" /></if>
 								<if condition="$gender=='f'"> <var var="I18N::translate('The husband died')" /></if>
@@ -612,7 +607,7 @@
 							</RepeatTag>
 						</Text>
 						</if>
-						</if><!--/if-->
+						</if>
 						<if condition="$fact=='DEAT' and @desc!='Y'">
 							<Text style="text">
 								<if condition="$gender=='m'"> <var var="I18N::translate('He died')" /></if>
