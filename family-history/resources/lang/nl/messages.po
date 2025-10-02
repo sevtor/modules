@@ -87,6 +87,11 @@ msgstr "Naam bij geboorte"
 msgid "née"
 msgstr "geb."
 
+#  Handle FAMS records without MARR subrecord (couples that are not living together)
+#  resources/family_history_report.xml:369
+msgid "Partner (unknown type)"
+msgstr ""
+
 #  resources/family_history_report.xml:21
 msgid "Reduce place names"
 msgstr "Verkort plaatsnamen"
@@ -155,7 +160,7 @@ msgstr "Ze gingen uit elkaar"
 msgid "Which names to show"
 msgstr "Welke namen tonen"
 
-#  Note that messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
+#  Note that the generated messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
 #  Both for msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
 msgid "Yes, between double quotes: \"nick\""

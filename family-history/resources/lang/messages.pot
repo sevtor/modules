@@ -1,4 +1,4 @@
-#  resources/family_history_report.xml:376
+#  resources/family_history_report.xml:383
 msgid "a relative"
 msgstr ""
 
@@ -6,15 +6,15 @@ msgstr ""
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr ""
 
-#  resources/family_history_report.xml:228
+#  resources/family_history_report.xml:231
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:380
+#  resources/family_history_report.xml:387
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:805
+#  resources/family_history_report.xml:804
 msgid "Children, see spouse above."
 msgstr ""
 
@@ -34,20 +34,24 @@ msgstr ""
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:655
+#  resources/family_history_report.xml:657
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:366
+#  resources/family_history_report.xml:365
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:364
+#  resources/family_history_report.xml:363
 msgid "He moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:303
+#  resources/family_history_report.xml:304
 msgid "He was adopted"
+msgstr ""
+
+#  resources/family_history_report.xml:22
+msgid "Hide 2nd last (province)"
 msgstr ""
 
 #  resources/family_history_report.xml:23
@@ -66,6 +70,11 @@ msgstr ""
 msgid "née"
 msgstr ""
 
+#  Handle FAMS records without MARR subrecord (couples that are not living together)
+#  resources/family_history_report.xml:369
+msgid "Partner (unknown type)"
+msgstr ""
+
 #  resources/family_history_report.xml:21
 msgid "Reduce place names"
 msgstr ""
@@ -78,19 +87,19 @@ msgstr ""
 msgid "Relationship to the selected individual is shown in parenthesis after the name: "
 msgstr ""
 
-#  resources/family_history_report.xml:656
+#  resources/family_history_report.xml:658
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:367
+#  resources/family_history_report.xml:366
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:365
+#  resources/family_history_report.xml:364
 msgid "She moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:304
+#  resources/family_history_report.xml:305
 msgid "She was adopted"
 msgstr ""
 
@@ -106,19 +115,19 @@ msgstr ""
 msgid "Show only first part"
 msgstr ""
 
-#  resources/family_history_report.xml:576
+#  resources/family_history_report.xml:580
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:575
+#  resources/family_history_report.xml:579
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:532
+#  resources/family_history_report.xml:536
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:569
+#  resources/family_history_report.xml:572
 msgid "They separated"
 msgstr ""
 
@@ -126,8 +135,10 @@ msgstr ""
 msgid "Which names to show"
 msgstr ""
 
+#  Note that the generated messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
+#  Both for msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: &quot;nick&quot;"
+msgid "Yes, between double quotes: \"nick\""
 msgstr ""
 
 #  resources/family_history_report.xml:16

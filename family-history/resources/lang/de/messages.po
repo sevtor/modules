@@ -65,6 +65,10 @@ msgstr "Er zog ein mit"
 msgid "He was adopted"
 msgstr "Er wurde adoptiert"
 
+#  resources/family_history_report.xml:22
+msgid "Hide 2nd last (province)"
+msgstr ""
+
 #  resources/family_history_report.xml:23
 msgid "Home country to hide (if any)"
 msgstr ""
@@ -80,6 +84,11 @@ msgstr ""
 #  resources/family_history_report.xml:93
 msgid "née"
 msgstr "geb."
+
+#  Handle FAMS records without MARR subrecord (couples that are not living together)
+#  resources/family_history_report.xml:369
+msgid "Partner (unknown type)"
+msgstr ""
 
 #  resources/family_history_report.xml:21
 msgid "Reduce place names"
@@ -145,10 +154,10 @@ msgstr "Sie trennten sich"
 msgid "Which names to show"
 msgstr ""
 
-#  Note that messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
-#  Both for msgid and msgstr must use \" instead !!!
+#  Note that the generated messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
+#  Both msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
-msgid "Yes, between double quotes: &quot;nick&quot;"
+msgid "Yes, between double quotes: \"nick\""
 msgstr ""
 
 #  resources/family_history_report.xml:16
