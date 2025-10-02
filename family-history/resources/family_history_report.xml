@@ -59,7 +59,7 @@
 	<SetVar name="minheight" value="20" />
 	<!-- New Page for Sources controller if SOUR exist -->
 	<SetVar name="source_exist" value="0" />
-	<SetVar name="ignore" value="CHAN,CHIL,FAMC,NAME,NOTE,OBJE,RESN,SEX,TITL,_UID,_WT_OBJE_SORT"/>
+	<SetVar name="ignore" value="CHAN,CHIL,FAMC,NAME,NOTE,OBJE,RESN,SEX,SOUR,TITL,_UID,_WT_OBJE_SORT"/>
 	<setvar name="dump" value="dval" />
 	<setvar name="dval" value="25" comment="don't show all the first 25 variables" />
 	<setvar name="lang" value="@lang"/>
@@ -115,6 +115,9 @@
 			<Relatives id="$pid" group="$relatives" sortby="$sortby" maxgen="$maxgen">
 				<if condition="$dupl!='yes'">
 				<SetVar name="gender" value="m" />
+				<!--SetVar name="death_date" value="99999999" />
+				<if condition="@DEAT!=''"><SetVar name="death_date" value="DEAT:DATE" /></if>
+				<SetVar name="dxx" value="@$dump" dumpvar="death_date" /-->
 				<if condition="@SEX=='F'">
 					<SetVar name="gender" value="f" />
 				</if>
@@ -348,7 +351,6 @@
 								<SetVar name="spid" value="@HUSB" />
 							</if>
 							<SetVar name="marrtype" value="_XXX"/>
-							<SetVar name="marrtype" value="_XXX"/>
 							<if condition="@ENGA:DATE!=''"><SetVar name="marrtype" value="ENGA"/></if>
 							<if condition="@MARR:DATE!=''"><SetVar name="marrtype" value="MARR"/></if>
 							<if condition="@MARR=='Y'"><SetVar name="marrtype" value="MARR"/></if>
@@ -364,7 +366,15 @@
 								<if condition="$gender=='f' and $mtype2=='ENGA'"><var var="I18N::translate('She engaged')" /></if>
 								<if condition="$gender=='m' and $mtype2=='MARR'"><var var="I18N::translate('He married')" /></if>
 								<if condition="$gender=='f' and $mtype2=='MARR'"><var var="I18N::translate('She married')" /></if>
+								<if condition="$mtype2=='_XXX'"><var var="I18N::translate('Partner (unknown type)')" /></if>
 							</Text>
+							<if condition="$mtype2=='_XXX'">
+								<Text style="text">
+									<Gedcom id="$spid">
+										<if condition="$spid!=''"> <GetPersonName id="$spid" select="$nmselct" nickname="$nick" /></if>
+									</Gedcom>
+								.</Text>
+							</if>
 							<Gedcom id="$marrtype">
 								<if condition="(($spid != '') and (@DATE != '' or @PLAC != '' or @desc == 'Y'))">
 						<Text style="text">
@@ -558,12 +568,13 @@
 						</Text>
 						</if>
 						</if>
-								<if condition="$fact=='EVEN' and @EVEN:TYPE=='Separation'">
-									<Text style="text"> <var var="I18N::translate('They separated')" /></Text>
-									<if condition="@EVEN:DATE!=''"><Text style="text"> <GedcomValue tag="EVEN:DATE" /></Text></if>
-									<Text style="text">.</Text>
-								</if>
+						<if condition="$fact=='EVEN'"><if condition="@EVEN:TYPE=='Separation'">
+							<Text style="text"> <var var="I18N::translate('They separated')" /></Text>
+							<if condition="@EVEN:DATE!=''"><Text style="text"> <GedcomValue tag="EVEN:DATE" /></Text></if>
+							<Text style="text">.</Text>
+						</if></if>
 						<if condition="$fact=='_SP_DEAT'">
+							<!--SetVar name="sp_death" value="_SP_DEAT:DATE"/><if condition="$death_date GT $sp_death"-->
 							<Text style="text">
 								<if condition="$gender=='m'"> <var var="I18N::translate('The wife died')" /></if>
 								<if condition="$gender=='f'"> <var var="I18N::translate('The husband died')" /></if>
@@ -601,7 +612,7 @@
 							</RepeatTag>
 						</Text>
 						</if>
-						</if>
+						</if><!--/if-->
 						<if condition="$fact=='DEAT' and @desc!='Y'">
 							<Text style="text">
 								<if condition="$gender=='m'"> <var var="I18N::translate('He died')" /></if>
