@@ -60,6 +60,8 @@
 	<SetVar name="ignore" value="CHAN,CHIL,FAMC,NAME,NOTE,OBJE,RESN,SEX,SOUR,TITL,_UID,_WT_OBJE_SORT"/>
 	<setvar name="dump" value="dval" />
 	<setvar name="dval" value="25" comment="don't show all the first 25 variables" />
+	<SetVar name="dval" value="10000" />
+	<!--SetVar name="dv_n2n" value="@$dump" comment="just generate a time stamp" /-->
 	<setvar name="lang" value="@lang"/>
 	<setvar name="lc1" value="1"/>
 	<if condition="$lang=='de'">
@@ -430,8 +432,6 @@
 								</RepeatTag>
 								</if>
 							</Gedcom>
-							<SetVar name="dval" value="1001" />
-							<!--SetVar name="dv_n2n" value="@$dump" /-->
 							<!--Text style="label3" color="#dc143c" > <var var="@fact" /> </Text-->
 							<if condition="$notes=='on'" >
 							<RepeatTag tag="NOTE" >

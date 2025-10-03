@@ -83,6 +83,9 @@
 	<setvar name="marg_vl" value="%26#xA0;|%26#xA0; " comment="A0 is nbsp, non-breakable space; A0 fools browsers:"/>
 	<setvar name="marg_bl" value="%26#xA0; %26#xA0; " comment=" more than one spaces are reduced to one SP by browsers"/>
 	<SetVar name="namesep" value="I18N::translate('née')"/>
+	<SetVar name="format" value="@format" />
+	<SetVar name="indent20" value="&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;" />
+	<SetVar name="indent40" value="$indent20$indent20$indent20"/>
 
 	<Doc pageSize="$pageSize" orientation="$orientation" headermargin="15" leftmargin="40" rightmargin="20" showGeneratedBy="0" >
 		<Header   comment="only used for html output" >
@@ -365,11 +368,15 @@
 				<if condition="@DEAT:DATE!=''"><Text style="text">, &#x271D;<GedcomValue tag="DEAT:DATE" truncate="$trunc_date" /></Text></if>
 				<Text style="text">)</Text>
 				<if condition="$dupl=='yes' and $samefam!='---'">
+					<if condition="$format=='PDF'"><Text style="text"><br /><var var="indent40"/></Text></if>
 					<Text style="ital">  <var var="I18N::translate('Married to a relative, for family see above!')"/></Text>
+					<if condition="$format=='PDF'"><Text style="ital"><br /></Text></if>
 					<setvar name="dupl_gen" value="$gen" />
 				</if>
 				<if condition="$dupl=='yes' and $samefam=='---'">
+					<if condition="$format=='PDF'"><Text style="text"><br /><var var="indent40"/></Text></if>
 					<Text style="ital">  <var var="I18N::translate('Married earlier to a relative, see above!')"/></Text>
+					<if condition="$format=='PDF'"><Text style="ital"><br /></Text></if>
 					<setvar name="dupl_gen" value="999" />
 				</if>
 				<if condition="$dupl!='1st'">
@@ -379,7 +386,9 @@
                                         <setvar name="dupl_1st_gen" value="$gen" />
 				</if>
 				<if condition="$dupl=='1st' and $gen==$dupl_1st_gen">
+					<if condition="$format=='PDF'"><Text style="text"><br /><var var="indent40"/></Text></if>
 					<Text style="ital">  <var var="I18N::translate('Married to a relative, see below!')"/></Text>
+					<if condition="$format=='PDF'"><Text style="ital"><br /></Text></if>
 				</if>
 				<setvar name="gen_at" value="@generation" />
 				<if condition="$gnum=='sp' and $prev_gen_adj_no==1">
