@@ -1,4 +1,8 @@
-#  resources/family_history_report.xml:383
+#  resources/family_history_report.xml:21
+msgid "all"
+msgstr ""
+
+#  resources/family_history_report.xml:382
 msgid "a relative"
 msgstr ""
 
@@ -6,19 +10,19 @@ msgstr ""
 msgid "A report of an individual’s relatives, in a narrative style."
 msgstr ""
 
-#  resources/family_history_report.xml:231
+#  resources/family_history_report.xml:229
 msgid "by"
 msgstr ""
 
-#  resources/family_history_report.xml:387
+#  resources/family_history_report.xml:386
 msgid "child of"
 msgstr ""
 
-#  resources/family_history_report.xml:804
+#  resources/family_history_report.xml:800
 msgid "Children, see spouse above."
 msgstr ""
 
-#  resources/family_history_report.xml:110
+#  resources/family_history_report.xml:111
 msgid "Explanation"
 msgstr ""
 
@@ -26,7 +30,7 @@ msgstr ""
 msgid "Family history"
 msgstr ""
 
-#  resources/family_history_report.xml:112
+#  resources/family_history_report.xml:113
 msgid "f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
@@ -34,27 +38,23 @@ msgstr ""
 msgid "generation"
 msgstr ""
 
-#  resources/family_history_report.xml:657
+#  resources/family_history_report.xml:653
 msgid "He emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:365
+#  resources/family_history_report.xml:364
 msgid "He engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:363
+#  resources/family_history_report.xml:362
 msgid "He moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:304
+#  resources/family_history_report.xml:302
 msgid "He was adopted"
 msgstr ""
 
 #  resources/family_history_report.xml:22
-msgid "Hide 2nd last (province)"
-msgstr ""
-
-#  resources/family_history_report.xml:23
 msgid "Home country to hide (if any)"
 msgstr ""
 
@@ -66,44 +66,39 @@ msgstr ""
 msgid "Name at birth"
 msgstr ""
 
-#  resources/family_history_report.xml:96
+#  resources/family_history_report.xml:97
 msgid "née"
 msgstr ""
 
-#  Handle FAMS records without MARR subrecord (couples that are not living together)
-#  resources/family_history_report.xml:369
+#  resources/family_history_report.xml:368
 msgid "Partner (unknown type)"
-msgstr ""
-
-#  resources/family_history_report.xml:21
-msgid "Reduce place names"
 msgstr ""
 
 #  resources/family_history_report.xml:11
 msgid "Relationship to the selected individual: f=father, m=mother, s=son, d=daughter, x=brother/sister/spouse (fmf=father's mother's father, ...)"
 msgstr ""
 
-#  resources/family_history_report.xml:111
+#  resources/family_history_report.xml:112
 msgid "Relationship to the selected individual is shown in parenthesis after the name: "
 msgstr ""
 
-#  resources/family_history_report.xml:658
+#  resources/family_history_report.xml:654
 msgid "She emigrated to"
 msgstr ""
 
-#  resources/family_history_report.xml:366
+#  resources/family_history_report.xml:365
 msgid "She engaged"
 msgstr ""
 
-#  resources/family_history_report.xml:364
+#  resources/family_history_report.xml:363
 msgid "She moved in with"
 msgstr ""
 
-#  resources/family_history_report.xml:305
+#  resources/family_history_report.xml:303
 msgid "She was adopted"
 msgstr ""
 
-#  resources/family_history_report.xml:12
+#  resources/family_history_report.xml:11
 msgid "Show family relationship"
 msgstr ""
 
@@ -112,22 +107,22 @@ msgid "Show nicknames"
 msgstr ""
 
 #  resources/family_history_report.xml:21
-msgid "Show only first part"
+msgid "Show selected parts of a place name"
 msgstr ""
 
-#  resources/family_history_report.xml:580
+#  resources/family_history_report.xml:576
 msgid "The husband died"
 msgstr ""
 
-#  resources/family_history_report.xml:579
+#  resources/family_history_report.xml:575
 msgid "The wife died"
 msgstr ""
 
-#  resources/family_history_report.xml:536
+#  resources/family_history_report.xml:533
 msgid "They divorced"
 msgstr ""
 
-#  resources/family_history_report.xml:572
+#  resources/family_history_report.xml:569
 msgid "They separated"
 msgstr ""
 
@@ -135,8 +130,6 @@ msgstr ""
 msgid "Which names to show"
 msgstr ""
 
-#  Note that the generated messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
-#  Both for msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
 msgid "Yes, between double quotes: \"nick\""
 msgstr ""

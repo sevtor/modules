@@ -66,6 +66,8 @@
 	    <SetVar name="trunc_fact" value="35" />
 	    <SetVar name="x_incr" value="140" />
 	</if>
+	<SetVar name="hmCountry" value="@homeCountry"/>
+	<SetVar name="rdcName" value="-3" />
 
 	<!-- Vertical positions -->
 	<SetVar name="y_middle" value="$h_current/2+5" />
@@ -126,7 +128,7 @@
 			</Header>
 			<Body>
 
-			<setvar name="dval" value="10"/>
+			<setvar name="dval" value="30"/>
 			<setvar name="dump" value="dval"/>
 			<if condition="$format=='HTML'" >
 				<!-- comment="line drawing is different for html and pdf" -->
@@ -142,6 +144,17 @@
 					<setvar name="$xref" value="1"/>
 				</if>
 				<setvar name="nn" value="@$xref?"/>
+				<!-- gen must be reset to handle cases with marriages -->
+				<!-- between relatives from different generations -->
+				<setvar name="gen" value="1" />
+				<if condition="$nn GT 1"><setvar name="gen" value="2"/></if>
+				<if condition="$nn GT 3"><setvar name="gen" value="3"/></if>
+				<if condition="$nn GT 7"><setvar name="gen" value="4"/></if>
+				<if condition="$nn GT 15"><setvar name="gen" value="5"/></if>
+				<if condition="$nn GT 31"><setvar name="gen" value="6"/></if>
+				<if condition="$nn GT 63"><setvar name="gen" value="7"/></if>
+				<if condition="$nn GT 127"><setvar name="gen" value="8"/></if>
+				<if condition="$nn GT 255"><setvar name="gen" value="9"/></if>
 			    <if condition="$nn GT 0" >
 
 				<setvar name="nnn" value="nn_$xref"/>
@@ -232,7 +245,7 @@
 				<!-- Individual name -->
 
 				<if condition="$nn2 GT 0">
-				<!-- one person has descendants that have married (e.g. cousins) -->
+				<!-- one person has ancestors that have married (e.g. cousins) -->
 					<!--setvar name="dv" value="@$dump" dumpvar="nn2"/-->
 					<SetVar name="top2_y" value="$y_middle + (2*$nn2-$n2_bias)* $y2_incr" />
 					<SetVar name="top2_y1" value="$top2_y -10" />
@@ -278,13 +291,13 @@
 	<SetVar name="top_y2" value="$top_y -10" />
 	<SetVar name="top_x1" value="$top_x -11" />
 	<SetVar name="top_x2" value="$top_x +3" />
-	<SetVar name="trunc_fact2" value="$trunc_fact" />
 	<if condition="$y_incr LT 5"><SetVar name="top_y2" value="$top_y -8" />
 				    <SetVar name="top_x1" value="$top_x1 +6" /> </if>
 	<if condition="$nn GT  9"><SetVar name="top_x1" value="$top_x1 -6" /></if>
 	<if condition="$nn GT 99"><SetVar name="top_x1" value="$top_x1 -6" /></if>	<!-- reduced by -6 twice -->
 	<if condition="$y_incr LT 40 and $x_incr GT 200"><SetVar name="trunc_fact" value="35" /></if>
 	<if condition="$y_incr LT 40 and $x_incr LT 200"><SetVar name="trunc_fact" value="22" /></if>
+	<SetVar name="trunc_fact2" value="$trunc_fact" />
 
 	<TextBox padding="0" width="30" height="10" align="right" left="$top_x1" top="$top_y2" reseth="1" pos="abs">
 	    <if condition="$y_incr LT 5">
@@ -323,7 +336,7 @@
 				<if condition="$y_incr GT 12 and @BIRT:PLAC!=''">
 					<if condition="$y_incr LT 40">, </if>
 					<if condition="$y_incr GT 39"><br /><var var="I18N::translate('Birth')" /> </if>
-					<GedcomValue tag="BIRT:PLAC" truncate="$trunc_fact2" />
+					<GedcomValue tag="BIRT:PLAC" truncate="$trunc_fact2" country="$hmCountry" rdcName="$rdcName" />
 				</if>
 				<if condition="$y_incr GT 19 and @SEX=='F'"><Gedcom id="@FAMS:MARR">
 					<if condition="@MARR:DATE!='' or @MARR:PLAC!=''">
@@ -331,7 +344,7 @@
 					<if condition="@MARR:PLAC!=''">
 					<if condition="$y_incr LT 40">, </if>
 					<if condition="$y_incr GT 39"><br /><var var="I18N::translate('Marriage')" /> </if>
-					<GedcomValue tag="MARR:PLAC" truncate="$trunc_fact2" />
+					<GedcomValue tag="MARR:PLAC" truncate="$trunc_fact2" country="$hmCountry" rdcName="$rdcName" />
 					</if></if>
 				</Gedcom></if>
 				<Gedcom id="DEAT">
@@ -341,7 +354,7 @@
 					<if condition="$y_incr GT 12 and @DEAT:PLAC!=''">
 					<if condition="$y_incr LT 40">, </if>
 					<if condition="$y_incr GT 39"><br /><var var="I18N::translate('Death')" /> </if>
-					<GedcomValue tag="DEAT:PLAC" truncate="$trunc_fact2" /></if>
+					<GedcomValue tag="DEAT:PLAC" truncate="$trunc_fact2" country="$hmCountry" rdcName="$rdcName" /></if>
 				</Gedcom>
 			</Text>
 		</if>

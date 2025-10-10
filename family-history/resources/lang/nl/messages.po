@@ -11,6 +11,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.7\n"
 
+#  resources/family_history_report.xml:21
+msgid "all"
+msgstr ""
+
 #  resources/family_history_report.xml:375
 msgid "a relative"
 msgstr "een verwant"
@@ -67,10 +71,6 @@ msgstr "Hij trok in bij"
 msgid "He was adopted"
 msgstr "Hij werd geadopteerd"
 
-#  resources/family_history_report.xml:21
-msgid "Hide 2nd last (province)"
-msgstr "Verberg één na laatste (provincie)"
-
 #  resources/family_history_report.xml:23
 msgid "Home country to hide (if any)"
 msgstr "Te verbergen landnaam (indien aanwezig)"
@@ -91,10 +91,6 @@ msgstr "geb."
 #  resources/family_history_report.xml:369
 msgid "Partner (unknown type)"
 msgstr ""
-
-#  resources/family_history_report.xml:21
-msgid "Reduce place names"
-msgstr "Verkort plaatsnamen"
 
 #  resources/family_history_report.xml:11
 msgid ""
@@ -137,8 +133,8 @@ msgid "Show nicknames"
 msgstr "Toon roepnamen"
 
 #  resources/family_history_report.xml:21
-msgid "Show only first part"
-msgstr "Toon alleen eerste deel"
+msgid "Show selected parts of a place name"
+msgstr ""
 
 #  resources/family_history_report.xml:536
 msgid "The husband died"
@@ -160,8 +156,6 @@ msgstr "Ze gingen uit elkaar"
 msgid "Which names to show"
 msgstr "Welke namen tonen"
 
-#  Note that the generated messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
-#  Both for msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
 msgid "Yes, between double quotes: \"nick\""
 msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
@@ -169,3 +163,4 @@ msgstr "Ja, tussen dubbele aanhalingstekens: \"roepnaam\""
 #  resources/family_history_report.xml:16
 msgid "Yes, between parenthesis: (nick)"
 msgstr "Ja, tussen haakjes: (roepnaam)"
+

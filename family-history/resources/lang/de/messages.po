@@ -11,6 +11,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.5\n"
 
+#  resources/family_history_report.xml:21
+msgid "all"
+msgstr ""
+
 #  resources/family_history_report.xml:375
 msgid "a relative"
 msgstr "ein Verwandter"
@@ -65,10 +69,6 @@ msgstr "Er zog ein mit"
 msgid "He was adopted"
 msgstr "Er wurde adoptiert"
 
-#  resources/family_history_report.xml:22
-msgid "Hide 2nd last (province)"
-msgstr ""
-
 #  resources/family_history_report.xml:23
 msgid "Home country to hide (if any)"
 msgstr ""
@@ -88,10 +88,6 @@ msgstr "geb."
 #  Handle FAMS records without MARR subrecord (couples that are not living together)
 #  resources/family_history_report.xml:369
 msgid "Partner (unknown type)"
-msgstr ""
-
-#  resources/family_history_report.xml:21
-msgid "Reduce place names"
 msgstr ""
 
 #  resources/family_history_report.xml:11
@@ -131,7 +127,7 @@ msgid "Show nicknames"
 msgstr ""
 
 #  resources/family_history_report.xml:21
-msgid "Show only first part"
+msgid "Show selected parts of a place name"
 msgstr ""
 
 #  resources/family_history_report.xml:536
@@ -154,8 +150,6 @@ msgstr "Sie trennten sich"
 msgid "Which names to show"
 msgstr ""
 
-#  Note that the generated messages.pot file contains &quot; but the xx/messages.po must use \" instead !!!
-#  Both msgid and msgstr must use \" instead !!!
 #  resources/family_history_report.xml:16
 msgid "Yes, between double quotes: \"nick\""
 msgstr ""
