@@ -15,7 +15,7 @@ Five new report definitions:
 ## Requirements
 
 **This module requires some changes to the app/Report AND resources/xml/reports parts of webtrees** and they can be downloaded here:
-<a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v15.1.zip">new-reports.zip</a> **v15.1 for webtrees version 2.2.n**. The zip file is also added as an asset to the module release.
+<a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v15.2.zip">new-reports.zip</a> **v15.2 for webtrees version 2.2.n**. The zip file is also added as an asset to the module release.
 
 ## Recent changes
 
