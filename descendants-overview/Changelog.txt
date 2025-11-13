@@ -14,3 +14,6 @@
 	Descendants overview updated to indicate when one person appears in two places,
 	e.g. when cousins have married. Their children, grandchildren et c. are hidden
 	in the second occurrance.
+
+1.2.1	Improved xml indentation.
+	Improved layout of PDF reports

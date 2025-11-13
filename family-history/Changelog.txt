@@ -26,4 +26,6 @@
 	For such marriages a note after the spouse name tells that the spose is a relative.
 
 1.6.1	Support for reduction of place names: first or latest n components, supress home country.
-		More translations.
+	More translations.
+
+1.6.2	More options for reduction of place names.
