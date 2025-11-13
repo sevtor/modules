@@ -15,23 +15,23 @@ Five new report definitions:
 ## Requirements
 
 **This module requires some changes to the app/Report AND resources/xml/reports parts of webtrees** and they can be downloaded here:
-<a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v15.2.zip">new-reports.zip</a> **v15.2 for webtrees version 2.2.n**. The zip file is also added as an asset to the module release.
+<a href="https://github.com/sevtor/modules/releases/latest/download/new-reports-v1.15.2.zip">new-reports.zip</a> **v1.15.2 for webtrees version 2.2.n**. The zip file is also added as an asset to the module release.
 
 ## Recent changes
 
-Version v15: Descendants overview updated to indicate when one person appears in two places,
+Version v1.15: Descendants overview updated to indicate when one person appears in two places,
 e.g. when cousins have married. Their children, grandchildren et c. are hidden in the second occurrance.
 
-Version v15.1: Minor improvements, mainly in the layout.
+Version v1.15.1-a...: Minor improvements, mainly in the layout.
 
-Version v15.1.1: More layout improvements. Possibility to reduce place names in reports.
+Version v1.15.2: More layout improvements. Possibility to reduce place names in reports.
 
 ## Installation
 
-Get the modules e.g. by tapping the 'Latest' button under Releases in the 'Code' tab. Then download both the source code (zip)
-and the asset new-reports-<version>.zip.
-Unzip the archive and copy the files to the module_v4/ directory in your **webtrees** installation. The corresponding version of new-reports-<v>.zip must also be installed by copying those files to their corresponding place in **webtrees**. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
+Get the modules e.g. by tapping the 'Latest' button under Releases in the 'Code' tab. Then download
+the assets new-modules-*version*.zip and new-reports-*version*.zip
+Unzip the archive and copy the files to the module_v4/ directory in your **webtrees** installation. The corresponding version of new-reports-*version*.zip must also be installed by copying those files to their corresponding place in **webtrees**. The latter archive includes new versions of many xml report definitions that give clickable links in reports formatted for html.
 
 The list of report modules is now very long and I  recommend disabling some. In the control panel one can select Modules --> Reports and uncheck some reports. Ancestors is replaced by Family tree, Ancestors and Descendents are replaced by Family history, Related families and Related individuals are replaced by Family individuals.  Some other reports may also be unused and can be disabled.
 
-**N.B. The corresponding new-reports-<version>.zip archive must also be installed!**
+**N.B. The corresponding new-reports-*version*.zip archive must also be installed!**
